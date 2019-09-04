@@ -1,14 +1,56 @@
+/* global properties */
+*
+{
+	font-family: Verdana, sans-serif;
+}
+
+/* header bar */
+header
+{
+	/* text */
+	color: white;
+	font-size: 400%;
+	text-align: center;
+	padding: 64px 64px 64px 64px;
+	
+	/* image */
+	background-color: black;
+	background-image: url("images/blue_plaid.png");
+	background-repeat: repeat;
+}
+
+/* footer bar */
+footer
+{
+	text-align: center;
+}
+
+/* main body text */
 body
 {
-	background-color: powderblue;
+	background-color: white;
 }
 
-h1
+/* unvisited link */
+a:link
 {
-	color: blue;
+	color: #1b3449;
 }
 
-p
+/* visited link */
+a:visited
 {
-	color: red;
+	color: #162a3a;
+}
+
+/* mouse over link */
+a:hover
+{
+	color: #1b3934;
+}
+
+/* selected link */
+a:active
+{
+	color: #1e5039;
 }
