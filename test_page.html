@@ -6,6 +6,16 @@
 </head>
 
 <body>
-  <p>Testing MathJax: \(x^2\)</p>
+	<p>Testing MathJax: \(x^2\)</p>
+
+	<p>Testing JavaScript: <button type="button" onclick="myFunction()">Click me</button></p>
+	<script>
+		function myFunction()
+		{
+			var things = ['Rock', 'Paper', 'Scissor'];
+			var thing = things[Math.floor(Math.random()*things.length)];
+			alert('The computer chose:' + thing);
+		}
+	</script>
 </body>
 </html>
