@@ -61,6 +61,59 @@ body
 	text-alight: left;
 }
 
+/* columns */
+.column
+{
+	float: left;
+}
+
+/* contact info and portrait column, normal screen size */
+@media screen and (min-width: 951px)
+{
+	.left
+	{
+		padding: 8px;
+		text-align: center;
+		width: 45%;
+	}
+}
+
+/* contact info and portrait column, small screen size */
+@media screen and (max-width: 950px)
+{
+	.left
+	{
+		text-align: center;
+		width: 100%;
+	}
+}
+
+/* contents next to portrait column, normal screen size */
+@media screen and (min-width: 951px)
+{
+	.right
+	{
+		width: 50%;
+	}
+}
+
+/* contents next to portrait column, small screen size */
+@media screen and (max-width: 950px)
+{
+	.right
+	{
+		width: 100%;
+	}
+}
+
+/* rows */
+.row:after
+{
+	content: "";
+	display: table;
+	clear: both;
+}
+
 /*****************************************************************************/
 /* links and navigation bar */
 /*****************************************************************************/
