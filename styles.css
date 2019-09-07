@@ -138,6 +138,14 @@ a:hover, a:active
 	text-decoration: underline;
 }
 
+/* link for current page */
+#current
+{
+	background-color: #e0c030;
+	color: #202020;
+	font-weight: bold;
+}
+
 /* navigation bar container */
 .navbar
 {
