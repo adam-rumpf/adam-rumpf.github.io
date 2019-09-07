@@ -19,11 +19,12 @@
 	
 	<div class="navbar">
 		<a href="#">Home</a>
+		<a href="about.html">About Me</a>
 		<a href="cv.html">CV</a>
 		<a href="research.html">Research</a>
 		<div class="dropdown">
 			<button class="dropbtn">
-				Programming...
+				Programs...
 			</button>
 			<div class="dropdown-content">
 				<a href="mathematica.html">Mathematica</a>
@@ -35,6 +36,25 @@
 	</div>
 
 	<!-- Describe research interests, link to arXiv and MTBI, link to GitHub and mention that it contains my research programs' code, possibly also include reference material that people might find useful. -->
+	<!-- Include a JavaScript implementation of the random research project generator. -->
+	
+	<p>Click on this handy idea button for a random research project idea: <button type="button" onclick="random_project()">Idea</button></p>
+	
+	<p class="tab" id="research_idea"> </p>
+	
+	<script>
+		function random_project()
+		{
+			var topic_list = ["a very powerful computer", "agent-based modeling", "algebra", "calculus", "cellular automata", "chaos theory", "combinatorial game theory", "compartmental models", "complex systems", "convex optimization", "discrete dynamical systems", "exponential random graph models", "fractals", "fuzzy programming", "game theory", "graph theory", "group theory", "information theory", "knot theory", "linear programming", "literature review", "machine learning", "Markov chains", "multicommodity network flows", "multilevel programming", "multiobjective programming", "network flows", "neural networks", "ODEs", "optimal control", "ordinal numbers", "PDEs", "percolation theory", "pursuit-evasion problems", "queueing theory", "regression", "robust programming", "scheduling problems", "semidefinite programming", "Sperner's lemma", "stochastic programming", "surreal numbers", "the hairy ball theorem", "the ham sandwich theorem", "topology", "zero-knowledge proofs"];
+			var topic = topic_list[Math.floor(Math.random()*topic_list.length)];
+			var app_list = ["bioethics", "bioterrorism", "civil infrastructure engineering", "climate change", "crowd dynamics", "crowd panics", "cryptography", "disaster prevention and relief", "disease cofactors", "disease treatment and prevention strategies", "drone delivery routes", "electoral systems", "emergent social behavior", "envy-free division", "epidemiology", "evacuation planning", "evolutionary biology", "factory layout", "forest fires", "fungal networks", "geology", "insects", "modified knapsack problems", "monstrous moonshine", "optimal board game strategies", "population ecology", "primary and secondary succession", "retail layout", "road network engineering", "the Collatz conjecture", "the Homicidal Chauffeur Problem", "the Navier-Stokes equations", "the number 42", "the Riemann hypothesis", "the twin prime conjecture", "transgenic mosquitos", "urban planning", "whether P = NP", "zombie apocalypse scenarios"];
+			var app = app_list[Math.floor(Math.random()*app_list.length)];
+			document.getElementById("research_idea").innerHTML = "Try using " + topic + " to study " + app + ".";
+		}
+		
+		random_project();
+	</script>
+
 	
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper, metus a tincidunt consequat, enim arcu fermentum nulla, aliquam hendrerit turpis justo ut tellus. Pellentesque porta sit amet lectus feugiat fermentum. Fusce consectetur a sem nec scelerisque. Praesent commodo vulputate orci ut efficitur. Maecenas finibus justo id ex laoreet tempus. Integer vel sapien sodales, condimentum urna vel, ultrices elit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam lorem dolor, efficitur eget elit vel, luctus congue leo. Integer vel condimentum urna. Donec sit amet est in quam suscipit tristique.</p>
 
