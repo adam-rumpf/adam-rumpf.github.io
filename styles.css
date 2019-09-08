@@ -20,7 +20,7 @@
 		color: white;
 		font-size: 72px;
 		text-align: center;
-		padding: 64px 64px 64px 64px;
+		padding: 64px;
 		text-shadow: 4px 4px #202020;
 		
 		/* image */
@@ -39,7 +39,7 @@
 		color: white;
 		font-size: 36px;
 		text-align: center;
-		padding: 32px 32px 32px 32px;
+		padding: 32px;
 		text-shadow: 2px 2px #202020;
 		
 		/* image */
@@ -120,6 +120,13 @@ body
 	margin-left: 40px;
 }
 
+/* darkened box */
+.dark
+{
+	background-color: #d0d0d0;
+	padding: 16px;
+}
+
 /*****************************************************************************/
 /* links and navigation bar */
 /*****************************************************************************/
@@ -141,9 +148,10 @@ a:hover, a:active
 /* link for current page */
 #current
 {
-	background-color: #e0c030;
-	color: #202020;
-	font-weight: bold;
+	/*background-color: #e0c030;
+	color: #202020;*/
+	background-color: #22415b;
+	/*font-weight: bold;*/
 }
 
 /* navigation bar container */
