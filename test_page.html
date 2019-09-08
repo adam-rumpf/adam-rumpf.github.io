@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+	<script src="/js/rps.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,8 @@
 		}
 	</script>
 	
-	<p>Testing Mathematica Demonstration:</p>
-	<iframe scrolling='no' frameborder='0' src='https://www.wolframcloud.com/objects/demonstrations/ComparingVotingSystemsForANormalDistributionOfVoters?_view=EMBED' style='border:0;'></iframe>
+	<p>Testing external JavaScript: <button type="button" onclick="rps_choice()">Click me</button></p>
+	
+	<p id="p1"> </p>
 </body>
 </html>
