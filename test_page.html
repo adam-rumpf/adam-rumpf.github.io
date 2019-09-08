@@ -6,7 +6,7 @@
 	<script src="/js/rps.js"></script>
 </head>
 
-<body onLoad="rps_choice('p1')">
+<body>
 	<p>Testing MathJax: \(x^2\)</p>
 
 	<p>Testing JavaScript: <button type="button" onclick="myFunction()">Click me</button></p>
@@ -22,5 +22,7 @@
 	<p>Testing external JavaScript: <button type="button" onclick="rps_choice('p1')">Click me</button></p>
 	
 	<p id="p1"> </p>
+	
+	<script>rps_choice("p1")</script>
 </body>
 </html>
