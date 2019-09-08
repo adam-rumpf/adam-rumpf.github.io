@@ -37,16 +37,19 @@
 	
 	<br/>
 	
-	<!-- Link to Wolfram Demonstrations and GitHub, include descriptions similar to GitHub README. -->
+	<p>Over the years I have written a large number of <a href="http://www.wolfram.com/mathematica/" target="_blank">Mathematica</a> programs, and still continue to do so. These projects started as an effort to teach myself Mathematica while working as a TA during graduate school at Illinois Institute of Technology. Things have gotten a little out of hand, and as of Fall 2019 I have over 200 distinct Notebook files written during my spare time to explore a wide variety of topics of personal interest. In order to establish my nerd cred, a small sample of this collection is provided below. I encourage you to have a look around to see if anything interests you. At the very least there are some pretty pictures.</p>
+	
+	<p>Some of these projects have been uploaded to the <a href="demonstrations.wolfram.com" target="_blank">Wolfram Demonstrations Project</a>, and can be found at my author page <a href="http://demonstrations.wolfram.com/author.html?author=Adam+Rumpf" target="_blank">here</a>. A GitHub repository containing this entire collection can be found <a href="https://github.com/adam-rumpf/mathematica-class-demonstrations" target="_blank">here</a>, released under the <a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/LICENSE" target="_blank">MIT License</a>. You can also browse below to see if anything interests you, or filter by category if you are looking for something related to a specific topic. Every project includes a link to download the Notebook file. The creation date indicates when my original version was completed, but all files have since been cleaned up since then to make them more user-friendly. All of the files below are meant to be useable in a classroom setting to act as visual, interactive demonstrations. Please feel free to use and modify these programs however you wish.</p>
 	
 	<!-- Dropdown menu selection chooses which demonstrations to reveal. Initially all are revealed. Every time an option is clicked the filter script is run, which decides which elements to show and hide and counts the number of active demonstrations. -->
-	<p>Select a category: 
+	<p>Filter by category: 
 		<select id="category" onClick="filter()" style="background-color: white">
 			<option value="all" selected>Show All</option>
 			<option value="none" disabled>--- Courses ---</option>
 			<option value="analysis">Analysis</option>
 			<option value="calculus">Calculus</option>
 			<option value="computational">Computational Mathematics</option>
+			<option value="diffeq">Differential Equations</option>
 			<option value="discrete">Discrete Mathematics</option>
 			<option value="dynamical">Dynamical Systems</option>
 			<option value="graph">Graph Theory</option>
@@ -226,7 +229,7 @@
 			
 			<p>I wrote this as a tool for myself during my first graph theory course for the purposes of solving graph isomorphism problems. A common way to try to determine whether two different embeddings actually represent the same graph is to imagine that the vertices and edges can be moved around. If one graph can be manipulated to look like the other, then they must be isomorphic, and the physical movements which occurred are a physical representation of the bijection from one graph to the other.</p>
 			
-			<p>This file contains a very simple function that accepts a <i>Mathematica</i> Graph object and produces a circular embedding of the graph. The vertices can be clicked and dragged to move them around.</p>
+			<p>This file contains a very simple function that accepts a Mathematica Graph object and produces a circular embedding of the graph. The vertices can be clicked and dragged to move them around.</p>
 		</div>
 	</div>
 	

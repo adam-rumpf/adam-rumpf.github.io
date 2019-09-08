@@ -8,6 +8,7 @@ var analysis = ["complex-newtons-method", "taylor-and-fourier-series-approximati
 var calculus = ["complex-newtons-method", "crowd-escape-panic-model", "monte-carlo-method", "spirograph", "taylor-and-fourier-series-approximations", "vector-kinematics"];
 var complex = ["complex-newtons-method", "complex-operations"];
 var computational = ["bezier-curves", "complex-newtons-method", "monte-carlo-method", "taylor-and-fourier-series-approximations"];
+var diffeq = ["crowd-escape-panic-model", "vector-kinematics"];
 var discrete = ["dijkstras-algorithm-and-astar-search", "domino-and-tromino-tiling", "pascals-triangle-fractals", "recamans-sequence", "remainder-graphs"];
 var dynamical = ["crowd-escape-panic-model", "vector-kinematics"];
 var fractal = ["complex-newtons-method", "dragon-curve", "fractal-shoulder-angels-and-devils", "pascals-triangle-fractals", "pythagoras-tree"];
@@ -70,6 +71,14 @@ function filter()
 		{
 			tally = computational.length;
 			if (computational.includes(all_list[i]))
+				item.style.display = "block";
+			else
+				item.style.display = "none";
+		}
+		else if (choice === "diffeq")
+		{
+			tally = diffeq.length;
+			if (diffeq.includes(all_list[i]))
 				item.style.display = "block";
 			else
 				item.style.display = "none";
