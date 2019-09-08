@@ -36,50 +36,43 @@
 	</div>
 	
 	<p>Select a category: 
-		<select>
-			<option value="all">All</option>
+		<select id="category" onClick="filter()">
+			<option value="all" selected>All</option>
 			<option value="even">Even</option>
 			<option value="odd">Odd</option>
 			<option value="prime">Prime</option>
 		</select>
 	</p>
 	
-	<script>
-		var all_list = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth"];
-		var even_list = ["second", "fourth", "sixth", "eighth"];
-		var all_list = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth"];
-		var all_list = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth"];
-	</script>
-	
-	<div name="first">
+	<div id="first">
 		<p class="dark">Element 1.</p>
 	</div>
 	
-	<div name="second">
+	<div id="second">
 		<p class="dark">Element 2.</p>
 	</div>
 	
-	<div name="third">
+	<div id="third">
 		<p class="dark">Element 3.</p>
 	</div>
 	
-	<div name="fourth">
+	<div id="fourth">
 		<p class="dark">Element 4.</p>
 	</div>
 	
-	<div name="fifth">
+	<div id="fifth">
 		<p class="dark">Element 5.</p>
 	</div>
 	
-	<div name="sixth">
+	<div id="sixth">
 		<p class="dark">Element 6.</p>
 	</div>
 	
-	<div name="seventh">
+	<div id="seventh">
 		<p class="dark">Element 7.</p>
 	</div>
 	
-	<div name="eighth">
+	<div id="eighth">
 		<p class="dark">Element 8.</p>
 	</div>
 
@@ -106,6 +99,47 @@
 	<p>Suspendisse auctor accumsan ipsum, in tincidunt justo consequat sed. Integer semper id sem ut suscipit. Quisque rutrum a dolor a ornare. Suspendisse efficitur suscipit mauris, vel tincidunt leo efficitur ut. Curabitur sed vestibulum purus, ac pretium urna. Curabitur rutrum cursus felis, vitae condimentum metus bibendum non. Duis dolor risus, iaculis id laoreet eget, feugiat at nibh. Ut nec dolor laoreet, ultrices ligula nec, lacinia lectus. Proin a venenatis ligula. Maecenas viverra est ac tellus efficitur, eget pellentesque massa placerat. Aenean ex dui, efficitur vitae odio sed, bibendum venenatis nunc. Fusce laoreet, quam facilisis tempor molestie, mi est bibendum arcu, et consequat sapien tortor et velit. Morbi vitae nulla eget odio molestie condimentum. Donec ultrices vehicula est, vitae convallis tellus pretium iaculis. Donec ac velit semper, interdum libero sed, sollicitudin massa. Phasellus ut nulla pretium, porta nulla ut, lacinia magna.</p>
 
 	<p>Proin sed ultrices lectus. Vestibulum molestie viverra elementum. Morbi tempor metus eget lorem vulputate, luctus sagittis lectus dignissim. Nunc turpis nulla, accumsan at purus a, gravida tempus nisi. Duis porttitor, nulla sed tempor aliquet, magna libero malesuada nulla, eget viverra felis neque sit amet dolor. Ut venenatis tincidunt lorem congue commodo. Donec eu commodo sem. Quisque pellentesque convallis sodales. Quisque mollis, mi ac vulputate luctus, nisl odio elementum erat, eu consequat sapien lacus a orci. Fusce a porttitor odio.</p>
+	
+	<script>
+		var all_list = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth"];
+		var even_list = ["second", "fourth", "sixth", "eighth"];
+		var odd_list = ["first", "third", "fifth", "seventh"];
+		var prime_list = ["second", "third", "fifth", "seventh"];
+		
+		function filter()
+		{
+			var dropdown = document.getElementById("category");
+			var choice = dropdown.options[dropdown.selectedIndex].value;
+			
+			for (var i = 0; i < all_list.length; i++)
+			{
+				var item = document.getElementById(all_list[i]);
+				if (choice === "even")
+				{
+					if (even_list.includes(all_list[i]))
+						item.style.display = "block";
+					else
+						item.style.display = "none";
+				}
+				else if (choice === "odd")
+				{
+					if (odd_list.includes(all_list[i]))
+						item.style.display = "block";
+					else
+						item.style.display = "none";
+				}
+				else if (choice === "prime")
+				{
+					if (prime_list.includes(all_list[i]))
+						item.style.display = "block";
+					else
+						item.style.display = "none";
+				}
+				else
+					item.style.display = "block";
+			}
+		}
+	</script>
 
 	<footer>
 		<hr>
