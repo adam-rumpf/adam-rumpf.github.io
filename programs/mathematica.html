@@ -18,7 +18,7 @@
 	</header>
 	
 	<div class="navbar">
-		<a href="#">Home</a>
+		<a href="https://adam-rumpf.github.io/">Home</a>
 		<a href="about.html">About Me</a>
 		<a href="cv.html">CV</a>
 		<a href="research.html">Research</a>
@@ -36,7 +36,7 @@
 	</div>
 	
 	<p>Select a category: 
-		<select id="category" onClick="filter()">
+		<select id="category" onClick="filter()" style="background-color: white">
 			<option value="all" selected>Show All</option>
 			<option value="none" disabled>--- Courses ---</option>
 			<option value="analysis">Analysis</option>
@@ -234,7 +234,7 @@
 			
 			<p><a href="https://en.wikipedia.org/wiki/Monte_Carlo_method" target="_blank">Monte Carlo methods</a> are a type of computational method for numerical integration based on random experiments. If the goal is to calculate the area within a particular curve, then a Monte Carlo method consists of randomly sampling points within a region of known area that surrounds the region of interest. In expectation, the ratio of points within the region of interest to points outside of the region of interest should equal the ratio of the two regions' areas, and because the surrounding region's area is known, this ratio can be used to calculate the unknown region's area. Due to the random nature of the experiment the ratio will not be exact, and may vary between realizations, but as the number of sample points increases the ratio should converge to the correct value.</p>
 			
-			<p>This Notebook includes a visual demonstration of the Monte Carlo method applied to calculating two separate areas: the area under an arbitrary curve, and the area of a unit circle (which should be exactly π, making this method a way to numerically approximate π). For each experiment, the user can select how many points to randomly sample. Running and re-running the command should produce slightly different results due to the randomness. There are also functions to plot the approximation error as the number of sample points increases, to show how it generally decreases as the number of iterations increases.</p>
+			<p>This Notebook includes a visual demonstration of the Monte Carlo method applied to calculating two separate areas: the area under an arbitrary curve, and the area of a unit circle (which should be exactly pi, making this method a way to numerically approximate pi). For each experiment, the user can select how many points to randomly sample. Running and re-running the command should produce slightly different results due to the randomness. There are also functions to plot the approximation error as the number of sample points increases, to show how it generally decreases as the number of iterations increases.</p>
 		</div>
 	</div>
 	
@@ -282,7 +282,7 @@
 			
 			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/number-theory/recamans-sequence.nb" download="recamans-sequence.nb">Download Notebook</a></p>
 			
-			<p>Recamán's Sequence (sequence <a href="https://oeis.org/A005132" target="_blank">A005132</a> in the <a href="oeis.org" target="_blank">OEIS</a>) is defined by an iterative process beginning at 0, at step <i>n=0</i>. In step <i>n</i>, we either take <i>n</i> steps backward or <i>n</i> steps forward. We go backward if doing so would take us to a nonnegative number that has not yet been visited, and otherwise we go forward. It is conjectured that this sequence includes every nonnegative integer exactly once.</p>
+			<p>Recamán's Sequence (sequence <a href="https://oeis.org/A005132" target="_blank">A005132</a> in the <a href="https://oeis.org" target="_blank">OEIS</a>) is defined by an iterative process beginning at 0, at step <i>n=0</i>. In step <i>n</i>, we either take <i>n</i> steps backward or <i>n</i> steps forward. We go backward if doing so would take us to a nonnegative number that has not yet been visited, and otherwise we go forward. It is conjectured that this sequence includes every nonnegative integer exactly once.</p>
 			
 			<p>This program is mostly meant for drawing pictures of Recamán's Sequence. Because each step is 1 unit larger than the preceding step, the most common way to draw it is using semicircular arcs to trace the path of the sequence on the number line. Doing so leads to interesting spiral patterns that illustrate the phases of rapid increase and of repeatedly bouncing back and forth to fill in areas that were previously unexplored.</p>
 		</div>
