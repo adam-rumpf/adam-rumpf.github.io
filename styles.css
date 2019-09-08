@@ -58,7 +58,20 @@ footer
 /* body */
 body
 {
-	text-alight: left;
+	text-align: left;
+}
+
+/* get standard elements to inherit their colors */
+p, a, h1, h2, h3, h4, img, b, i, u
+{
+	background-color: inherit;
+	color: inherit;
+}
+
+/* Header 1 */
+h1
+{
+	font-size: 24px;
 }
 
 /* columns */
@@ -124,7 +137,24 @@ body
 .dark
 {
 	background-color: #d0d0d0;
+	border: 3px #d0d0d0 solid;
+	display: block;
+	overflow: auto;
+	padding: 0px 16px;
+}
+
+/* spacer */
+.spacer
+{
 	padding: 16px;
+}
+
+/* centered */
+.center
+{
+	background-color: inherit;
+	color: inherit;
+	text-align: center;
 }
 
 /*****************************************************************************/
@@ -134,14 +164,14 @@ body
 /* links */
 a:link, a:visited
 {
-	color: #22415b;
+	color: #507090;
 	text-decoration: none;
 }
 
 /* mouse over links */
 a:hover, a:active
 {
-	color: #22415b;
+	color: #507090;
 	text-decoration: underline;
 }
 
