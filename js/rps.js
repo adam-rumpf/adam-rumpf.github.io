@@ -4,3 +4,5 @@ function rps_choice(handle)
 	var thing = things[Math.floor(Math.random()*things.length)];
 	document.getElementById(handle).innerHTML = "The computer chose: " + thing;
 }
+
+rps_choice("p1");
