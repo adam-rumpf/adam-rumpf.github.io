@@ -10,7 +10,7 @@
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<base href="https://adam-rumpf.github.io/" target="_blank">
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>	
-	<script src="/js/random_project.js">random_project();</script>
+	<script src="/js/random_project.js"></script>
 </head>
 
 <body>
@@ -39,7 +39,7 @@
 	<!-- Describe research interests, link to arXiv and MTBI, link to GitHub and mention that it contains my research programs' code, possibly also include reference material that people might find useful. -->
 	<!-- Include a JavaScript implementation of the random research project generator. -->
 	
-	<p>Click on this handy idea button for a random research project idea: <button type="button" onclick="random_project()">Idea</button></p>
+	<p>Click on this handy idea button for a random research project idea: <button type="button" onclick="random_project('research_idea')">Idea</button></p>
 	
 	<p class="tab" id="research_idea"> </p>
 	
@@ -62,6 +62,8 @@
 	<p>Suspendisse auctor accumsan ipsum, in tincidunt justo consequat sed. Integer semper id sem ut suscipit. Quisque rutrum a dolor a ornare. Suspendisse efficitur suscipit mauris, vel tincidunt leo efficitur ut. Curabitur sed vestibulum purus, ac pretium urna. Curabitur rutrum cursus felis, vitae condimentum metus bibendum non. Duis dolor risus, iaculis id laoreet eget, feugiat at nibh. Ut nec dolor laoreet, ultrices ligula nec, lacinia lectus. Proin a venenatis ligula. Maecenas viverra est ac tellus efficitur, eget pellentesque massa placerat. Aenean ex dui, efficitur vitae odio sed, bibendum venenatis nunc. Fusce laoreet, quam facilisis tempor molestie, mi est bibendum arcu, et consequat sapien tortor et velit. Morbi vitae nulla eget odio molestie condimentum. Donec ultrices vehicula est, vitae convallis tellus pretium iaculis. Donec ac velit semper, interdum libero sed, sollicitudin massa. Phasellus ut nulla pretium, porta nulla ut, lacinia magna.</p>
 
 	<p>Proin sed ultrices lectus. Vestibulum molestie viverra elementum. Morbi tempor metus eget lorem vulputate, luctus sagittis lectus dignissim. Nunc turpis nulla, accumsan at purus a, gravida tempus nisi. Duis porttitor, nulla sed tempor aliquet, magna libero malesuada nulla, eget viverra felis neque sit amet dolor. Ut venenatis tincidunt lorem congue commodo. Donec eu commodo sem. Quisque pellentesque convallis sodales. Quisque mollis, mi ac vulputate luctus, nisl odio elementum erat, eu consequat sapien lacus a orci. Fusce a porttitor odio.</p>
+	
+	<script>random_project("research_idea")</script>
 
 	<footer>
 		<hr>
