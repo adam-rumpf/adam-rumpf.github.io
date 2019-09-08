@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="../styles.css">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<base href="https://adam-rumpf.github.io/">
-	<script src="../js/demonstration_filter.js"></script>
+	<script src="../js/demonstration_filter.js"></script> <!-- Project filter script. -->
 </head>
 
 <body>
@@ -39,6 +39,7 @@
 	
 	<!-- Link to Wolfram Demonstrations and GitHub, include descriptions similar to GitHub README. -->
 	
+	<!-- Dropdown menu selection chooses which demonstrations to reveal. Initially all are revealed. Every time an option is clicked the filter script is run, which decides which elements to show and hide and counts the number of active demonstrations. -->
 	<p>Select a category: 
 		<select id="category" onClick="filter()" style="background-color: white">
 			<option value="all" selected>Show All</option>
@@ -60,8 +61,11 @@
 		</select>
 	</p>
 	
+	<!-- Displays number of active demonstrations depending on selection. -->
 	<p id="tally"> </p>
-		
+	
+	<!-- All of the 'spacer' containers below will be revealed or hidden depending on the dropdown menu selection. -->
+	
 	<div class="spacer" id="bezier-curves">
 		<div class="dark">
 			<h1>Bézier Curves</h1>
@@ -360,6 +364,7 @@
 		</div>
 	</div>
 	
+	<!-- Run script once on page load to generate the initial tally. -->
 	<script>filter()</script>
 
 	<footer>

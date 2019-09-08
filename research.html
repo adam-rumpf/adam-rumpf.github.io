@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="styles.css">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<base href="https://adam-rumpf.github.io/">
-	<script src="/js/random_project.js"></script>
+	<script src="/js/random_project.js"></script> <!-- Random project generation script. -->
 </head>
 
 <body>
@@ -42,6 +42,7 @@
 	
 	<p>Click on this handy idea button for a random research project idea: <button type="button" style="background-color: #d0d0d0" onclick="random_project('research_idea')">Idea</button></p>
 	
+	<!-- Empty space for random project idea (automatically filled on page load). -->
 	<p class="tab" id="research_idea"> </p>
 	
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper, metus a tincidunt consequat, enim arcu fermentum nulla, aliquam hendrerit turpis justo ut tellus. Pellentesque porta sit amet lectus feugiat fermentum. Fusce consectetur a sem nec scelerisque. Praesent commodo vulputate orci ut efficitur. Maecenas finibus justo id ex laoreet tempus. Integer vel sapien sodales, condimentum urna vel, ultrices elit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam lorem dolor, efficitur eget elit vel, luctus congue leo. Integer vel condimentum urna. Donec sit amet est in quam suscipit tristique.</p>
@@ -64,6 +65,7 @@
 
 	<p>Proin sed ultrices lectus. Vestibulum molestie viverra elementum. Morbi tempor metus eget lorem vulputate, luctus sagittis lectus dignissim. Nunc turpis nulla, accumsan at purus a, gravida tempus nisi. Duis porttitor, nulla sed tempor aliquet, magna libero malesuada nulla, eget viverra felis neque sit amet dolor. Ut venenatis tincidunt lorem congue commodo. Donec eu commodo sem. Quisque pellentesque convallis sodales. Quisque mollis, mi ac vulputate luctus, nisl odio elementum erat, eu consequat sapien lacus a orci. Fusce a porttitor odio.</p>
 	
+	<!-- Run script once on page load to generate an initial idea. -->
 	<script>random_project("research_idea")</script>
 
 	<footer>

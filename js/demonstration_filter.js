@@ -1,3 +1,8 @@
+/*
+The following lists correspond to all of the available categories from the Mathematica demonstration page.
+Each list contains the IDs of the projects associated with that category.
+'all_list' should always contain everything, and is the list iterated over for the filter function's main loop.
+*/
 var all_list = ["bezier-curves", "complex-newtons-method", "complex-operations", "crowd-escape-panic-model", "dijkstras-algorithm-and-astar-search", "domino-and-tromino-tiling", "dragon-curve", "fractal-shoulder-angels-and-devils", "graph-untangler", "monte-carlo-method", "pascals-triangle-fractals", "pythagoras-tree", "recamans-sequence", "remainder-graphs", "spirograph", "taylor-and-fourier-series-approximations", "vector-kinematics"];
 var analysis = ["complex-newtons-method", "taylor-and-fourier-series-approximations"];
 var calculus = ["complex-newtons-method", "crowd-escape-panic-model", "monte-carlo-method", "spirograph", "taylor-and-fourier-series-approximations", "vector-kinematics"];
@@ -13,6 +18,13 @@ var number = ["pascals-triangle-fractals", "recamans-sequence", "remainder-graph
 var pretty = ["bezier-curves", "complex-newtons-method", "domino-and-tromino-tiling", "dragon-curve", "pythagoras-tree", "recamans-sequence", "spirograph"];
 var voting = [];
 
+/**
+Called whenever the dropdown menu is clicked.
+Gets the dropdown menu selection and finds the corresponding list from the above choices.
+Processes each project ID to find the ones present in the chosen list.
+Those present in the list are displayed, while those not present are hidden.
+The length of the chosen list is used to display a count of the number of displayed demonstrations.
+*/
 function filter()
 {
 	var dropdown = document.getElementById("category");
@@ -20,9 +32,16 @@ function filter()
 	var total = all_list.length;
 	var tally;
 	
+	// Loop over all demonstrations
 	for (var i = 0; i < all_list.length; i++)
 	{
-		var item = document.getElementById(all_list[i]);
+		var item = document.getElementById(all_list[i]); // current demonstration
+		
+		/*
+		Switch block depending on the dropdown menu selection.
+		All cases set tally to the number of elements corresponding to the selection,
+		and then display the item if present in the selected list and hide it if not.
+		*/
 		if (choice === "analysis")
 		{
 			tally = analysis.length;
@@ -134,5 +153,6 @@ function filter()
 		}
 	}
 	
+	// Set tally display
 	document.getElementById("tally").innerHTML = "Showing " + tally.toString() + " of " + total.toString() + " demonstrations.";
 }
