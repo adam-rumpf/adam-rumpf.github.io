@@ -66,6 +66,78 @@
 
 	<p>Proin sed ultrices lectus. Vestibulum molestie viverra elementum. Morbi tempor metus eget lorem vulputate, luctus sagittis lectus dignissim. Nunc turpis nulla, accumsan at purus a, gravida tempus nisi. Duis porttitor, nulla sed tempor aliquet, magna libero malesuada nulla, eget viverra felis neque sit amet dolor. Ut venenatis tincidunt lorem congue commodo. Donec eu commodo sem. Quisque pellentesque convallis sodales. Quisque mollis, mi ac vulputate luctus, nisl odio elementum erat, eu consequat sapien lacus a orci. Fusce a porttitor odio.</p>
 	
+	<h2>Research Papers</h2>
+	
+	<!-- Explain that, for all of the papers, I will try to provide a link to the PDF and the any relevant code. -->
+	
+	<div class="spacer">
+		<div class="dark">
+			<p>H. Kaul and A. Rumpf. Public transit optimization with social access objectives: A case study of primary health care access for underserved communities of Chicago. Unpublished manuscript, 2019.</p>
+			
+			<p class="tab">Links: PDF, <a href="https://github.com/adam-rumpf/social-transit-preprocessor" target="_blank">Data Preprocessing Script</a>, <a href="https://github.com/adam-rumpf/social-transit-solver-single" target="_blank">Solution Algorithm Initialization</a>, Main Solution Algorithm</p>
+		</div>
+	</div>
+	
+	<div class="spacer">
+		<div class="dark">
+			<p>H. Kaul and A. Rumpf. Linear input dependence model for interdependent civil infrastructure systems with network simplex based solution algorithm. Unpublished manuscript, 2019.</p>
+			
+			<p class="tab">Links: PDF</a>
+		</div>
+	</div>
+	
+	<div class="spacer">
+		<div class="dark">
+			<p>J. Ames, A. Feiler, G. Mendoza, A. Rumpf, and S. Wirkus. Determination of Tucson, Arizona as an Ecological Trap for Cooper's Hawks (Accipiter cooperii). Unpublished manuscript, 2011, <a href="https://mtbi.asu.edu/2011-2" target="_blank">https://mtbi.asu.edu/2011-2</a>.</p>
+			
+			<p class="tab">Links: <a href="https://mtbi.asu.edu/sites/default/files/determination_of_tucson_arizona_as_an_ecological_trap_for_coopers_hawks_accipiter_cooperii_.pdf" download="coopers_hawks_epidemiology.pdf" target="_blank">PDF</a>, <a href="https://github.com/adam-rumpf/mtbi-hawk-epidemiology" target="_blank">MATLAB Scripts</a></p>
+		</div>
+	</div>
+	
+	<h2>Potentially Useful Resources</h2>
+	
+	<p>The following unpublished reports are mostly taken from my personal notes, but hopefully someone may find them useful. Most of them are either basic overviews or specific technique explanations for concepts from operations research.</p>
+	
+	<div class="spacer">
+		<div class="dark">
+			<p>A. Rumpf. Introduction to Simulated Annealing and Tabu Search. Technical report, 2019.</p>
+			
+			<p class="tab">Links: <a href="papers/sa_ts_intro.pdf" download="sa_ts_intro.pdf" target="_blank">PDF</a></p>
+			
+			<p>This is a brief introduction to the <a href="https://en.wikipedia.org/wiki/Simulated_annealing" target="_blank">simulated annealing</a> and <a href="https://en.wikipedia.org/wiki/Tabu_search" target="_blank">tabu search</a> metaheuristics. I wrote these notes in preparation for my second major research project, which involved solving a difficult combinatorial optimization problem with a hybrid simulated annealing/tabu search algorithm.</p>
+		</div>
+	</div>
+	
+	<div class="spacer">
+		<div class="dark">
+			<p>A. Rumpf. Introduction to the Karush-Kuhn-Tucker (KKT) Conditions. Technical report, 2018.</p>
+			
+			<p class="tab">Links: <a href="papers/kkt_intro.pdf" download="kkt_intro.pdf" target="_blank">PDF</a>, <a href="http://demonstrations.wolfram.com/KarushKuhnTuckerKKTConditionsForNonlinearProgrammingWithIneq/" target="_blank">Wolfram Demonstration</a></p>
+			
+			<p>I wrote these notes for myself while studying the <a href="https://en.wikipedia.org/wiki/Bilevel_optimization" target="_blank">bilevel programs</a> that came out of several of my Ph.D. research projects, since the <a href="https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions" target="_blank">KKT conditions</a> can be used to rewrite the lower-level program as a set of algebraic constraints in the upper-level program. They are an important concept in nonlinear optimization, and hopefully these notes will provide a brief introduction. The linked Wolfram Demonstration was written in conjunction with these notes, and provides some useful pictures to go along with them.</p>
+		</div>
+	</div>
+	
+	<div class="spacer">
+		<div class="dark">
+			<p>A. Rumpf. Logical Constraint IP Formulation Techniques. Technical report, 2017.</p>
+			
+			<p class="tab">Links: <a href="papers/logical_ip_formulation.pdf" download="logical_ip_formulation.pdf" target="_blank">PDF</a></p>
+			
+			<p>These are some techniques that I've written up for expressing logical constraints (of forms like "if constraint 1 is true, then constraint 2 must be true") as integer program constraints. I have used these types of techniques extensively in the process of using mixed integer-linear program models of decision problems.</p>
+		</div>
+	</div>
+	
+	<div class="spacer">
+		<div class="dark">
+			<p>A. Rumpf. Getting Started with Using CPLEX in C++. Technical report, 2016.</p>
+			
+			<p class="tab">Links: <a href="papers/cplex_in_cpp.pdf" download="cplex_in_cpp.pdf" target="_blank">PDF</a></p>
+			
+			<p>I wrote this guide for myself while first getting <a href="https://www.ibm.com/analytics/cplex-optimizer" target="_blank">CPLEX</a> set up on my computer for use in my linear optimization projects. It is a complicated enough process that I had to spend many hours searching through forums and blogs to figure it out. Hopefully this can save someone some time.</p>
+		</div>
+	</div>
+	
 	<!-- Run script once on page load to generate an initial idea. -->
 	<script>random_project("research_idea")</script>
 
