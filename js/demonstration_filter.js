@@ -3,7 +3,7 @@ The following lists correspond to all of the available categories from the Mathe
 Each list contains the IDs of the projects associated with that category.
 'all_list' should always contain everything, and is the list iterated over for the filter function's main loop.
 */
-var all_list = ["bezier-curves", "complex-newtons-method", "complex-operations", "continued-fraction-square-packing", "crowd-escape-panic-model", "dijkstras-algorithm-and-astar-search", "domino-and-tromino-tiling", "dragon-curve", "duvergers-law", "fractal-shoulder-angels-and-devils", "graph-untangler", "monte-carlo-method", "pascals-triangle-fractals", "pythagoras-tree", "recamans-sequence", "remainder-graphs", "single-winner-voting-systems", "spirograph", "taylor-and-fourier-series-approximations", "vector-kinematics", "winner-take-all-distortion"];
+var all_list = ["bezier-curves", "complex-newtons-method", "complex-operations", "continued-fraction-square-packing", "crowd-escape-panic-model", "dijkstras-algorithm-and-astar-search", "domino-and-tromino-tiling", "dragon-curve", "duvergers-law", "fractal-shoulder-angels-and-devils", "graph-untangler", "monte-carlo-method", "pascals-triangle-fractals", "pythagoras-tree", "recamans-sequence", "remainder-graphs", "single-winner-voting-systems", "spirograph", "taylor-and-fourier-series-approximations", "triangle-centers", "vector-kinematics", "winner-take-all-distortion"];
 var analysis = ["complex-newtons-method", "taylor-and-fourier-series-approximations"];
 var calculus = ["complex-newtons-method", "crowd-escape-panic-model", "monte-carlo-method", "spirograph", "taylor-and-fourier-series-approximations", "vector-kinematics"];
 var complex = ["complex-newtons-method", "complex-operations"];
@@ -11,7 +11,7 @@ var computational = ["bezier-curves", "complex-newtons-method", "monte-carlo-met
 var diffeq = ["crowd-escape-panic-model", "vector-kinematics"];
 var discrete = ["continued-fraction-square-packing", "dijkstras-algorithm-and-astar-search", "domino-and-tromino-tiling", "pascals-triangle-fractals", "recamans-sequence", "remainder-graphs"];
 var dynamical = ["crowd-escape-panic-model", "vector-kinematics"];
-var geometry = ["continued-fraction-square-packing"];
+var geometry = ["continued-fraction-square-packing", "triangle-centers"];
 var fractal = ["complex-newtons-method", "dragon-curve", "fractal-shoulder-angels-and-devils", "pascals-triangle-fractals", "pythagoras-tree"];
 var fun = ["bezier-curves", "domino-and-tromino-tiling", "dragon-curve", "fractal-shoulder-angels-and-devils", "pythagoras-tree", "spirograph"];
 var graph = ["dijkstras-algorithm-and-astar-search", "graph-untangler", "remainder-graphs"];
