@@ -44,7 +44,7 @@
 	
 	<!-- Dropdown menu selection chooses which demonstrations to reveal. Initially all are revealed. Every time an option is clicked the filter script is run, which decides which elements to show and hide and counts the number of active demonstrations. -->
 	<p>Filter by category: 
-		<select id="category" onClick="filter()" style="background-color: white">
+		<select id="category" onClick="filter("tally")" style="background-color: white">
 			<option value="all" selected>Show All</option>
 			<option value="none" disabled>--- Courses ---</option>
 			<option value="analysis">Analysis</option>
@@ -53,8 +53,10 @@
 			<option value="diffeq">Differential Equations</option>
 			<option value="discrete">Discrete Mathematics</option>
 			<option value="dynamical">Dynamical Systems</option>
+			<option value="geometry">Geometry</option>
 			<option value="graph">Graph Theory</option>
 			<option value="number">Number Theory</option>
+			<option value="optimization">Optimization</option>
 			<option value="voting">Voting Theory</option>
 			<option value="none" disabled>--- Topics ---</option>
 			<option value="complex">Complex Numbers</option>
@@ -86,6 +88,24 @@
 		</div>
 	</div>
 	
+	<div class="spacer" id="single-winner-voting-systems">
+		<div class="dark">
+			<h1>Comparison of Single-Winner Voting Systems</h1>
+			
+			<div class="center"><img src="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/images/single-winner-voting-systems-1.png" alt="Single-Winner Voting Systems Image 1" height="220"/> <img src="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/images/single-winner-voting-systems-2.png" alt="Single-Winner Voting Systems Image 2" height="220"/></div>
+		
+			<p>Created 10/31/2017</p>
+			
+			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/voting-theory/single-winner-voting-systems.nb" download="single-winner-voting-systems.nb">Download Notebook</a></p>
+			
+			<p><a href="http://demonstrations.wolfram.com/ComparingVotingSystemsForANormalDistributionOfVoters/" target="_blank">Wolfram Demonstrations Link</a></p>
+			
+			<p>This is based on an <a href="http://zesty.ca/voting/voteline/" target="_blank">interactive Flash demonstration</a> by Ka-Ping Yee, which is meant to show how different, reasonable-seeming methods of evaluating ballots can affect the outcomes of single-winner elections. It also shows some of the problems that certain systems can have, such as the <a href="https://en.wikipedia.org/wiki/Spoiler_effect" target="_blank">spoiler effect</a> and non-monotonicity.</p>
+
+			<p>Most people do not think very much about election systems, and if you asked them to come up with a system for how to run a single-winner election they would probably just suggest the one method they are familiar with: everyone votes for a single candidate and the candidate with the most votes wins. This method is called <a href="https://en.wikipedia.org/wiki/First-past-the-post_voting" target="_blank">first-past-the-post</a>, and although it makes intuitive sense, it has a great many <a href="https://www.electionscience.org/voting-methods/spoiler-effect-top-5-ways-plurality-voting-fails/" target="_blank">problems</a>. Other election systems like <a href="https://en.wikipedia.org/wiki/Instant-runoff_voting" target="_blank">instant runoff voting</a>, <a href="https://en.wikipedia.org/wiki/Borda_count" target="_blank">Borda count</a>, and <a href="https://en.wikipedia.org/wiki/Approval_voting" target="_blank">approval voting</a> are meant to avoid these problems, although they have varying degrees of success.</p>
+		</div>
+	</div>
+	
 	<div class="spacer" id="complex-newtons-method">
 		<div class="dark">
 			<h1>Complex Newton's Method</h1>
@@ -113,6 +133,26 @@
 			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/calc-diffeq-analysis/complex-operations.nb" download="complex-operations.nb">Download Notebook</a></p>
 			
 			<p>This is a lightweight visual demonstration of how familiar mathematical operations (addition, multiplication, trigonometric functions, etc.) affect the complex numbers, displayed as vectors in the complex plane. The user can select an operation or function and then click and drag the input vector or vectors to see how this affects the output vector. In particular, it is interesting to look at how changing just the magnitude or just the angle of an input vector affects the output.</p>
+		</div>
+	</div>
+	
+	<div class="spacer" id="continued-fraction-square-packing">
+		<div class="dark">
+			<h1>Continued Fraction Square Packing</h1>
+			
+			<div class="center"><img src="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/images/continued-fraction-boxes-1.png" alt="Continued Fraction Square Packing Image 1" height="200"/> <img src="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/images/continued-fraction-boxes-2.png" alt="Continued Fraction Square Packing Image 2" height="200"/></div>
+		
+			<p>Created 5/23/2018</p>
+			
+			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/number-theory/continued-fraction-square-packing.nb" download="continued-fraction-square-packing.nb">Download Notebook</a></p>
+			
+			<p>This is a program for constructing geometric pictures of <a href="https://en.wikipedia.org/wiki/Continued_fraction" target="_blank">continued fractions</a>. A continued fraction is a way to represent a real number as a sequence of integers, similar to how a decimal expansion is a way to represent a real number as a sequence of integers. The way to interpret a decimal expansion like "3.14159" is to recognize that each digit tells us the coefficient in a series of decreasing powers of 10, so the leading 3 should be multiplied by 1, then the 1 should be multiplied by 1/10, then the 4 should be multiplied by 1/100, and so on, and all of these values should be added together. Some numbers (like 2 and 564 and 5/8) can be represented exactly with finitely many decimal values, while others (like pi and e and √2) cannot, but they can at least be approximated by specifying the first few terms and truncating the rest.</p>
+			
+			<p>The continued fraction representation of a number comes from iteratively taking its integer part and inverting its fractional part. Taking pi as an example, the integer part is 3 and the fractional part is 0.14159..., so the first digit in our continued fraction representation is 3. Then we invert the fractional part to get 1/0.14159 = 7.06251.... That has an integer part of 7, so our second digit is 7. The fractional part can be inverted to get 1/0.06251... = 15.99659..., and so the next digit is 15. Going through the same process again will yield 1 and then 292 as the next two digits. Much like with the decimal representation, since pi is irrational this process will never end, so we must choose to truncate it at some point. If we chose to do that here, then our continued fraction approximation of pi would be expressed as [3; 7, 15, 1, 292], the sequence of digits that we just found. The way to interpret a continued fraction representation is to plug the digits into a sequence of nested fractions of the form 3+1/(7+1/(15+1/(1+1/292))).</p>
+			
+			<p>There is a geometric interpretation of this process, and that is what this program generates. Imagine that we draw a rectangle with height 1 and width pi, and that we attempt to draw as many unit squares as we can inside this box. If we start at the lefthand side and continue to the right, we can fit exactly 3 squares before running out of room, and the remaining 1 by 0.14159... space will be empty. Now suppoose that we wish to fit as many squares of side length 0.14159... as possible into this empty space. We can rescale by multiplying everything by 1/0.14159... (which is 7.06251...), in which case the problem becomes trying to fit as many unit squares as possible into a 1 by 7.06251... unit space. The solution is obviously 7, with a remaining 1 by 0.06251... space. This process of iteratively packing squares and rescaling the gap is analogous to the above process of taking the unit part and inverting the fractional part, and it will produce the same sequence of integers.</p>
+			
+			<p>This box packing process is very much like the process for generating a <a href="https://en.wikipedia.org/wiki/Golden_spiral" target="_blank">golden spiral</a>, and in fact if we begin with rectangle whose dimensions are 1 by phi (the <a href="https://en.wikipedia.org/wiki/Golden_ratio" target="_blank">golden ratio</a>) box the two processes are exactly the same. Because the golden spiral involves packing a single square in each iteration, this implies that the continued fraction representation of phi is [1; 1, 1, 1, 1, ...], which is indeed true. It is for this reason that phi is occasionally referred to as the <a href="http://www.ams.org/publicoutreach/feature-column/fcarc-irrational4" target="_blank">"most irrational"</a> number. Because all of the digits in the continued fraction representation are inverted, large digits indicates that the term contributes a small value to the overall sum, and so truncating a large digit leads to smaller truncation error than truncating a small digit. Because all digits of phi's continued fraction are the smallest possible positive integer, truncating its continued fraction leads to the largest possible truncation error, making it the number with the worst possible rational approximations.</p>
 		</div>
 	</div>
 	
@@ -199,6 +239,22 @@
 			<p>One of the several equivalent constructions of the dragon curve involves taking a thin strip of paper and folding it in half, end-to-end, several times (the number of folds corresponds to the generation number). Then unfold the paper, open each crease to form a 90 degree angle, and look at the edge of the strip. The first fold simply creates an "L" shape. Starting over and adding a second fold creates a roughly "?" shape. Including additional folds one-at-a-time and observing the resulting curve produces shapes that are not very interesting, but after around 6 or 7 folds the shape begins to become incredibly intricate and complex.</p>
 			
 			<p>This Notebook defines a function that applies a recursive algorithm to draw a specified generation of dragon curve. Due to the recursive nature, the computational time increases exponentially as the generation number increases, so I would not recommend trying to draw anything past approximately 18 generations. I would also not recomment running the entire notebook at once, and instead running only specific blocks one-at-a-time.</p>
+		</div>
+	</div>
+	
+	<div class="spacer" id="duvergers-law">
+		<div class="dark">
+			<h1>Duverger's Law</h1>
+			
+			<div class="center"><img src="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/images/duvergers-law-1.png" alt="Duverger's Law Image 1" height="300"/> <img src="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/images/duvergers-law-2.png" alt="Duverger's Law Image 2" height="300"/></div>
+		
+			<p>Created 7/22/2015</p>
+			
+			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/voting-theory/duvergers-law.nb" download="duvergers-law.nb">Download Notebook</a></p>
+			
+			<p><a href="https://en.wikipedia.org/wiki/Duverger%27s_law" target="_blank">Duverger's law</a> is an empirical rule which holds that <a href="https://en.wikipedia.org/wiki/First-past-the-post_voting" target="_blank">first-past-the-post</a> elections tend to result in a two-party system. This is the expected outcome from <a href="https://en.wikipedia.org/wiki/Tactical_voting" target="_blank">tactical voting</a>, wherein supporters of third-party candidates are coerced into abandoning their favorite candidate in favor of their preferred major party candidate in order to avoid the <a href="https://en.wikipedia.org/wiki/Spoiler_effect" target="_blank">spoiler effect</a>.</p>
+			
+			<p>This demonstration implements a simple tactical voting model based on a sequence of successive elections. We begin with a set of parties lying on a one-dimensional political spectrum, each with a given number of initial supporters. We then simulate a sequence of elections. The behavior assumption is that, if a person's preferred candidate did not win, they will consider shifting their support to the most successful candidate on their half of the political spectrum (centrist voters may shift in either direction because of this). There are parameters to adjust how quickly this occurs, as well as for introducing slight randomization.</p>
 		</div>
 	</div>
 	
@@ -368,8 +424,28 @@
 		</div>
 	</div>
 	
+	<div class="spacer" id="winner-take-all-distortion">
+		<div class="dark">
+			<h1>Winner-Take-All Distortion</h1>
+			
+			<div class="center"><img src="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/images/winner-take-all-distortion-1.png" alt="Winner-Take-All Distortion Image 1" height="500"/> <img src="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/images/winner-take-all-distortion-2.png" alt="Winner-Take-All Distortion Image 2" height="500"/></div>
+		
+			<p>Created 11/26/2016</p>
+			
+			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/voting-theory/winner-take-all-distortion.nb" download="winner-take-all-distortion.nb">Download Notebook</a></p>
+			
+			<p>This is a demonstration of how the preferences of the voter base can be distorted when their results are aggregated across a series of winner-take-all elections. For a variety of purposes voters are usually grouped into electoral districts. Rather than simply tabulating all individual votes, instead a separate winner-take-all election is run within each district, and only the district-level results are used to determine the overall result. For example, in the United States, presidential elections are carried out using the <a href="https://en.wikipedia.org/wiki/Electoral_college" target="_blank">Electoral College</a> where, in essence, each state runs its own statewide presidential election, and whomever wins in the state receives all of that state's support for the purposes of determining the overall result.</p>
+			
+			<p>This can distort the actual preferences of the voters due to <a href="https://en.wikipedia.org/wiki/Wasted_vote" target="_blank">wasted votes</a>. For the purposes of a winner-take-all election, winning with 51% of the vote is as good as winning with 100% of the vote, so winning by narrow margins in a large number of districts can cause a candidate's advantage to expand to far beyond what it would be if every individual were polled directly. If this occurs in enough districts it can change the outcomes of elections to allow someone to win even if another candidate receives more votes. This same effect can also occur for elections with multiple winners, like congressional elections, which may result in the numbers of congressional seats won by each party being significantly different from their actual support among the voter base.</p>
+			
+			<p>Incidentally, the Electoral College also distorts results by directly giving a disproportinately large amoung of weight to smaller states (and the Senate does the same thing to an even greater extent), but even if each state were to receive representation proportional to their population, the winner-take-all aspect of the election would still distort results. Among other things it tends to push out third party candidates, since the only way for a small party to win even a single seat would be to have a large enough amount of support concentrated in a single district to achieve a plurality there.</p>
+			
+			<p>The net effect of all of this is that the geographic distribution of a party's voters can determine the party's success in an election. This also makes the system susceptible to things like <a href="https://en.wikipedia.org/wiki/Gerrymandering" target="_blank">gerrymandering</a>, wherein electoral districts are drawn to intentionally distort results in favor of one party, but as this demonstration shows it can also occur even without intentional interference. There are different electoral systems, like <a href="https://en.wikipedia.org/wiki/Direct_representation" target="_blank">direct representation</a> and <a href="https://en.wikipedia.org/wiki/Mixed-member_proportional_representation" target="_blank">mixed-member proportional representation</a>, which are immune to these issues, but at least within the United States a person's voting power is largely determined simply by where they happen to live.</p>
+		</div>
+	</div>
+	
 	<!-- Run script once on page load to generate the initial tally. -->
-	<script>filter()</script>
+	<script>filter("tally")</script>
 
 	<footer>
 		<hr>
