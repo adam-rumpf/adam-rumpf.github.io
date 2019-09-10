@@ -3,9 +3,9 @@ The following lists correspond to all of the available categories from the Mathe
 Each list contains the IDs of the projects associated with that category.
 'all_list' should always contain everything, and is the list iterated over for the filter function's main loop.
 */
-var all_list = ["bezier-curves", "complex-newtons-method", "complex-operations", "continued-fraction-square-packing", "crowd-escape-panic-model", "dijkstras-algorithm-and-astar-search", "domino-and-tromino-tiling", "dragon-curve", "duvergers-law", "fractal-shoulder-angels-and-devils", "graph-untangler", "monte-carlo-method", "pascals-triangle-fractals", "pythagoras-tree", "recamans-sequence", "remainder-graphs", "single-winner-voting-systems", "spirograph", "taylor-and-fourier-series-approximations", "triangle-centers", "vector-kinematics", "winner-take-all-distortion"];
+var all_list = ["bezier-curves", "complex-newtons-method", "complex-operations", "continued-fraction-square-packing", "crowd-escape-panic-model", "dijkstras-algorithm-and-astar-search", "domino-and-tromino-tiling", "dragon-curve", "duvergers-law", "fractal-shoulder-angels-and-devils", "graph-untangler", "kkt-conditions", "monte-carlo-method", "pascals-triangle-fractals", "pythagoras-tree", "recamans-sequence", "remainder-graphs", "single-winner-voting-systems", "spirograph", "taylor-and-fourier-series-approximations", "triangle-centers", "vector-kinematics", "winner-take-all-distortion"];
 var analysis = ["complex-newtons-method", "taylor-and-fourier-series-approximations"];
-var calculus = ["complex-newtons-method", "crowd-escape-panic-model", "monte-carlo-method", "spirograph", "taylor-and-fourier-series-approximations", "vector-kinematics"];
+var calculus = ["complex-newtons-method", "crowd-escape-panic-model", "kkt-conditions", "monte-carlo-method", "spirograph", "taylor-and-fourier-series-approximations", "vector-kinematics"];
 var complex = ["complex-newtons-method", "complex-operations"];
 var computational = ["bezier-curves", "complex-newtons-method", "monte-carlo-method", "taylor-and-fourier-series-approximations"];
 var diffeq = ["crowd-escape-panic-model", "vector-kinematics"];
@@ -17,7 +17,7 @@ var fun = ["bezier-curves", "domino-and-tromino-tiling", "dragon-curve", "fracta
 var graph = ["dijkstras-algorithm-and-astar-search", "graph-untangler", "remainder-graphs"];
 var model = ["crowd-escape-panic-model", "duvergers-law", "single-winner-voting-systems", "winner-take-all-distortion"];
 var number = ["continued-fraction-square-packing", "pascals-triangle-fractals", "recamans-sequence", "remainder-graphs"];
-var optimization = ["complex-newtons-method", "dijkstras-algorithm-and-astar-search"];
+var optimization = ["complex-newtons-method", "dijkstras-algorithm-and-astar-search", "kkt-conditions"];
 var pretty = ["bezier-curves", "complex-newtons-method", "domino-and-tromino-tiling", "dragon-curve", "pythagoras-tree", "recamans-sequence", "spirograph"];
 var voting = ["duvergers-law", "single-winner-voting-systems", "winner-take-all-distortion"];
 

@@ -290,6 +290,26 @@
 		</div>
 	</div>
 	
+	<div class="spacer" id="kkt-conditions">
+		<div class="dark">
+			<h1>Karush-Kuhn-Tucker (KKT) Conditions</h1>
+			
+			<div class="center"><img src="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/images/kkt-conditions-1.png" alt="KKT Conditions Image 1" height="500"/> <img src="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/images/kkt-conditions-2.png" alt="KKT Conditions Image2" height="500"/></div>
+		
+			<p>Created 5/7/2018</p>
+			
+			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/calc-diffeq-analysis/kkt-conditions.nb" download="kkt-conditions.nb" target="_blank">Download Notebook</a></p>
+			
+			<p><a href="http://demonstrations.wolfram.com/KarushKuhnTuckerKKTConditionsForNonlinearProgrammingWithIneq/" target="_blank">Wolfram Demonstrations Link</a></p>
+			
+			<p>This is a graphical demonstration of the <a href="https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions" target="_blank">KKT conditions</a> applied to a constrained nonlinear optimization problem. The KKT conditions generalize the method of <a href="https://en.wikipedia.org/wiki/Lagrange_multipliers" target="_blank">Lagrange multipliers</a> to allow for inequality constraints as well as equality constraints. They provide a set of algebraic conditions involving the objective function, the constraint functions, and their derivatives, which give necessary (and under the right circumstances sufficient) conditions for optimality. This provides us with a solution method for the optimization problem, since we can simply solve the system of equations defined by the KKT conditions.</p>
+			
+			<p>There are four parts to the KKT conditions: <i>stationarity</i>, <i>primal feasibility</i>, <i>dual feasibility</i>, and <i>complementary slackness</i>. <i>Stationarity</i> ensures local optimality, and essentially means that the objective function should "flatten out" at the optimal solution (specifically, this requires that the gradient of the objective function be either zero or collinear with the gradients of the constraint functions). <i>Primal feasibility</i> is obvious, and just means that the given constraints must be satisfied. Stationarity and primal feasibility are both present in the method of Lagrange multipliers, while dual feasibility and complementary slackness are unique to the KKT conditions, and are there to deal with the possibility of the optimal solution lying strictly inside of the feasible set rather than on its boundary. Specifically, <i>dual feasibility</i> ensures that an optimal solution lie on the correct side of the boundary, while <i>complementary slackness</i> ensures that an interior optimal solution has a stationary objective.</p>
+			
+			<p>This demonstration shows a 2D constrained optimization problem with a single inequality constraint. In the top left window, the contour lines of the objective are shown in gray, the feasible set (with its contour lines) is shaded blue, and the optimal solution is shown as a red dot. The user can click and drag to select a solution, and the KKT conditions for that solution will be shown in the other windows. Try moving the selected point around and watching how the conditions change in response.</p>
+		</div>
+	</div>
+	
 	<div class="spacer" id="monte-carlo-method">
 		<div class="dark">
 			<h1>Monte Carlo Method</h1>
