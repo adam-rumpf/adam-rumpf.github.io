@@ -3,22 +3,23 @@ The following lists correspond to all of the available categories from the Mathe
 Each list contains the IDs of the projects associated with that category.
 'all_list' should always contain everything, and is the list iterated over for the filter function's main loop.
 */
-var all_list = ["bezier-curves", "complex-newtons-method", "complex-operations", "continued-fraction-square-packing", "crowd-escape-panic-model", "dijkstras-algorithm-and-astar-search", "domino-and-tromino-tiling", "dragon-curve", "duvergers-law", "fractal-shoulder-angels-and-devils", "graph-untangler", "kkt-conditions", "monte-carlo-method", "pascals-triangle-fractals", "pythagoras-tree", "recamans-sequence", "remainder-graphs", "single-winner-voting-systems", "spirograph", "taylor-and-fourier-series-approximations", "triangle-centers", "vector-kinematics", "winner-take-all-distortion"];
+var all_list = ["bezier-curves", "bifurcation-analysis", "cobwebbing", "complex-newtons-method", "complex-operations", "continued-fraction-square-packing", "continuous-discrete-logistic-growth", "crowd-escape-panic-model", "dijkstras-algorithm-and-astar-search", "domino-and-tromino-tiling", "dragon-curve", "duvergers-law", "fractal-shoulder-angels-and-devils", "graph-untangler", "kkt-conditions", "monte-carlo-method", "pascals-triangle-fractals", "pythagoras-tree", "recamans-sequence", "remainder-graphs", "single-winner-voting-systems", "spirograph", "taylor-and-fourier-series-approximations", "triangle-centers", "vector-kinematics", "winner-take-all-distortion"];
 var analysis = ["complex-newtons-method", "taylor-and-fourier-series-approximations"];
-var calculus = ["complex-newtons-method", "crowd-escape-panic-model", "kkt-conditions", "monte-carlo-method", "spirograph", "taylor-and-fourier-series-approximations", "vector-kinematics"];
-var complex = ["complex-newtons-method", "complex-operations"];
+var calculus = ["bifurcation-analysis", "complex-newtons-method", "continuous-discrete-logistic-growth", "crowd-escape-panic-model", "kkt-conditions", "monte-carlo-method", "spirograph", "taylor-and-fourier-series-approximations", "vector-kinematics"];
+var chaos = ["cobwebbing", "complex-newtons-method", "continuous-discrete-logistic-growth"];
+var complex = ["bifurcation-analysis", "complex-newtons-method", "complex-operations"];
 var computational = ["bezier-curves", "complex-newtons-method", "monte-carlo-method", "taylor-and-fourier-series-approximations"];
-var diffeq = ["crowd-escape-panic-model", "vector-kinematics"];
-var discrete = ["continued-fraction-square-packing", "dijkstras-algorithm-and-astar-search", "domino-and-tromino-tiling", "pascals-triangle-fractals", "recamans-sequence", "remainder-graphs"];
-var dynamical = ["crowd-escape-panic-model", "vector-kinematics"];
+var diffeq = ["bifurcation-analysis", "continuous-discrete-logistic-growth", "crowd-escape-panic-model", "vector-kinematics"];
+var discrete = ["cobwebbing", "continued-fraction-square-packing", "continuous-discrete-logistic-growth", "dijkstras-algorithm-and-astar-search", "domino-and-tromino-tiling", "pascals-triangle-fractals", "recamans-sequence", "remainder-graphs"];
+var dynamical = ["bifurcation-analysis", "cobwebbing", "continuous-discrete-logistic-growth", "crowd-escape-panic-model", "vector-kinematics"];
 var geometry = ["continued-fraction-square-packing", "triangle-centers"];
-var fractal = ["complex-newtons-method", "dragon-curve", "fractal-shoulder-angels-and-devils", "pascals-triangle-fractals", "pythagoras-tree"];
+var fractal = ["complex-newtons-method", "continuous-discrete-logistic-growth", "dragon-curve", "fractal-shoulder-angels-and-devils", "pascals-triangle-fractals", "pythagoras-tree"];
 var fun = ["bezier-curves", "domino-and-tromino-tiling", "dragon-curve", "fractal-shoulder-angels-and-devils", "pythagoras-tree", "spirograph"];
 var graph = ["dijkstras-algorithm-and-astar-search", "graph-untangler", "remainder-graphs"];
-var model = ["crowd-escape-panic-model", "duvergers-law", "single-winner-voting-systems", "winner-take-all-distortion"];
+var model = ["cobwebbing", "continuous-discrete-logistic-growth", "crowd-escape-panic-model", "duvergers-law", "single-winner-voting-systems", "winner-take-all-distortion"];
 var number = ["continued-fraction-square-packing", "pascals-triangle-fractals", "recamans-sequence", "remainder-graphs"];
 var optimization = ["complex-newtons-method", "dijkstras-algorithm-and-astar-search", "kkt-conditions"];
-var pretty = ["bezier-curves", "complex-newtons-method", "domino-and-tromino-tiling", "dragon-curve", "pythagoras-tree", "recamans-sequence", "spirograph"];
+var pretty = ["bezier-curves", "cobwebbing", "complex-newtons-method", "continuous-discrete-logistic-growth", "domino-and-tromino-tiling", "dragon-curve", "pythagoras-tree", "recamans-sequence", "spirograph"];
 var voting = ["duvergers-law", "single-winner-voting-systems", "winner-take-all-distortion"];
 
 /**
@@ -58,6 +59,14 @@ function filter(handle)
 		{
 			tally = calculus.length;
 			if (calculus.includes(all_list[i]))
+				item.style.display = "block";
+			else
+				item.style.display = "none";
+		}
+		else if (choice === "chaos")
+		{
+			tally = chaos.length;
+			if (chaos.includes(all_list[i]))
 				item.style.display = "block";
 			else
 				item.style.display = "none";
@@ -180,6 +189,15 @@ function filter(handle)
 			item.style.display = "block";
 		}
 	}
+	
+	// "Boring Math" message joke
+	if (choice === "boring")
+	{
+		tally = 0;
+		document.getElementById("boring-message").style.display = "block";
+	}
+	else
+		document.getElementById("boring-message").style.display = "none";
 	
 	// Set tally display
 	document.getElementById(handle).innerHTML = "Showing " + tally.toString() + " of " + total.toString() + " demonstrations.";

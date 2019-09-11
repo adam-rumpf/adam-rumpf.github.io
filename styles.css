@@ -11,6 +11,13 @@
 /* sections */
 /*****************************************************************************/
 
+/* highlighted temporary text for use during development */
+.temp
+{
+	background-color: white;
+	color: red;
+}
+
 /* header bar, normal screen size */
 @media screen and (min-width: 951px)
 {
