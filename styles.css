@@ -176,6 +176,15 @@ li
 	padding: 4px;
 }
 
+/* table with borders */
+.bordered
+{
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 4px;
+	text-align: center;
+}
+
 /*****************************************************************************/
 /* links and navigation bar */
 /*****************************************************************************/
