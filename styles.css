@@ -140,6 +140,13 @@ h1
 	margin-left: 40px;
 }
 
+/* block quote */
+.quote
+{
+	margin-left: 80px;
+	margin-right: 80px;
+}
+
 /* darkened box */
 .dark
 {
