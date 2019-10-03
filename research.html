@@ -41,11 +41,6 @@
 	
 	<p>This page contains links to my research papers and related material, including computer code, most of which is available through my <a href="https://github.com/adam-rumpf" target="_blank">GitHub account</a>. I have also included some guides and other resources written for my own personal reference while working on projects. You may find them useful as a brief introduction to a topic.</p>
 	
-	<p>Coming up with interesting ideas for research projects can be difficult, so here is a handy idea button: <button type="button" style="background-color: #d0d0d0" onclick="random_project()">Idea</button></p>
-	
-	<!-- Empty space for random project idea (automatically filled on page load). -->
-	<p class="tab" id="research_idea"> </p>
-	
 	<h1>Contents</h1>
 	<ul>
 		<li><a href="research.html#interests">Research Interests</a></li>
@@ -160,24 +155,5 @@
 		<hr>
 		© 2019 <a href="mailto:arumpf@hawk.iit.edu">Adam Rumpf</a>
 	</footer>
-	
-	<!-- Random project generation script. -->
-	<script>
-		// Pool of math topics
-		var topic_list = ["a very powerful computer", "agent-based models", "algebra", "ant colony optimization", "boolean algebra", "calculus", "cellular automata", "chaos theory", "combinatorial design", "combinatorial game theory", "compartmental models", "complex systems", "convex optimization", "deep learning", "discrete dynamical systems", "exponential random graph models", "fractals", "fuzzy programming", "game theory", "graph theory", "group theory", "information theory", "knot theory", "linear programming", "literature review", "machine learning", "Markov chains", "mechanism design", "metaheuristics", "multicommodity network flows", "multilevel programming", "multiobjective programming", "network flows", "neural networks", "ODEs", "optimal control", "ordinal numbers", "PDEs", "percolation theory", "pursuit-evasion problems", "queueing theory", "regression", "robust programming", "scheduling problems", "semidefinite programming", "Sperner's lemma", "stochastic programming", "surreal numbers", "the hairy ball theorem", "the ham sandwich theorem" "the pigeonhole principle", "topology", "zero-knowledge proofs"];
-
-		// Pool of math applications
-		var app_list = ["bioethics", "bioterrorism", "chess", "civil infrastructure engineering", "climate change", "crowd dynamics", "crowd panics", "cryptography", "disaster prevention and relief", "disease cofactors", "disease treatment and prevention strategies", "drone delivery routes", "electoral systems", "emergent social behavior", "envy-free division", "epidemiology", "evacuation planning", "evolutionary biology", "factory layouts", "fluid dynamics", "forest fires", "fungal networks", "geology", "insects", "military strategy", "mineralogy", "modified knapsack problems", "monstrous moonshine", "optimal board game strategies", "population ecology", "primary and secondary succession", "retail layout", "road network engineering", "the Collatz conjecture", "the Homicidal Chauffeur Problem", "the Navier-Stokes equations", "the number 42", "the prevailing issues of the day", "the Riemann hypothesis", "the stock market", "the twin prime conjecture", "the weather", "transgenic mosquitos", "urban planning", "what it means to be human", "whether P = NP", "zombie apocalypse scenarios"];
-
-		/**
-		Randomly generates a project by selecting a random topic and a random application, then generates a popup for the output.
-		*/
-		function random_project()
-		{
-			var topic = topic_list[Math.floor(Math.random()*topic_list.length)];
-			var app = app_list[Math.floor(Math.random()*app_list.length)];
-			alert("Try using " + topic + " to study " + app + ".");
-		}
-	</script>
 </body>
 </html>
