@@ -1,0 +1,314 @@
+/* global properties */
+*
+{
+	background-color: #f0f0f0;
+	color: black;
+	font-family: Verdana, sans-serif;
+	font-size: 16px;
+}
+
+/*****************************************************************************/
+/* sections */
+/*****************************************************************************/
+
+/* highlighted temporary text for use during development */
+.temp
+{
+	background-color: white;
+	color: red;
+}
+
+/* header bar, normal screen size */
+@media screen and (min-width: 1001px)
+{
+	header
+	{
+		/* text */
+		color: white;
+		font-size: 72px;
+		text-align: center;
+		padding: 64px;
+		text-shadow: 4px 4px #202020;
+		
+		/* image */
+		background-color: black;
+		background-image: url("bg/blue_plaid.png");
+		background-repeat: repeat;
+	}
+}
+
+/* header bar, small screen size */
+@media screen and (max-width: 1000px)
+{
+	header
+	{
+		/* text */
+		color: white;
+		font-size: 36px;
+		text-align: center;
+		padding: 32px;
+		text-shadow: 2px 2px #202020;
+		
+		/* image */
+		background-color: black;
+		background-image: url("bg/blue_plaid.png");
+		background-repeat: repeat;
+	}
+}
+
+/* footer bar */
+footer
+{
+	text-align: center;
+}
+
+/* body */
+body
+{
+	text-align: left;
+}
+
+/* get standard elements to inherit their colors */
+p, a, h1, h2, h3, h4, img, b, i, u
+{
+	background-color: inherit;
+	color: inherit;
+}
+
+/* Header 1 */
+h1
+{
+	font-size: 24px;
+}
+
+/* columns */
+.column
+{
+	float: left;
+}
+
+/* contact info and portrait column, normal screen size */
+@media screen and (min-width: 1001px)
+{
+	.left
+	{
+		padding: 8px;
+		text-align: center;
+		width: 48%;
+	}
+}
+
+/* contact info and portrait column, small screen size */
+@media screen and (max-width: 1000px)
+{
+	.left
+	{
+		text-align: center;
+		width: 100%;
+	}
+}
+
+/* contents next to portrait column, normal screen size */
+@media screen and (min-width: 1001px)
+{
+	.right
+	{
+		width: 50%;
+	}
+}
+
+/* contents next to portrait column, small screen size */
+@media screen and (max-width: 1000px)
+{
+	.right
+	{
+		width: 100%;
+	}
+}
+
+/* rows */
+.row:after
+{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* indented */
+.tab
+{
+	margin-left: 40px;
+}
+
+/* block quote */
+.quote
+{
+	margin-left: 80px;
+	margin-right: 80px;
+}
+
+/* darkened box */
+.dark
+{
+	background-color: #d0d0d0;
+	border: 3px #d0d0d0 solid;
+	display: block;
+	overflow: auto;
+	padding: 0px 16px;
+}
+
+/* spacer */
+.spacer
+{
+	padding: 16px;
+}
+
+/* centered */
+.center
+{
+	background-color: inherit;
+	color: inherit;
+	text-align: center;
+}
+
+/* lists */
+ul
+{
+	list-style-type: square;
+}
+
+/* list items */
+li
+{
+	padding: 4px;
+}
+
+/* table with borders */
+.bordered
+{
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 4px;
+	text-align: center;
+}
+
+/* dropdown menus */
+select, option
+{
+	background-color: white;
+}
+
+/*****************************************************************************/
+/* links and navigation bar */
+/*****************************************************************************/
+
+/* links */
+a:link, a:visited
+{
+	color: #507090;
+	text-decoration: none;
+}
+
+/* mouse over links */
+a:hover, a:active
+{
+	color: #507090;
+	text-decoration: underline;
+}
+
+/* link for current page */
+#current
+{
+	/*background-color: #e0c030;
+	color: #202020;*/
+	background-color: #22415b;
+	/*font-weight: bold;*/
+}
+
+/* navigation bar container */
+.navbar
+{
+	background-color: #202020;
+	overflow: hidden;
+}
+
+/* navigation bar links */
+.navbar a:link, .navbar a:visited
+{
+	background-color: #202020;
+	border: none;
+	color: white;
+	float: left;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: none;
+}
+
+/* mouse over links */
+.navbar a:hover, .dropdown:hover .dropbtn
+{
+	background-color: #404040;
+}
+
+/* selected links */
+.navbar a:active
+{
+	background-color: #404040;
+}
+
+/* dropdown container */
+.dropdown
+{
+	background-color: #202020;
+	color: white;
+	float: left;
+	overflow: hidden;
+}
+
+/* dropdown button */
+.dropdown .dropbtn
+{
+	background-color: inherit;
+	border: none;
+	color: white;
+	font-family: inherit;
+	font-size: 16px;
+	margin: 0;
+	outline: none;
+	padding: 16px 32px;
+}
+
+/* dropdown content to display */
+.dropdown-content
+{
+	background-color: #202020;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+	display: none;
+	/*min-width: 160px;*/
+	position: absolute;
+	z-index: 1;
+}
+
+/* dropdown links */
+.dropdown-content a
+{
+	color: #202020;
+	display: block;
+	float: none;
+	padding: 16px 32px;
+	text-align: left;
+	text-decoration: none;
+	width: 160px;
+}
+
+/* dropdown link hover */
+.dropdown-content a:hover
+{
+	background:color #404040;
+}
+
+/* show dropdown on hover */
+.dropdown:hover .dropdown-content
+{
+	display: block;
+}
