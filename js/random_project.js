@@ -5,11 +5,11 @@ var topic_list = ["a very powerful computer", "agent-based models", "algebra", "
 var app_list = ["bioethics", "bioterrorism", "chess", "civil infrastructure engineering", "climate change", "crowd dynamics", "crowd panics", "cryptography", "disaster prevention and relief", "disease cofactors", "disease treatment and prevention strategies", "drone delivery routes", "electoral systems", "emergent social behavior", "envy-free division", "epidemiology", "evacuation planning", "evolutionary biology", "factory layouts", "fluid dynamics", "forest fires", "fungal networks", "geology", "insects", "military strategy", "mineralogy", "modified knapsack problems", "monstrous moonshine", "optimal board game strategies", "population ecology", "primary and secondary succession", "retail layout", "road network engineering", "the Collatz conjecture", "the Homicidal Chauffeur Problem", "the Navier-Stokes equations", "the number 42", "the prevailing issues of the day", "the Riemann hypothesis", "the stock market", "the twin prime conjecture", "the weather", "transgenic mosquitos", "urban planning", "what it means to be human", "whether P = NP", "zombie apocalypse scenarios"];
 
 /**
-Randomly generates a project by selecting a random topic and a random application, then outputs the string to a given container ID.
+Randomly generates a project by selecting a random topic and a random application, then generates a popup for the output.
 */
-function random_project(handle)
+function random_project()
 {
 	var topic = topic_list[Math.floor(Math.random()*topic_list.length)];
 	var app = app_list[Math.floor(Math.random()*app_list.length)];
-	document.getElementById(handle).innerHTML = "Try using " + topic + " to study " + app + ".";
+	alert("Try using " + topic + " to study " + app + ".");
 }

@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="../styles.css">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<base href="https://adam-rumpf.github.io/">
-	<script src="../js/demonstration_filter.js"></script> <!-- Project filter script. -->
 </head>
 
 <body>
@@ -40,38 +39,11 @@
 	
 	<p>Over the years I have written a large number of <a href="http://www.wolfram.com/mathematica/" target="_blank">Mathematica</a> programs, and still continue to do so. These projects started as an effort to teach myself Mathematica while working as a TA. Things have gotten a little out of hand, and as of Fall 2019 I have accrued over 200 Notebook files, all written during my spare time to explore a wide variety of topics of personal interest. In order to establish my nerd cred, a small sample of this collection is provided below, and more will be added over time. I encourage you to have a look around to see if anything interests you. At the very least there are some pretty pictures.</p>
 	
-	<p>Some of these projects have been uploaded to the <a href="demonstrations.wolfram.com" target="_blank">Wolfram Demonstrations Project</a>, and can be found at my <a href="http://demonstrations.wolfram.com/author.html?author=Adam+Rumpf" target="_blank">author page</a>. This entire collection is contained in a <a href="https://github.com/adam-rumpf/mathematica-class-demonstrations" target="_blank">GitHub repository</a> released under the <a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/LICENSE" target="_blank">MIT License</a>. You can browse below or filter by category if you are looking for something related to a specific topic. Every project includes a link to download the Notebook file. The creation date indicates when my original version was completed, but all files have since been cleaned up to make them more user-friendly. All of the files below are meant to be useable in a classroom setting to act as visual, interactive demonstrations. Please feel free to use and modify these programs however you wish.</p>
+	<p>Some of these projects have been uploaded to the <a href="demonstrations.wolfram.com" target="_blank">Wolfram Demonstrations Project</a>, and can be found at my <a href="http://demonstrations.wolfram.com/author.html?author=Adam+Rumpf" target="_blank">author page</a>. This entire collection is contained in a <a href="https://github.com/adam-rumpf/mathematica-class-demonstrations" target="_blank">GitHub repository</a> released under the <a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/LICENSE" target="_blank">MIT License</a>. You can also browse the collection below. Every project includes a link to download the Notebook file. The creation date indicates when my original version was completed, but all files have since been cleaned up to make them more user-friendly. All of the files below are meant to be useable in a classroom setting to act as visual, interactive demonstrations. Please feel free to use and modify these programs however you wish.</p>
 	
 	<h1>Mathematica Demonstrations</h1>
 	
 	<p><a href="https://github.com/adam-rumpf/mathematica-class-demonstrations" target="_blank">GitHub Link</a></p>
-	
-	<!-- Dropdown menu selection chooses which demonstrations to reveal. Initially all are revealed. Every time an option is clicked the filter script is run, which decides which elements to show and hide and counts the number of active demonstrations. -->
-	<p>Filter by category: 
-		<select id="category" onClick="filter("tally")">
-			<option value="all" selected>Show All</option>
-			<option value="none" disabled>--- Courses ---</option>
-			<option value="analysis">Analysis</option>
-			<option value="calculus">Calculus</option>
-			<option value="computational">Computational Mathematics</option>
-			<option value="diffeq">Differential Equations</option>
-			<option value="discrete">Discrete Mathematics</option>
-			<option value="dynamical">Dynamical Systems</option>
-			<option value="geometry">Geometry</option>
-			<option value="graph">Graph Theory</option>
-			<option value="number">Number Theory</option>
-			<option value="optimization">Optimization</option>
-			<option value="voting">Voting Theory</option>
-			<option value="none" disabled>--- Topics ---</option>
-			<option value="boring">Boring Math</option>
-			<option value="chaos">Chaos</option>
-			<option value="complex">Complex Numbers</option>
-			<option value="fractal">Fractals</option>
-			<option value="fun">Just for Fun</option>
-			<option value="model">Mathematical Model</option>
-			<option value="pretty">Pretty Pictures</option>
-		</select>
-	</p>
 	
 	<!-- Displays number of active demonstrations depending on selection. -->
 	<p id="tally"> </p>
@@ -91,6 +63,8 @@
 			<p><a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve" target="_blank">Bézier Curves</a> are parametric curves defined by a sequence of control points. Most people would be familiar with them from simple graphics programs like MS Paint. They are commonly used for drawing smooth curves that are easily adjustable by clicking and dragging the control points. The process of drawing a Bézier curve can be imagined by moving points at constant speed between each pair of control points, defining a new, smaller set of moving control points. This process is then repeated with the new set of even fewer control points, repeating until reaching only a single control point. The path of this single control point is the curve.</p>
 			
 			<p>There are some interesting mathematical properties and applications of Bézier curves, but my main interest was in watching their drawing process. This demonstration animates the process of drawing a Bézier curve for a given set of control points. I am not sure whether the program, itself, has much educational value, but it does look really cool.</p>
+			
+			<p>Tags: Computational Mathematics, Just for Fun, Pretty Pictures</p>
 		</div>
 	</div>
 	
@@ -109,6 +83,8 @@
 			<p>A bifurcation occurs in a dynamical system when changing a parameter causes the qualitative behavior of the system to change. Varying the parameters of an ODE system will of course always cause the exact solution to change, but in some cases these changes are so extreme that the fundamental behavior of the system is completely different. Equilibria may appear or disappear, or may switch from being stable to being unstable, or the directions of orbits may change. The different types of bifurcation mentioned above describe different types of qualitative change.</p>
 			
 			<p>Bifurcation analysis highlights one of the major differences between a dynamical systems class and a differential equations class: both involve the study of differential equations, but dynamical systems classes tend to focus on describing qualitative behaviors of a system whereas differential equations classes tend to focus on methods of exact or numerical solution. I personally find that the dynamical systems approach is usually more interesting and more immediately useful, and I believe that most aspects of math education would benefit from focusing less on calculation and more on fundamental understanding.</p>
+			
+			<p>Tags: Calculus, Complex Numbers, Differential Equations, Dynamical Systems</p>
 		</div>
 	</div>
 	
@@ -127,6 +103,8 @@
 			<p>This is based on an <a href="http://zesty.ca/voting/voteline/" target="_blank">interactive Flash demonstration</a> by Ka-Ping Yee, which is meant to show how different, reasonable-seeming methods of evaluating ballots can affect the outcomes of single-winner elections. It also shows some of the problems that certain systems can have, such as the <a href="https://en.wikipedia.org/wiki/Spoiler_effect" target="_blank">spoiler effect</a> and non-monotonicity.</p>
 
 			<p>Most people do not think very much about election systems, and if you asked them to come up with a system for how to run a single-winner election they would probably just suggest the one method they are familiar with: everyone votes for a single candidate and the candidate with the most votes wins. This method is called <a href="https://en.wikipedia.org/wiki/First-past-the-post_voting" target="_blank">first-past-the-post</a>, and although it makes intuitive sense, it has a great many <a href="https://www.electionscience.org/voting-methods/spoiler-effect-top-5-ways-plurality-voting-fails/" target="_blank">problems</a>. Other election systems like <a href="https://en.wikipedia.org/wiki/Instant-runoff_voting" target="_blank">instant runoff voting</a>, <a href="https://en.wikipedia.org/wiki/Borda_count" target="_blank">Borda count</a>, and <a href="https://en.wikipedia.org/wiki/Approval_voting" target="_blank">approval voting</a> are meant to avoid these problems, although they have varying degrees of success.</p>
+			
+			<p>Tags: Mathematical Modeling, Voting Theory</p>
 		</div>
 	</div>
 	
@@ -144,7 +122,9 @@
 			
 			<p>Specifically, cobwebbing is used for discrete dynamical systems for which the next iteration is given as a function <i>f</i> of the previous iteration. We first plot both the function and the <i>y = x</i> line on the same set of axes. Given an initial value <i>x0</i>, the next value should be <i>f(x0)</i>, which we can eyeball from the plot by drawing a vertical line up from <i>x0</i> on the <i>x</i>-axis until it touches the function curve. Intuitively, if we wanted to find the next iteration, we would need to transfer this value back onto the <i>x</i>-axis and then draw another vertical line up from it. However, because we already have the <i>y = x</i> line drawn, if we simply draw a horizontal line from our current position to it we will automatically reach the <i>x</i>-coordinate corresponding to our current <i>y</i>-coordinate. Then we can simply move vertically from this location. This process can be repeated as many times as needed to approximate the sequence of values produced by the system, alternating between moving vertically to the <i>f</i> curve to evaluate the update step, and then horizontally to the <i>y = x</i> line to convert the <i>y</i>-coordinate to an <i>x</i>-coordinate.</p>
 			
-			<p>The points where the function curve passes through the <i>y = x</i> line are the fixed points of the system, and in general an initial solution will either approach or diverge from certain fixed points (or possibly enter a periodic orbit around them), which is how the long-term behavior of the system can be estimated. The result often ends up creating stair-step or spiral patterns which look like cobwebs, hence the name. In chaotic systems, like the <a href="https://en.wikipedia.org/wiki/Logistic_map" target="_blank">discrete logistic map</a> with large growth rates, it provites a very clear picture of how complicated and messy things can get.</p>
+			<p>The points where the function curve passes through the <i>y = x</i> line are the fixed points of the system, and in general an initial solution will either approach or diverge from certain fixed points (or possibly enter a periodic orbit around them), which is how the long-term behavior of the system can be estimated. The result often ends up creating stair-step or spiral patterns which look like cobwebs, hence the name. In chaotic systems, like the <a href="https://en.wikipedia.org/wiki/Logistic_map" target="_blank">discrete logistic map</a> with large growth rates, it provides a very clear picture of how complicated and messy things can get.</p>
+			
+			<p>Tags: Chaos, Discrete Mathematics, Dynamical Systems, Mathematical Modeling, Pretty Pictures</p>
 		</div>
 	</div>
 	
@@ -161,6 +141,8 @@
 			<p>This is a demonstration of how <a href="https://en.wikipedia.org/wiki/Newton%27s_method" target="_blank">Newton's Method</a> works for complex-valued functions. Most Calculus students will learn about Newton's Method for finding roots of real-valued functions, and may be surprised to learn that it also works for complex numbers. They may also learn that the method does not necessarily always converge to the root nearest the initial guess due to "overshooting" in unexpected ways. For real numbers this phenomenon is not very interesting to look at, but for the complex numbers we can generate fascinating and beautiful fractal basins of attraction.</p>
 			
 			<p>The main function of this demonstration allows the user to specify a function and a few other parameters, and outputs a coloring of a portion of the complex plane demonstrating the basins of attraction of the different roots. Note that this may take a while to calculate for some large cases with many nodes. For this reason I would not recommend running the entire notebook, but rather running the initialization code and then evaluating one function at a time.</p>
+			
+			<p>Tags: Analysis, Calculus, Chaos, Complex Numbers, Computational Mathematics, Fractal, Optimization, Pretty Pictures</p>
 		</div>
 	</div>
 	
@@ -175,6 +157,8 @@
 			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/calc-diffeq-analysis/complex-operations.nb" download="complex-operations.nb" target="_blank">Download Notebook</a></p>
 			
 			<p>This is a lightweight visual demonstration of how familiar mathematical operations (addition, multiplication, trigonometric functions, etc.) affect the complex numbers, displayed as vectors in the complex plane. The user can select an operation or function and then click and drag the input vector or vectors to see how this affects the output vector. In particular, it is interesting to look at how changing just the magnitude or just the angle of an input vector affects the output.</p>
+			
+			<p>Tags: Complex Numbers</p>
 		</div>
 	</div>
 	
@@ -195,6 +179,8 @@
 			<p>There is a geometric interpretation of this process, and that is what this program generates. Imagine that we draw a rectangle with height 1 and width pi, and that we attempt to draw as many unit squares as we can inside this box. If we start at the lefthand side and continue to the right, we can fit exactly 3 squares before running out of room, and the remaining 1 by 0.14159... space will be empty. Now suppose that we wish to fit as many squares of side length 0.14159... as possible into this empty space. We can rescale by multiplying everything by 1/0.14159... (which is 7.06251...), in which case the problem becomes trying to fit as many unit squares as possible into a 1 by 7.06251... unit space. The solution is obviously 7, with a remaining 1 by 0.06251... space. This process of iteratively packing squares and rescaling the gap is analogous to the above process of taking the unit part and inverting the fractional part, and it will produce the same sequence of integers.</p>
 			
 			<p>This box packing process is very much like the process for generating a <a href="https://en.wikipedia.org/wiki/Golden_spiral" target="_blank">golden spiral</a>, and in fact if we begin with a rectangle whose dimensions are 1 by phi (the <a href="https://en.wikipedia.org/wiki/Golden_ratio" target="_blank">golden ratio</a>) the two processes are exactly the same. Because the golden spiral involves packing a single square in each iteration, this implies that the continued fraction representation of phi is [1; 1, 1, 1, 1, ...], which is indeed true. It is for this reason that phi is occasionally referred to as the <a href="http://www.ams.org/publicoutreach/feature-column/fcarc-irrational4" target="_blank">"most irrational"</a> number. Because all of the digits in the continued fraction representation are inverted, large digits indicates that the term contributes a small value to the overall sum, and so truncating a large digit leads to smaller truncation error than truncating a small digit. Because all digits of phi's continued fraction are the smallest possible positive integer, truncating its continued fraction leads to the largest possible truncation error, making it the number with the worst possible rational approximations.</p>
+			
+			<p>Tags: Discrete Mathematics, Geometry, Number Theory</p>
 		</div>
 	</div>
 	
@@ -211,6 +197,8 @@
 			<p>This demonstration serves as a good example of how continuous and discrete analogs of the same model can produce drastically different behaviors, and it involves one of the most famous examples from <a href="https://en.wikipedia.org/wiki/Chaos_theory" target="_blank">chaos theory</a>. The logistic growth model is a very simple dynamical systems model for population growth. There is both a <a href="https://en.wikipedia.org/wiki/Logistic_function" target="_blank">continuous version</a> (taking the form of a differential equation) and a <a href="https://en.wikipedia.org/wiki/Logistic_map" target="_blank">discrete version</a> (taking the form of a discrete map). Both attempt to model the situation of population being limited by finite resources.</p>
 			
 			<p>At first glance the two models seem very similar, and for many students first learning about differential and difference equations it may seem like there is no significant difference between the two approaches. They even produce similar results under certain circumstances, and if anything the discrete model may seem intuitively easier to understand. However, the discrete model begins to exhibit some very strange and chaotic behavior if the intrinsic growth rate becomes large enough. This behavior is unique to the discrete model, and nothing like it occurs in the continuous model.</p>
+			
+			<p>Tags: Calculus, Chaos, Differential Equations, Discrete Mathematics, Dynamical Systems, Fractal, Mathematical Modeling, Pretty Pictures</p>
 		</div>
 	</div>
 	
@@ -231,6 +219,8 @@
 			<p>The article describes a dynamical systems model for crowds of people attempting to run to a building exit during a panic. The model is similar to those used in fluid dynamics. Each person is treated as a particle with a certain radius. Each particle attempts to move toward the exit, but they also repel each other if they get too close (incredibly strongly if they are within crush distance of each other). For each particle we can define a total force function that includes its own desired movement, repulsion from other particles and obstacles, body forces from intersecting particles and obstacles, and sliding friction past particles and obstacles. The total force can then be used to define the particle's acceleration vector, which in turn defines a system of ordinary differential equations to determine each particle's position as a function of time.</p>
 			
 			<p>This demonstration implements the model and displays an animation of the crowd as it tries to reach the exit. Controls allow the user to change the layout of the room, including obstacles and the size of the exit. Particles are colored according to the amount of crush force experienced from the surrounding particles, becoming more red as the force increases. A plot is also displayed in the corner of the animation, with the green line indicating the number of successful exits and the red line indicating the total crush force.</p>
+			
+			<p>Tags: Calculus, Differential Equations, Dynamical Systems, Mathematical Modeling</p>
 		</div>
 	</div>
 	
@@ -251,6 +241,8 @@
 			<p>Dijkstra's algorithm attempts to find the shortest path from a start node to every other node on the graph, although it can be halted early if a specific end node is specified. Nodes whose distance has already been determined are marked as "searched", while nodes on the search frontier have tentative distances based on the shortest known path. In each iteration the node with the shortest tentative distance is chosen for search. Because of this, the set of searched nodes slowly expands out from the start node, meaning that the algorithm may search a lot of extraneous nodes on its way to the destination. This can be seen in the demonstration by the way that the "bubble" of explored nodes slowly expands.</p>
 			
 			<p>A* search is a modified version of Dijkstra's algorithm which explicitly attempts to choose nodes likely to be closer to the destination. This requires extra information in the form of a heuristic distance from each node to the destination (for example, the Euclidean distance based on the node coordinates). Because of this preferential selection, A* tends to move directly towards the destination when possible, spreading out only to find its way past obstacles. An interesting illustration of this is to use the L-shaped obstacle with the start node on the inside and the destination on the outside.</p>
+			
+			<p>Tags: Discrete Mathematics, Graph Theory, Optimization</p>
 		</div>
 	</div>
 	
@@ -279,6 +271,8 @@
 			<p>Consider the problem of attempting to tile a chess board with L-shaped <i>trominos</i>, each of which covers <i>three</i> adjacent squares. This is impossible on a standard chess board because 64 is not divisible by 3.</p>
 			
 			<p>What if we remove a single square from the board? Then we would have 63 squares, which is divisible by 3, and thus might be possible. Suppose, for simplicity, that we remove a corner from the board. Can it be tiled with trominos? What squares could be removed while still allowing a tromino tiling?</p>
+			
+			<p>Tags: Discrete Mathematics, Just for Fun, Pretty Pictures</p>
 		</div>
 	</div>
 	
@@ -297,6 +291,8 @@
 			<p>One of the several equivalent constructions of the dragon curve involves taking a thin strip of paper and folding it in half, end-to-end, several times (the number of folds corresponds to the generation number). Then unfold the paper, open each crease to form a 90 degree angle, and look at the edge of the strip. The first fold simply creates an "L" shape. Starting over and adding a second fold creates a roughly "?" shape. Including additional folds one-at-a-time and observing the resulting curve produces shapes that are not very interesting, but after around 6 or 7 folds the shape begins to become incredibly intricate and complex.</p>
 			
 			<p>This Notebook defines a function that applies a recursive algorithm to draw a specified generation of dragon curve. Due to the recursive nature, the computational time increases exponentially as the generation number increases, so I would not recommend trying to draw anything past approximately 18 generations. I would also not recommend running the entire notebook at once, and instead running only specific blocks one-at-a-time.</p>
+			
+			<p>Tags: Fractal, Just for Fun, Pretty Pictures</p>
 		</div>
 	</div>
 	
@@ -313,6 +309,8 @@
 			<p><a href="https://en.wikipedia.org/wiki/Duverger%27s_law" target="_blank">Duverger's law</a> is an empirical rule which holds that <a href="https://en.wikipedia.org/wiki/First-past-the-post_voting" target="_blank">first-past-the-post</a> elections tend to result in a two-party system. This is the expected outcome from <a href="https://en.wikipedia.org/wiki/Tactical_voting" target="_blank">tactical voting</a>, wherein supporters of third-party candidates are coerced into abandoning their favorite candidate in favor of their preferred major party candidate in order to avoid the <a href="https://en.wikipedia.org/wiki/Spoiler_effect" target="_blank">spoiler effect</a>.</p>
 			
 			<p>This demonstration implements a simple tactical voting model based on a sequence of successive elections. We begin with a set of parties lying on a one-dimensional political spectrum, each with a given number of initial supporters. We then simulate a sequence of elections. The behavioral assumption is that, if a person's preferred candidate did not win, they will consider shifting their support to the most successful candidate on their half of the political spectrum (centrist voters may shift in either direction because of this). There are parameters to adjust how quickly this occurs, as well as for introducing slight randomization.</p>
+			
+			<p>Tags: Mathematical Modeling, Voting Theory</p>
 		</div>
 	</div>
 	
@@ -329,6 +327,8 @@
 			<p>This is a joke based on the shoulder angel/devil trope for representing a character's internal struggle over an ethical dilemma. Occasionally in films the idea of a shoulder angel is toyed with by giving the shoulder angel, itself, its own tiny shoulder angel and devil. I thought it would be funny to carry that out to its logical conclusion.</p>
 			
 			<p>The program generates fractal arrangements of shoulder angels and devils with adjustable parameters, including the relative scaling and position of each generation.</p>
+			
+			<p>Tags: Fractal, Just for Fun</p>
 		</div>
 	</div>
 	
@@ -345,6 +345,8 @@
 			<p>I wrote this as a tool for myself during my first graph theory course for the purposes of solving graph isomorphism problems. A common way to try to determine whether two different embeddings actually represent the same graph is to imagine that the vertices and edges can be moved around. If one graph can be manipulated to look like the other, then they must be isomorphic, and the physical movements which occurred are a physical representation of the bijection from one graph to the other.</p>
 			
 			<p>This file contains a very simple function that accepts a Mathematica Graph object and produces a circular embedding of the graph. The vertices can be clicked and dragged to move them around.</p>
+			
+			<p>Tags: Graph Theory</p>
 		</div>
 	</div>
 	
@@ -365,6 +367,8 @@
 			<p>There are four parts to the KKT conditions: <i>stationarity</i>, <i>primal feasibility</i>, <i>dual feasibility</i>, and <i>complementary slackness</i>. <i>Stationarity</i> ensures local optimality, and essentially means that the objective function should "flatten out" at the optimal solution (specifically, this requires that the gradient of the objective function be either zero or collinear with the gradients of the constraint functions). <i>Primal feasibility</i> is obvious, and just means that the given constraints must be satisfied. Stationarity and primal feasibility are both present in the method of Lagrange multipliers, while dual feasibility and complementary slackness are unique to the KKT conditions, and are there to deal with the possibility of the optimal solution lying strictly inside of the feasible set rather than on its boundary. Specifically, <i>dual feasibility</i> ensures that an optimal solution lie on the correct side of the boundary, while <i>complementary slackness</i> ensures that an interior optimal solution has a stationary objective.</p>
 			
 			<p>This demonstration shows a 2D constrained optimization problem with a single inequality constraint. In the top left window, the contour lines of the objective are shown in gray, the feasible set (with its contour lines) is shaded blue, and the optimal solution is shown as a red dot. The user can click and drag to select a solution, and the KKT conditions for that solution will be shown in the other windows. Try moving the selected point around and watching how the conditions change in response.</p>
+			
+			<p>Tags: Calculus, Optimization</p>
 		</div>
 	</div>
 	
@@ -381,6 +385,8 @@
 			<p><a href="https://en.wikipedia.org/wiki/Monte_Carlo_method" target="_blank">Monte Carlo methods</a> are a type of computational method for numerical integration based on random experiments. If the goal is to calculate the area within a particular curve, then a Monte Carlo method consists of randomly sampling points within a region of known area that surrounds the region of interest. In expectation, the ratio of points within the region of interest to points outside of the region of interest should equal the ratio of the two regions' areas, and because the surrounding region's area is known, this ratio can be used to calculate the unknown region's area. Due to the random nature of the experiment the ratio will not be exact, and may vary between realizations, but as the number of sample points increases the ratio should converge to the correct value.</p>
 			
 			<p>This Notebook includes a visual demonstration of the Monte Carlo method applied to calculating two separate areas: the area under an arbitrary curve, and the area of a unit circle (which should be exactly pi, making this method a way to numerically approximate pi). For each experiment, the user can select how many points to randomly sample. Running and re-running the command should produce slightly different results due to the randomness. There are also functions to plot the approximation error as the number of sample points increases, to show how it generally decreases as the number of iterations increases.</p>
+			
+			<p>Tags: Calculus, Computational Mathematics</p>
 		</div>
 	</div>
 	
@@ -399,6 +405,8 @@
 			<p>A Sierpiński triangle can be generated by highlighting all odd entries in Pascal's triangle. Using the fact that each entry of Pascal's triangle is the sum of the two preceding entries, we can think of Pascal's triangle as an <a href="https://en.wikipedia.org/wiki/Elementary_cellular_automaton" target="_blank">elementary cellular automaton</a> (specifically <a href="https://en.wikipedia.org/wiki/Elementary_cellular_automaton#Rule_60" target="_blank">Rule 60</a>).</p>
 			
 			<p>This program generates an instance of Pascal's triangle with the specified number of rows, and can color the entries depending on whether they are divisible by a chosen value. Highlighting the entries not divisible by 2 (i.e. the odd entries) generates a Sierpiński triangle. Choosing values other than 2 results in different fractals.</p>
+			
+			<p>Tags: Discrete Mathematics, Fractal, Number Theory</p>
 		</div>
 	</div>
 	
@@ -415,6 +423,8 @@
 			<p>This is a simple program containing a variety of Manipulate environments to generate <a href="https://en.wikipedia.org/wiki/Pythagoras_tree_(fractal)" target="_blank">Pythagoras tree</a> fractals with various parameters. A Pythagoras tree is generated iteratively by beginning with a square and then stacking two smaller squares on top of it, leaning against each other and meeting at the corner. The same process is then repeated on top of the two new squares, and then on top of the four new squares, and so on. The relative sizes of the two squares (or equivalently the angle at which they meet) determines the shape of the tree.</p>
 			
 			<p>There is not much mathematical content here. The main purpose of the program is simply to generate cool-looking fractals, and so most of the options are related to the display.</p>
+			
+			<p>Tags: Fractal, Just for Fun, Pretty Pictures</p>
 		</div>
 	</div>
 	
@@ -431,6 +441,8 @@
 			<p>Recamán's Sequence (sequence <a href="https://oeis.org/A005132" target="_blank">A005132</a> in the <a href="https://oeis.org" target="_blank">OEIS</a>) is defined by an iterative process beginning at 0, at step <i>n=0</i>. In step <i>n</i>, we either take <i>n</i> steps backward or <i>n</i> steps forward. We go backward if doing so would take us to a nonnegative number that has not yet been visited, and otherwise we go forward. It is conjectured that this sequence includes every nonnegative integer exactly once.</p>
 			
 			<p>This program is mostly meant for drawing pictures of Recamán's Sequence. Because each step is 1 unit larger than the preceding step, the most common way to draw it is using semicircular arcs to trace the path of the sequence on the number line. Doing so leads to interesting spiral patterns that illustrate the phases of rapid increase and of repeatedly bouncing back and forth to fill in areas that were previously unexplored.</p>
+			
+			<p>Tags: Discrete Mathematics, Number Theory, Pretty Pictures</p>
 		</div>
 	</div>
 	
@@ -453,6 +465,8 @@
 			<p>With this graph in place, we begin at position 0 and then read the digits of 42,959 from left to right. Each time we read a digit, we advance around the black circuit that number of steps. Between each digit, we follow the green arrow that leads out of the current position. In this case, we begin at 0 and read the first digit, "4". Then we advance 4 places to position 4, and then follow the green arrow to position 5. The next digit is "2", so we advance 2 to arrive at 0, and then follow the green arrow to remain at 0. Next we take "9" steps to 2, follow the green arrow to 6, advance "5" digits to 4, follow the green arrow to 5, and finally advance "9" digits to arrive back at 0. The final position is the remainder after division by 7. In this case it is 0, indicating that 42,959 is, indeed, divisible by 7.</p>
 			
 			<p>The reasons for why this method works are worth figuring out for oneself (see the article linked above). It also generalizes to any modulus besides 7, and doing so produces some interesting graphical representations of why the well-known divisibility tests that students learn in basic arithmetic work. For example, the graphs resulting from 2, 5, and 10 all have the property that every green arrow points to 0, indicating that, no matter where the black arrows take us, we will always reset our position to 0 between steps. As a result only the final digit matters, which is exactly what students learn for 2, 5, and 10. The graphs resulting from 3 and 9 both have the property that every green arrow is a loop, making them essentially meaningless. As a result only the total number of steps taken on the black arrows (which is the sum of all digits) matters, and that is exactly what students learn for 3 and 9. 11 is also rather interesting.</p>
+			
+			<p>Tags: Discrete Mathematics, Graph Theory, Number Theory</p>
 		</div>
 	</div>
 	
@@ -469,6 +483,8 @@
 			<p>This is an interactive version of a <a href="https://en.wikipedia.org/wiki/Spirograph" target="_blank">Spirograph</a> which displays the path of a pen attached to a disk rolling around a larger disk. There are controls to adjust the relative sizes of the disks, whether the small disk is inside or outside the larger disk, and where the pen is positioned (even allowing it to be outside of the disk). There is also a feature that displays a disk rolling on its edge around in circles.</p>
 			
 			<p>This was originally written while teaching Calculus, which is when many students are introduced to the concept of polar and parametric coordinates. Part of the course material mentions <a href="https://en.wikipedia.org/wiki/Epicycloid" target="_blank">epicycloids</a> and <a href="https://en.wikipedia.org/wiki/Hypocycloid" target="_blank">hypocycloids</a>, both of which are interesting in their own right and both of which show up in nature in some unexpected places, but I thought that it would be more impactful to show how they can all be generalized using this type of rolling mechanism.</p>
+			
+			<p>Tags: Calculus, Just for Fun, Pretty Pictures</p>
 		</div>
 	</div>
 	
@@ -485,6 +501,8 @@
 			<p>This demonstration shows how a <a href="https://en.wikipedia.org/wiki/Taylor_series" target="_blank">Taylor Series</a> or a <a href="https://en.wikipedia.org/wiki/Fourier_series" target="_blank">Fourier Series</a> approximation of a given function changes as more terms are added to the series. The Taylor and Fourier series' are both ways of representing functions as linear combinations of simpler functions (polynomial functions for Taylor and trigonometric functions for Fourier). They also have important applications in computational mathematics, since taking only the first few terms of the series can provide a simple approximation of a potentially complicated function within a small neighborhood.</p>
 			
 			<p>This program includes two Manipulate environments: one for Taylor series and one for Fourier series. Both include a dropdown menu of example functions and a slider to select the number of terms to include. The Taylor series also includes a slider to select the center of the approximation. These can be used to show how well the approximations model the original function near or far from the center, and how adding more terms changes things.</p>
+			
+			<p>Tags: Analysis, Calculus, Computational Mathematics</p>
 		</div>
 	</div>
 	
@@ -503,6 +521,8 @@
 			<p>This demonstration allows the user to click and drag the corners of a triangle to adjust its shape, and defines four different classical triangle centers: the orthocenter (intersection of altitudes), the circumcenter (center of circumscribed circle), the centroid (intersection of lines from vertices to opposite midpoints), and the incenter (center of inscribed circle). All coincide for equilateral triangles but generally differ for other triangles, and occasionally even lie outside of the triangle.</p>
 			
 			<p>The orthocenter, circumcenter, and centroid also possess the property of always being collinear. The line through them is called the Euler line. The incenter in general does not lie on the Euler line, unless the triangle is isosceles.</p>
+			
+			<p>Tags: Geometry</p>
 		</div>
 	</div>
 	
@@ -517,6 +537,8 @@
 			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/calc-diffeq-analysis/vector-kinematics.nb" download="vector-kinematics.nb" target="_blank">Download Notebook</a></p>
 			
 			<p>This demonstration is meant for elementary Calculus students encountering the concept of position, velocity, and acceleration vectors for the first time. It includes a series of Manipulate environments which describe various kinematic systems such as ballistic motion and rotational orbiting. Within each system there is a time slider to animate the system, and there is a toggle to select whether to display the position vector (with its x- and y-components), the velocity vector (with its x- and y-components), the acceleration vector (with its x- and y-components), and the velocity vector along with the acceleration vector. The purpose of these animations is to give a visual demonstration of how the velocity vector describes where the position vector is "about" to move to, and how the acceleration vector does the same for the velocity vector.</p>
+			
+			<p>Tags: Calculus, Differential Equations, Dynamical Systems</p>
 		</div>
 	</div>
 	
@@ -537,14 +559,10 @@
 			<p>Incidentally, the Electoral College also distorts results by directly giving a disproportionately large amount of weight to smaller states (and the Senate does the same thing to an even greater extent), but even if each state were to receive representation proportional to their population, the winner-take-all aspect of the election would still distort results. Among other things it tends to push out third party candidates, since the only way for a small party to win even a single seat would be to have a large enough amount of support concentrated in a single district to achieve a plurality there.</p>
 			
 			<p>The net effect of all of this is that the geographic distribution of a party's voters can determine the party's success in an election. This also makes the system susceptible to things like <a href="https://en.wikipedia.org/wiki/Gerrymandering" target="_blank">gerrymandering</a>, wherein electoral districts are drawn to intentionally distort results in favor of one party, but as this demonstration shows it can also occur even without intentional interference. There are different electoral systems, like <a href="https://en.wikipedia.org/wiki/Direct_representation" target="_blank">direct representation</a> and <a href="https://en.wikipedia.org/wiki/Mixed-member_proportional_representation" target="_blank">mixed-member proportional representation</a>, which are immune to these issues, but at least within the United States a person's voting power is largely determined simply by where they happen to live.</p>
+			
+			<p>Tags: Mathematical Modeling, Voting Theory</p>
 		</div>
 	</div>
-	
-	<!-- Joke message for if the user picks the "Boring Math" category. -->
-	<p class="tab" id="boring-message">No such thing exists.</p>
-	
-	<!-- Run script once on page load to generate the initial tally. -->
-	<script>filter("tally")</script>
 
 	<footer>
 		<hr>
