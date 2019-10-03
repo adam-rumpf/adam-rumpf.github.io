@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="styles.css">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<base href="https://adam-rumpf.github.io/">
-	<script src="/js/random_project.js"></script> <!-- Random project generation script. -->
 </head>
 
 <body>
@@ -42,7 +41,7 @@
 	
 	<p>This page contains links to my research papers and related material, including computer code, most of which is available through my <a href="https://github.com/adam-rumpf" target="_blank">GitHub account</a>. I have also included some guides and other resources written for my own personal reference while working on projects. You may find them useful as a brief introduction to a topic.</p>
 	
-	<p>Coming up with interesting ideas for research projects can be difficult, so here is a handy idea button: <button type="button" style="background-color: #d0d0d0" onclick="random_project('research_idea')">Idea</button></p>
+	<p>Coming up with interesting ideas for research projects can be difficult, so here is a handy idea button: <button type="button" style="background-color: #d0d0d0" onclick="random_project()">Idea</button></p>
 	
 	<!-- Empty space for random project idea (automatically filled on page load). -->
 	<p class="tab" id="research_idea"> </p>
@@ -157,8 +156,8 @@
 		</div>
 	</div>
 	
-	<!-- Run script once on page load to generate an initial idea. -->
-	<script>random_project()</script>
+	<!-- Random project generation script. -->
+	<script src="/js/random_project.js"></script>
 
 	<footer>
 		<hr>
