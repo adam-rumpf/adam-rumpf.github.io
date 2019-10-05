@@ -82,6 +82,12 @@ h1
 	font-size: 24px;
 }
 
+/* Header 2 */
+h2
+{
+	font-size: 20px;
+}
+
 /* indented */
 .tab
 {
