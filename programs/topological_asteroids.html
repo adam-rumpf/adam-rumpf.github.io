@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>Adam Rumpf: Cellular Automata Program</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Adam Rumpf">
+	<meta name="description" content="Adam Rumpf: Topological Asteroids game">
+	<link rel="stylesheet" href="../styles.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<base href="https://adam-rumpf.github.io/">
+</head>
+
+<body>
+	<header>
+		Adam Rumpf: Math Person
+	</header>
+	
+	<div class="navbar">
+		<a href="https://adam-rumpf.github.io/">Home</a>
+		<a href="cv.html">CV</a>
+		<a href="teaching.html">Teaching</a>
+		<a href="research.html">Research</a>
+		<div class="dropdown">
+			<button class="dropbtn" id="current">
+				Programs...
+			</button>
+			<div class="dropdown-content">
+				<p><a href="programs/mathematica.html">Mathematica Class Demonstrations</a></p>
+				<p><a href="programs/cellular_automata.html">Cellular Automata</a></p>
+				<p><a href="programs/logic_circuits.html">Logic Circuits</a></p>
+				<p><a href="programs/topological_asteroids.html" id="current">Topological Asteroids</a></p>
+			</div>
+		</div>
+		<a href="papercraft.html">Papercraft</a>
+		<a href="links.html">Links</a>
+	</div>
+	
+	<br/>
+	
+	<h1>Topological Asteroids</h1>
+	
+	<iframe src="https://itch.io/embed/667059?link_color=ff0000" width="208" height="167" frameborder="0"><a href="https://adam-rumpf.itch.io/topological-asteroids">Topological Asteroids by Adam Rumpf</a></iframe>
+	
+	<p><a href="https://github.com/adam-rumpf/topological-asteroids">GitHub Link</a></p>
+	
+	<p>This is a game based on the classic 1979 Atari arcade game <a href="https://en.wikipedia.org/wiki/Asteroids_(video_game)"><i>Asteroids</i></a>, in which the player controls a ship and attempts to avoid and destroy asteroids floating around in space. The original arcade game takes place on a torus, with both the player's ship and the asteroids wrapping around from one side of the screen to the other, requiring the player to develop an intuitive understanding of how the game's space connects to itself in order to effectively play.</p>
+	
+	<p>In this variant of the game, the player can choose from six different topological surfaces (the torus, Klein bottle, sphere, real projective plane, cylinder, and Möbius strip) to play on. All of these spaces wrap around in one or two directions, but some of them mirror or rotate objects as they move across edges, meaning that the player (and their controls) can become mirrored. It is possible to interpret each space as either consisting of a single screen whose edges connect to each other, or as an infinite array of tiles that fill the Euclidean plane. In order to better view these two interpretations, the camera can be adjusted to either remain fixed in space or follow the player.</p>
+	
+	<p>This game was developed in <a href="https://www.yoyogames.com/gamemaker">GameMaker Studio 2</a>. Whatever educational merit it may have, I mostly just made it as a way of getting back into my younger self's hobby of independent game design after finishing grad school. It is available for free on my <a href="https://adam-rumpf.itch.io/topological-asteroids">itch.io page</a>, and the source code is available under the <a href="https://github.com/adam-rumpf/topological-asteroids/blob/master/LICENSE">MIT license</a> at my <a href="https://github.com/adam-rumpf/topological-asteroids">GitHub page</a>. Please feel free to modify it in any way you wish.</p>
+	
+	<h2>Screenshots</h2>
+	
+	<p class="center"><img src="images/asteroids/torus_01.jpg" alt="Torus Gameplay" width="300px"/> <img src="images/asteroids/rpp_01.jpg" alt="Real Projective Plane Gameplay" width="300px"/> <img src="images/asteroids/sphere_01.jpg" alt="Sphere Gameplay" width="300px"/></p>
+	
+	<h2>Background</h2>
+	
+	<p>This project was largely inspired by the freeware program <a href="http://www.geometrygames.org/TorusGames/index.html"><i>Torus Games</i></a>, by Jeff Weeks. Jeff has <a href="http://www.geometrygames.org">an entire website</a> devoted to interesting games and other interactive programs for illustrating abstract mathematical concepts, and anyone who knows me knows that I'm all about that. <i>Torus Games</i> allows players to explore how familiar games work differently when space connects to itself differently. Whereas most board games that we are used to have finite boundaries, on a <a href="https://en.wikipedia.org/wiki/Torus">torus</a> the edges "wrap around", and things that leave through one edge seem to reappear at the opposite edge. My goal with this project was to do something along the lines of <i>Torus Games</i>, but to explore more exotic topological spaces than just the torus, and to do so using an action game rather than a puzzle game.</p>
+	
+	<p>The torus is one of the simplest topological spaces to understand (outside of the disk and the Euclidean plane). It is also fairly easy to program around, since in general it just requires resetting the coordinates of an object that moves off of the screen so that it reappears at the other side. One useful way of describing how a topological surface connects to itself is through use of its <a href="https://en.wikipedia.org/wiki/Fundamental_polygon">fundamental polygon</a>. In the case of the torus, we can draw this as a parallelogram whose opposite sides are identified with each other, like in the following picture:</p>
+	
+	<p class="center"><img src="images/asteroids/polygon_torus.png" alt="Torus" width="200px"/></p>
+	
+	<p>In this picture, edges with the same color are meant to represent the same points in space. For example, the left and right sides of the square are both red, meaning that an object located at the left edge of the square is, somehow, also simultaneously located at the right edge. This is because the torus "wraps around" to meet itself. If you travel far enough in a straight line on a torus you will eventually end up back where you started. Likewise, the top and bottom edges also represent the same set of points.</p>
+	
+	<p>There are a couple of different ways to interpret the fundamental polygon. One is to imagine that the polygon represents the entire 2D space, by itself, and that a person living on the torus whom walked off of one edge would suddenly warp to the other edge, as if going through a <a href="https://en.wikipedia.org/wiki/Portal_(video_game)">portal</a>. From that person's perspective, though, everything would appear to be continuous, and there would be no way to tell where the boundaries of the polygon were. In fact, if they were to look towards the right side of the polygon, they would see the back of their own head, since some of the light reflecting off of them would travel to the left to wrap around and meet their own eye. In this way we can think of the fundamental polygon as being something that we can tile infinitely many copies of to fill all of 2D space, as in the following picture:</p>
+	
+	<p class="center"><img src="images/asteroids/polygon_torus_tile.png" alt="Cylinder" width="400px"/></p>
+	
+	<p>Because of the way that the torus connects to itself, it can be thought of as repeating itself infinitely in two different directions. The one-directional version of this would be the cylinder, whose fundamental polygon looks like this:</p>
+	
+	<p class="center"><img src="images/asteroids/polygon_cylinder.png" alt="Cylinder" width="200px"/></p>
+	
+	<p>Like the torus, the cylinder also wraps around to meet itself. Unlike the torus, the cylinder has two edges representing a boundary that cannot be crossed while still remaining on the surface. We can easily imagine creating a model cylinder by taking a square marked like the above picture, curling it into a loop, and gluing the opposite edges together so that the half-arrows match up to create a full arrow. If we could somehow bend the square to then also glue the <i>other</i> set of opposite edges together, we would get a doughnut-shaped torus.</p>
+	
+	<p>The way in which the torus and the cylinder identify coordinates with each other represents only a geometric translation, meaning that objects that leave one edge reappear at the opposite edge in the same orientation, and with only one of their coordinates (x or y) changing. There are more complicated spaces for which this is not the case, for example the <a href="https://en.wikipedia.org/wiki/M%C3%B6bius_strip">Möbius strip</a>, whose fundamental polygon is:</p>
+	
+	<p class="center"><img src="images/asteroids/polygon_mobius.png" alt="Möbius Strip" width="200px"/></p>
+	
+	<p>A Möbius strip can be modeled by taking a square marked like the above picture and then gluing the opposite edges together so that the half-arrows have the same orientation. Because they point in opposite directions in this picture, we need to give the square a half-twist so that one of the arrows is flipped upside-down to meet the other. Like the cylinder this identifies one set of opposite sides with each other, but unlike the cylinder this half-twist results in the orientation reversing. If an object leaves one of the red edges here, it will reappear at the opposite edge, but mirrored over the horizontal line. From the object's perspective, however, it will remain in the same orientation the entire time, and it is instead the space around it that would reverse orientation.</p>
+	
+	<p>Considering all of the possible ways for us to identify the four edges of a square with each other, we can create a total of four unique topological spaces. Not counting the torus, the other three possibilities are:</p>
+	
+	<p class="center"><img src="images/asteroids/polygon_klein.png" alt="Klein Bottle" width="200px"/> <img src="images/asteroids/polygon_sphere.png" alt="Sphere" width="200px"/> <img src="images/asteroids/polygon_rpp.png" alt="Real Projective Plane" width="200px"/></p>
+	
+	<p>From left to right, these are the <a href="https://en.wikipedia.org/wiki/Klein_bottle">Klein bottle</a> (which is effectively like a cylinder in one direction and a Möbius strip in the other direction), the sphere (with poles located at the corners where the same colors meet), and the <a href="https://en.wikipedia.org/wiki/Real_projective_plane">real projective plane</a> (which is effectively like a Möbius strip in two different directions). All of these polygons can be used to tile the plane, but they involve different patterns of symmetry reversal and rotations.</p>
+	
+	<h2>Design Notes</h2>
+	
+	<p>If you happen to look through this game's source code I am certain that you will find many more efficient ways to do things, but in case you are curious about how I got this game to work, here is a brief explanation. Each of the different surfaces is contained in its own game room. Within each of these rooms is a 4 x 4 array of fundamental polygons, similar to the example shown above for the torus, but with some of the polygons being reflected or rotated depending on the type of surface. Every object in the game (the player, the asteroids, bullets, etc.) is actually made up of a single master object that spawns and keeps track of 16 copies, one for each polygon. Whenever two objects need to interact with each other (for example when a bullet hits an asteroid), a signal is sent to both objects' controllers, which then tell all of the copies to simultaneously react in exactly the same way. This is how all of the copies remain synchronized, even if minor numerical errors might cause some collisions to register while others narrowly miss.</p>
+	
+	<p>In the original arcade game, although the player's ship wraps around the edges, their bullets do not. Since I knew that I would want to be able to have the camera follow the player, having bullets disappear at the edges of the screen would not have made sense, and so I also made the bullets wrap around, disappearing on their own after a limited amount of time. This meant that, unlike the original arcade game, it was possible for the player to collide with their own bullets, and so I was presented with the choice to either have the player ignore their own bullets or be killed by them. I chose to have the player be killed by their own bullets, partly because this led to more challenging gameplay, but mostly because it was funnier.</p>
+	
+	<p>Also in the original arcade game, although the asteroids wrap around the edges after they enter the game, new asteroids spawn into the game by simply drifting in from the edges. This does not really make sense from a topological perspective since it is unclear where exactly the asteroids are coming from. If the main screen were simply a small square in the Euclidean plane, then presumably the asteroids had always existed and were simply drifting into view, but on a torus there <i>is</i> nothing outside of the main screen, so any object drifting in from one edge would need to have already existed and drifted out through the opposite edge. In order to get around this I had to allow the asteroids to spawn within the play area at a randomly-chosen position in the polygon, preceded by a warning image so that the player would know to avoid the spot.</p>
+	
+	<p>The graphics in this game fall firmly into the category of <a>programmer art</a>, but I am generally pretty happy with how the sprites turned out. The player's ship went through a few iterations. It began as a simple chevron, but due to the possibility of reflection, it was necessary to give the image some <a href="https://en.wikipedia.org/wiki/Chirality">chirality</a> in order to more easily tell when it had been reversed. To help with this I added an <a href="https://starwars.fandom.com/wiki/Millennium_Falcon">off-center cockpit</a> as well as some text that could be immediately recognized as mirrored. My usual go-to text for making rotations and reflections more obvious is <a href="https://adam-rumpf.github.io/programs/mathematica.html#linear-transformations">the letter <b>F</b></a>, but that seemed a bit odd to write on a ship, so instead I went with the number </b>64</b> (which is the size of the ship's sprite in pixels).</p>
+	
+	<p class="center"><img src="images/asteroids/ships.png" alt="Ship Evolution" width="512px"/></p>
+	
+	<p>Due to the large number of objects on screen at any given time I wanted to keep the asteroids' hitboxes as simple as possible, meaning just rotating squares. The shapes of the asteroid graphics were made to mimic this as closely as possible. The lines of light near the edges were meant to look like areas of light and shadow on a rock, but combined with their squareness and transparency it makes them look more like giant ice cubes, which I kind of liked, so I left it in.</p>
+
+	<footer>
+		<hr>
+		© 2020 <a href="mailto:arumpf@hawk.iit.edu">Adam Rumpf</a>
+	</footer>
+</body>
+</html>
