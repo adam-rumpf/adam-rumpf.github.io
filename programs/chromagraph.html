@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>Adam Rumpf: Chromagraph</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Adam Rumpf">
+	<meta name="description" content="Adam Rumpf: Chromagraph game">
+	<link rel="stylesheet" href="../styles.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<base href="https://adam-rumpf.github.io/">
+</head>
+
+<body>
+	<header>
+		Adam Rumpf: Math Person
+	</header>
+	
+	<div class="navbar">
+		<a href="https://adam-rumpf.github.io/">Home</a>
+		<a href="cv.html">CV</a>
+		<a href="teaching.html">Teaching</a>
+		<a href="research.html">Research</a>
+		<div class="dropdown">
+			<button class="dropbtn" id="current">
+				Programs...
+			</button>
+			<div class="dropdown-content">
+				<p><a href="programs/mathematica.html">Mathematica Class Demonstrations</a></p>
+				<p><a href="programs/cellular_automata.html">Cellular Automata</a></p>
+				<p><a href="programs/chromagraph.html" id="current">Chromagraph</a></p>
+				<p><a href="programs/logic_circuits.html">Logic Circuits</a></p>
+				<p><a href="programs/topological_asteroids.html">Topological Asteroids</a></p>
+			</div>
+		</div>
+		<a href="papercraft.html">Papercraft</a>
+		<a href="links.html">Links</a>
+	</div>
+	
+	<br/>
+	
+	<h1>Chromagraph</h1>
+	
+	<iframe src="https://itch.io/embed/710968?linkback=true&amp;bg_color=b7ab92&amp;fg_color=222222&amp;link_color=5b8355&amp;border_color=968975" width="552" height="167" frameborder="0"><a href="https://adam-rumpf.itch.io/chromagraph">Chromagraph by Adam Rumpf</a></iframe>
+	
+	<p><a href="https://github.com/adam-rumpf/chromagraph">GitHub Link</a></p>
+	
+	<p>This is a minimalist puzzle game that explores a variety of <a href="https://en.wikipedia.org/wiki/Graph_coloring">graph coloring</a> problems. The goal of each puzzle is to color the given graph according to a particular set of rules. Simply point and click to cycle components of the graph through different states.</p>
+	
+	<p>A <a href="https://en.wikipedia.org/wiki/Graph_theory">graph</a> (also known as a network) is a mathematical object used to represent pairwise relationships. We encounter graphs constantly in our everyday lives, and they can be used to represent an endless variety of physical and abstract structures ranging from social connections to infrastructure networks to biological pathways to digital data structures to symmetric systems of sets, just to name a few.</p>
+	
+	<p>This game is divided into several sections, each of which follows a different set of rules regarding which elements can be colored and what criteria must be met in order to solve the puzzle. Part of the challenge lies in figuring out what, exactly, the rules are in each of these sections, which will require observation and experimentation.</p>
+	
+	<p>This game was developed in <a href="https://www.yoyogames.com/gamemaker">GameMaker Studio 2</a>. It is available for free on my <a href="https://adam-rumpf.itch.io/chromagraph">itch.io page</a>, and the source code is available under the <a href="https://github.com/adam-rumpf/chromagraph/blob/master/LICENSE">MIT license</a> at my <a href="https://github.com/adam-rumpf/chromagraph">GitHub page</a>. Please feel free to modify it in any way you wish.</p>
+	
+	<h2>Screenshots</h2>
+	
+	<p class="center">
+		<img src="images/chromagraph/screen_dart.png" alt="Dart Graph" width="300px"/>
+		<img src="images/chromagraph/screen_petersen.png" alt="Petersen Graph" width="300px"/>
+		<img src="images/chromagraph/screen_capsule_triangle.png" alt="Graph of Triangles" width="300px"/>
+		<img src="images/chromagraph/screen_grid.png" alt="Grid Graph" width="300px"/>
+		<img src="images/chromagraph/screen_snowflake.png" alt="Tree Graph" width="300px"/>
+	</p>
+	
+	<h2>Background</h2>
+	
+	<!--
+		Motivation
+		Gameplay inspiration
+		Mathematical background
+	-->
+	
+	<!--
+		-Mention that I won't go into too much detail about the specific contents of the puzzle since I'd like for you to figure it out for yourself.
+		-Explain why graph theory is so close to my heart. Link to my <a href="research.html" id="current">research</a> and <a href="teaching.html#story">my origin story</a>. Discuss my reasons for why I think that graph theory belongs in elementary education, including its practical utility, its accessibility, its similarity to childrens' puzzles, and the fact that it would help to dispel the idea that math is only about numbers and calculations at an early enough age for that idea to never take root in the first place.
+		-Since this page is about mathematical background, also mention a few applications of graph coloring, notably scheduling. Maybe even go so far as to explain exactly how one might set up such a puzzle.
+		-As with many of my game ideas, this originally came from me trying to think of interesting mathematical puzzles to put into my <a href="https://www.d20pfsrd.com/">D &amp D</a> games. I tend to like puzzles that include inductive reasoning, where figuring out how the puzzle works by playing around with it is part of the puzzle.
+		-Mention a few important graph coloring applications, and the NP-hardness of many related problems.
+		-Gameplay-wise, inspired by <a href="https://2dboy.com/">World of Goo</a> and <a href="http://the-witness.net/">The Witness</a>. The fact that they are both puzzle games that are (basically) about graphs is purely incidental, it's more just that I think they're both incredibly well-designed games that do a great job of getting the player to figure out for themself what needs to be done through observation and experimentation, and they both have fairly minimal instructions.
+		-Only talk about a few of the specific graph coloring concepts, since talking about all of them would be a spoiler. The obvious ones to mention are vertex coloring and edge coloring, and then possibly also discuss a few things that can be defined using the same system, like dominating set. Also mention that one of the included puzzles is there mostly because it's a problem that one of my colleagues has done a lot of work on.
+	-->
+	
+	<h2>Design Notes</h2>
+	
+	<!--
+		How I chose which puzzles to include, and its relation to the visual design
+		Minimalism
+		Number system
+		Backgrounds
+		Sound effects
+	-->
+	
+	<!--
+		-Original idea to include a much broader array of graph concepts, and to include the same number of each puzzle type, and to have all of them merge in sets of two. For simplicity I stuck to the theme of coloring and things that could be conveyed through coloring, and also freed myself from the exact structural restrictions of the overall game.
+		-Discuss design of number system. I would have liked to exclude it, but I really wanted the graceful trees puzzles, and those require numbers. Plus, they help for colorblind accessibility. I wanted something that seemed alien (so not <a href="https://en.wikipedia.org/wiki/Roman_numerals">Roman numerals</a> or <a href="https://en.wikipedia.org/wiki/Arabic_numerals">Arabic numerals</a>), but would be easily recognized from any angle (since the edges could be oriented in any direction). The original design was dots connected into a complete graph, which radiated out by one layer every time it ticked over 10. This made it extremely difficult to discern values near 10. Other options included only going up to 8 and leaving a large dot in the middle for base-8 counting. The edge equivalent of this would have been a complete bipartite graph. I also thought about Mayan numerals, with combinations of dots and lines. Then I thought about <a href="https://en.wikipedia.org/wiki/Figurate_number">figurate numbers</a> and <a href="https://en.wikipedia.org/wiki/Circle_packing_in_a_circle">circle packings</a>. I went with circle packings because I like the idea of sneaking another mathematical concept into the game, and because dots can easibly be repeated for the edges as well as the vertices. It is difficult to visually distinguish large numbers that way, but the only puzzle type where that matters is graceful trees, for which all vertex labels differ by at least 2 (all being odd numbers) which helps to make them more distinct. It is difficult to count large masses of dots on circles and edges, but the exact number is not as important as just being able to see which are bigger than others and approximately by how much.
+		-<a href="https://en.wikipedia.org/wiki/Kaktovik_Inupiaq_numerals">Kaktovik Iñupiaq numerals</a>, interests in linguistics
+		-The visual design of the puzzle game and the puzzle mechanisms informed each other a lot. I wanted a very minimalistic GUI. I tried to choose puzzles whose rules could be entirely communicated by experimentation on the graph, itself. The minimal required feedback I decided on would be to immediately point out if any vertex or edge label caused a rule to be violated. For dominating set I decided to also strictly enforce the vertex limit since otherwise it might be too difficult to tell what the rules were. Originally I had planned to have some meters and things at the side of the graph to indicate things like the vertex budget or the fact that we want to create triangles, but I wanted to try to make the visual design as clean and consistent as possible, so I made efforts to have the puzzle progression, itself, teach what the rules are, for example beginning the triangle decomposition series with a few puzzles that make it obvious that we're trying to make triangles. I had also wanted for all of the vertex and edge label numbers to consistently correspond to a particular color, using both as a means of colorblind accessability, but I also thought that using separate colors might be too confusing in graceful trees, so that's the only puzzle series where the dot numbers are all colored the same, in order to make it more clear that the numbers are what is important to pay attention to.
+		-Explain what some of the sound effects are.
+		-Mention how the backgrounds were created in <a href="https://www.gimp.org/">GIMP</a>.
+	-->
+	
+	<footer>
+		<hr>
+		© 2020 <a href="mailto:arumpf@hawk.iit.edu">Adam Rumpf</a>
+	</footer>
+</body>
+</html>
