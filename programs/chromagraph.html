@@ -41,17 +41,17 @@
 	
 	<h1>Chromagraph</h1>
 	
-	<iframe src="https://itch.io/embed/710968?linkback=true&amp;bg_color=b7ab92&amp;fg_color=222222&amp;link_color=5b8355&amp;border_color=968975" width="552" height="167" frameborder="0"><a href="https://adam-rumpf.itch.io/chromagraph">Chromagraph by Adam Rumpf</a></iframe>
+	<iframe src="https://itch.io/embed/710968?linkback=true&amp;bg_color=655d52&amp;fg_color=222222&amp;link_color=5b8355&amp;border_color=302c28" width="552" height="167" frameborder="0"><a href="https://adam-rumpf.itch.io/chromagraph">Chromagraph by Adam Rumpf</a></iframe>
 	
 	<p><a href="https://github.com/adam-rumpf/chromagraph">GitHub Link</a></p>
 	
-	<p>This is a minimalist puzzle game that explores a variety of <a href="https://en.wikipedia.org/wiki/Graph_coloring">graph coloring</a> problems. The goal of each puzzle is to color the given graph according to a particular set of rules. Simply point and click to cycle components of the graph through different states.</p>
+	<p>This is a minimalist puzzle game that explores a variety of <a href="https://en.wikipedia.org/wiki/Graph_coloring">graph coloring</a> problems. The goal of each puzzle is to color the given graph according to a particular set of rules. The game is meant to be accessible to everyone and does not require any mathematical background.</p>
 	
 	<p>A <a href="https://en.wikipedia.org/wiki/Graph_theory">graph</a> (also known as a network) is a mathematical object used to represent pairwise relationships. We encounter graphs constantly in our everyday lives, and they can be used to represent an endless variety of physical and abstract structures ranging from social connections to infrastructure networks to biological pathways to digital data structures to symmetric systems of sets, just to name a few.</p>
 	
 	<p>The game is divided into several sections, each of which follows a different set of rules regarding which elements can be colored and what criteria must be met in order to solve the puzzle. Part of the challenge lies in figuring out what, exactly, the rules are in each of these sections, which will require observation and experimentation.</p>
 	
-	<p>This game was developed in <a href="https://www.yoyogames.com/gamemaker">GameMaker Studio 2</a>. It is available for free on my <a href="https://adam-rumpf.itch.io/chromagraph">itch.io page</a>, and the source code is available under the <a href="https://github.com/adam-rumpf/chromagraph/blob/master/LICENSE">MIT license</a> at my <a href="https://github.com/adam-rumpf/chromagraph">GitHub page</a>. Please feel free to modify it in any way you wish.</p>
+	<p>This game was developed in <a href="https://www.yoyogames.com/gamemaker">GameMaker Studio 2</a>. It is available for free at my <a href="https://adam-rumpf.itch.io/chromagraph">itch.io page</a>, and the source code is available under the <a href="https://github.com/adam-rumpf/chromagraph/blob/master/LICENSE">MIT license</a> at my <a href="https://github.com/adam-rumpf/chromagraph">GitHub page</a>. Please feel free to modify it in any way you wish.</p>
 	
 	<!-- Screenshots -->
 	
@@ -59,7 +59,7 @@
 	
 	<p class="center">
 		<img src="images/chromagraph/screen_dart.png" alt="Dart Graph" width="300px"/>
-		<img src="images/chromagraph/screen_petersen.png" alt="Petersen Graph" width="300px"/>
+		<img src="images/chromagraph/screen_petersen_edge.png" alt="Petersen Graph" width="300px"/>
 		<img src="images/chromagraph/screen_capsule_triangle.png" alt="Graph of Triangles" width="300px"/>
 		<img src="images/chromagraph/screen_grid.png" alt="Grid Graph" width="300px"/>
 		<img src="images/chromagraph/screen_snowflake.png" alt="Tree Graph" width="300px"/>
@@ -69,15 +69,17 @@
 	
 	<h2>Background</h2>
 	
+	<p>Graphs are great.</p>
+	
 	<!--
-		Motivation
-		Gameplay inspiration
-		Mathematical background
+		Mathematical background, argument for teaching graph theory early
+		Motivation for making this game
 	-->
 	
-	<p class="center"><img src="images/chromagraph/dnd_puzzle.jpg" alt="D&amp;D Puzzle" width="400px"/></p>
+	<p class="center"><img src="images/chromagraph/dnd_puzzle.jpg" alt="D&amp;D Puzzle" width="450px"/></p>
 	
 	<!--
+		-Briefly explain what a graph is and why they are such a point of interest for me.
 		-The D&D campaign was really the beginning of this puzzle. I wanted the campaign to be very "me", and I generally think very little of "typical" RPG puzzles. I wanted mathematical concepts to permeate every aspect of the game, and I had an explicit design goal to include at least one mathematical challenge (not necessarily a puzzle) within every mission of the campaign. (Then lead into the inductive logic approach and the independent set puzzle with the door feedback.)
 		-Mention that I won't go into too much detail about the specific contents of the puzzle since I'd like for you to figure it out for yourself.
 		-Explain why graph theory is so close to my heart. Link to my <a href="research.html" id="current">research</a> and <a href="teaching.html#story">my origin story</a>. Discuss my reasons for why I think that graph theory belongs in elementary education, including its practical utility, its accessibility, its similarity to childrens' puzzles, and the fact that it would help to dispel the idea that math is only about numbers and calculations at an early enough age for that idea to never take root in the first place.
@@ -86,6 +88,7 @@
 		-Mention a few important graph coloring applications, and the NP-hardness of many related problems.
 		-Gameplay-wise, inspired by <a href="https://2dboy.com/">World of Goo</a> and <a href="http://the-witness.net/">The Witness</a>. The fact that they are both puzzle games that are (basically) about graphs is purely incidental, it's more just that I think they're both incredibly well-designed games that do a great job of getting the player to figure out for themself what needs to be done through observation and experimentation, and they both have fairly minimal instructions.
 		-Only talk about a few of the specific graph coloring concepts, since talking about all of them would be a spoiler. The obvious ones to mention are vertex coloring and edge coloring, and then possibly also discuss a few things that can be defined using the same system, like dominating set. Also mention that one of the included puzzles is there mostly because it's a problem that one of my colleagues has done a lot of work on.
+		-Original idea to include a much broader array of graph concepts, and to include the same number of each puzzle type, and to have all of them merge in sets of two. For simplicity I stuck to the theme of coloring and things that could be conveyed through coloring (like partitioning and labeling), and also freed myself from the exact structural restrictions of the overall game.
 	-->
 	
 	<!-- Design Notes -->
@@ -100,12 +103,13 @@
 		Sound effects
 	-->
 	
+	<p class="center"><img src="images/chromagraph/circle_packings.png" alt="Circle Packings" width="600px"/></p>
+	
 	<!--
-		-Original idea to include a much broader array of graph concepts, and to include the same number of each puzzle type, and to have all of them merge in sets of two. For simplicity I stuck to the theme of coloring and things that could be conveyed through coloring, and also freed myself from the exact structural restrictions of the overall game.
 		-I wanted the entire game to look dynamic to avoid looking too static and boring, as would be easy for a puzzle game, without making anything too distracting. This is why the vertex and edge labels slowly pulsate and rotate, and why I added some atmospheric particle effects.
-		-Discuss design of number system. I would have liked to exclude it, but I really wanted the graceful trees puzzles, and those require numbers. Plus, they help for colorblind accessibility. I wanted something that seemed alien (so not <a href="https://en.wikipedia.org/wiki/Roman_numerals">Roman numerals</a> or <a href="https://en.wikipedia.org/wiki/Arabic_numerals">Arabic numerals</a>), but would be easily recognized from any angle (since the edges could be oriented in any direction). The original design was dots connected into a complete graph, which radiated out by one layer every time it ticked over 10. This made it extremely difficult to discern values near 10. Other options included only going up to 8 and leaving a large dot in the middle for base-8 counting. The edge equivalent of this would have been a complete bipartite graph. I also thought about Mayan numerals, with combinations of dots and lines. Then I thought about <a href="https://en.wikipedia.org/wiki/Figurate_number">figurate numbers</a> and <a href="https://en.wikipedia.org/wiki/Circle_packing_in_a_circle">circle packings</a>. I went with circle packings because I like the idea of sneaking another mathematical concept into the game, and because dots can easibly be repeated for the edges as well as the vertices. It is difficult to visually distinguish large numbers that way, but the only puzzle type where that matters is graceful trees, for which all vertex labels differ by at least 2 (all being odd numbers) which helps to make them more distinct. It is difficult to count large masses of dots on circles and edges, but the exact number is not as important as just being able to see which are bigger than others and approximately by how much.
+		-Discuss design of number system. It's there partly for colorblind support but mostly because exactly one of the puzzle types actually depends on the numerical labels. I would have liked to exclude it, but I really wanted the graceful trees puzzles, and those require numbers. Plus, they help for colorblind accessibility. I wanted something that seemed alien (so not <a href="https://en.wikipedia.org/wiki/Roman_numerals">Roman numerals</a> or <a href="https://en.wikipedia.org/wiki/Arabic_numerals">Arabic numerals</a>), but would be easily recognized from any angle (since the edges could be oriented in any direction). The original design was dots connected into a complete graph, which radiated out by one layer every time it ticked over 10. This made it extremely difficult to discern values near 10. Other options included only going up to 8 and leaving a large dot in the middle for base-8 counting. The edge equivalent of this would have been a complete bipartite graph. I also thought about Mayan numerals, with combinations of dots and lines. Then I thought about <a href="https://en.wikipedia.org/wiki/Figurate_number">figurate numbers</a> and <a href="https://en.wikipedia.org/wiki/Circle_packing_in_a_circle">circle packings</a>. I went with circle packings because I like the idea of sneaking another mathematical concept into the game, and because dots can easily be repeated for the edges as well as the vertices. It is difficult to visually distinguish large numbers that way, but the only puzzle type where that matters is graceful trees, for which all vertex labels differ by at least 2 (all being odd numbers) which helps to make them more distinct. It is difficult to count large masses of dots on circles and edges, but the exact number is not as important as just being able to see which are bigger than others and approximately by how much.
 		-<a href="https://en.wikipedia.org/wiki/Kaktovik_Inupiaq_numerals">Kaktovik Iñupiaq numerals</a>, interests in linguistics
-		-The visual design of the puzzle game and the puzzle mechanisms informed each other a lot. I wanted a very minimalistic GUI. I tried to choose puzzles whose rules could be entirely communicated by experimentation on the graph, itself. The minimal required feedback I decided on would be to immediately point out if any vertex or edge label caused a rule to be violated. For dominating set I decided to also strictly enforce the vertex limit since otherwise it might be too difficult to tell what the rules were. Originally I had planned to have some meters and things at the side of the graph to indicate things like the vertex budget or the fact that we want to create triangles, but I wanted to try to make the visual design as clean and consistent as possible, so I made efforts to have the puzzle progression, itself, teach what the rules are, for example beginning the triangle decomposition series with a few puzzles that make it obvious that we're trying to make triangles. I had also wanted for all of the vertex and edge label numbers to consistently correspond to a particular color, using both as a means of colorblind accessability, but I also thought that using separate colors might be too confusing in graceful trees, so that's the only puzzle series where the dot numbers are all colored the same, in order to make it more clear that the numbers are what is important to pay attention to.
+		-The visual design of the puzzle game and the puzzle mechanisms informed each other a lot. I wanted a very minimalist GUI. I tried to choose puzzles whose rules could be entirely communicated by experimentation on the graph, itself. The minimal required feedback I decided on would be to immediately point out if any vertex or edge label caused a rule to be violated. For dominating set I decided to also strictly enforce the vertex limit since otherwise it might be too difficult to tell what the rules were. Originally I had planned to have some meters and things at the side of the graph to indicate things like the vertex budget or the fact that we want to create triangles, but I wanted to try to make the visual design as clean and consistent as possible, so I made efforts to have the puzzle progression, itself, teach what the rules are, for example beginning the triangle decomposition series with a few puzzles that make it obvious that we're trying to make triangles. I had also wanted for all of the vertex and edge label numbers to consistently correspond to a particular color, using both as a means of colorblind accessibility, but I also thought that using separate colors might be too confusing in graceful trees, so that's the only puzzle series where the dot numbers are all colored the same, in order to make it more clear that the numbers are what is important to pay attention to.
 		-Explain what some of the sound effects are. The color cycling sound is me exhaling. The "incorrect" rumbling sound is a <a href="https://freesound.org/people/cognito%20perceptu/sounds/181868/">train screeching</a>.
 		-Mention how the backgrounds were created in <a href="https://www.gimp.org/">GIMP</a>.
 	-->
