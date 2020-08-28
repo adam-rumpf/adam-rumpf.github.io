@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
 	<meta charset="utf-8">
-	<title>Adam Rumpf: Cellular Automata Program</title>
+	<title>Adam Rumpf: Topological Asteroids</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Adam Rumpf">
 	<meta name="description" content="Adam Rumpf: Topological Asteroids game">
@@ -28,6 +28,7 @@
 			<div class="dropdown-content">
 				<p><a href="programs/mathematica.html">Mathematica Class Demonstrations</a></p>
 				<p><a href="programs/cellular_automata.html">Cellular Automata</a></p>
+				<p><a href="programs/chromagraph.html">Chromagraph</a></p>
 				<p><a href="programs/logic_circuits.html">Logic Circuits</a></p>
 				<p><a href="programs/topological_asteroids.html" id="current">Topological Asteroids</a></p>
 			</div>
@@ -50,9 +51,13 @@
 	
 	<p>This game was developed in <a href="https://www.yoyogames.com/gamemaker">GameMaker Studio 2</a>. Whatever educational merit it may have, I mostly just made it as a way of getting back into my younger self's hobby of independent game design after finishing grad school. It is available for free at my <a href="https://adam-rumpf.itch.io/topological-asteroids">itch.io page</a>, and the source code is available under the <a href="https://github.com/adam-rumpf/topological-asteroids/blob/master/LICENSE">MIT license</a> at my <a href="https://github.com/adam-rumpf/topological-asteroids">GitHub page</a>. Please feel free to modify it in any way you wish.</p>
 	
+	<!-- Screenshots -->
+	
 	<h2>Screenshots</h2>
 	
 	<p class="center"><img src="images/asteroids/torus_01.jpg" title="Torus Gameplay" width="300px"/> <img src="images/asteroids/rpp_01.jpg" title="Real Projective Plane Gameplay" width="300px"/> <img src="images/asteroids/sphere_01.jpg" title="Sphere Gameplay" width="300px"/></p>
+	
+	<!-- Background -->
 	
 	<h2>Background</h2>
 	
@@ -86,6 +91,8 @@
 	
 	<p>From left to right, these are the <a href="https://en.wikipedia.org/wiki/Klein_bottle">Klein bottle</a> (which is effectively like a cylinder in one direction and a Möbius strip in the other direction), the sphere (with poles located at the corners where the same colors meet), and the <a href="https://en.wikipedia.org/wiki/Real_projective_plane">real projective plane</a> (which is effectively like a Möbius strip in two different directions). All of these polygons can be used to tile the plane, but they involve different patterns of symmetry reversal and rotations.</p>
 	
+	<!-- Design Notes -->
+	
 	<h2>Design Notes</h2>
 	
 	<p>If you happen to look through this game's source code I am certain that you will find many more efficient ways to do things, but in case you are curious about how I got this game to work, here is a brief explanation. Each of the different surfaces is contained in its own game room. Within each of these rooms is a 4 x 4 array of fundamental polygons, similar to the example shown above for the torus, but with some of the polygons being reflected or rotated depending on the type of surface. Every object in the game (the player, the asteroids, bullets, etc.) is actually made up of a single master object that spawns and keeps track of 16 copies, one for each polygon. Whenever two objects need to interact with each other (for example when a bullet hits an asteroid), a signal is sent to both objects' controllers, which then tell all of the copies to simultaneously react in exactly the same way. This is how all of the copies remain synchronized, even if minor numerical errors might cause some collisions to register while others narrowly miss.</p>
@@ -94,7 +101,7 @@
 	
 	<p>Also in the original arcade game, although the asteroids wrap around the edges after they enter the game, new asteroids spawn into the game by simply drifting in from the edges. This does not really make sense from a topological perspective since it is unclear where exactly the asteroids are coming from. If the main screen were simply a small square in the Euclidean plane, then presumably the asteroids had always existed and were simply drifting into view, but on a torus there <i>is</i> nothing outside of the main screen, so any object drifting in from one edge would need to have already existed and drifted out through the opposite edge. In order to get around this I had to allow the asteroids to spawn within the play area at a randomly-chosen position in the polygon, preceded by a warning image so that the player would know to avoid the spot.</p>
 	
-	<p>The graphics in this game fall firmly into the category of <a>programmer art</a>, but I am generally pretty happy with how the sprites turned out. The player's ship went through a few iterations. It began as a simple chevron, but due to the possibility of reflection, it was necessary to give the image some <a href="https://en.wikipedia.org/wiki/Chirality">chirality</a> in order to more easily tell when it had been reversed. To help with this I added an <a href="https://starwars.fandom.com/wiki/Millennium_Falcon">off-center cockpit</a> as well as some text that could be immediately recognized as mirrored. My usual go-to text for making rotations and reflections more obvious is <a href="https://adam-rumpf.github.io/programs/mathematica.html#linear-transformations">the letter <b>F</b></a>, but that seemed a bit odd to write on a ship, so instead I went with the number </b>64</b> (which is the size of the ship's sprite in pixels).</p>
+	<p>The graphics in this game fall firmly into the category of <a>programmer art</a>, but I am generally pretty happy with how the sprites turned out. The player's ship went through a few iterations. It began as a simple chevron, but due to the possibility of reflection, it was necessary to give the image some <a href="https://en.wikipedia.org/wiki/Chirality">chirality</a> in order to more easily tell when it had been reversed. To help with this I added an <a href="https://starwars.fandom.com/wiki/Millennium_Falcon">off-center cockpit</a> as well as some text that could be immediately recognized as mirrored. My usual go-to text for making rotations and reflections more obvious is <a href="https://adam-rumpf.github.io/programs/mathematica.html#linear-transformations">the letter <b>F</b></a>, but that seemed a bit odd to write on a ship, so instead I went with the number <b>64</b> (which is the size of the ship's sprite in pixels).</p>
 	
 	<p class="center"><img src="images/asteroids/ships.png" title="Ship Evolution" width="512px"/></p>
 	
