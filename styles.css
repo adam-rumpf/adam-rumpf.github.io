@@ -67,13 +67,23 @@ body
 {
 	background-color: #f0f0f0;
 	text-align: left;
+	margin: 0px;
 }
 
-/* get standard elements to inherit their colors */
-p, a, h1, h2, h3, h4, img, b, i, u
+/* get standard boxed elements to inherit their colors */
+p, h1, h2, h3, h4, img
 {
 	background-color: inherit;
 	color: inherit;
+	margin: 8px;
+}
+
+/* get standard inline elements to inherit their colors */
+a, b, i, u
+{
+	background-color: inherit;
+	color: inherit;
+	margin: 0px;
 }
 
 /* Header 1 */
@@ -108,7 +118,6 @@ h2
 	border: 3px #d0d0d0 solid;
 	display: block;
 	overflow: auto;
-	padding: 0px 16px;
 }
 
 /* spacer */
@@ -342,7 +351,6 @@ a:hover, a:active
 	color: white;
 	font-family: inherit;
 	font-size: 16px;
-	margin: 0;
 	outline: none;
 	padding: 16px 32px;
 }
@@ -356,6 +364,13 @@ a:hover, a:active
 	/*min-width: 160px;*/
 	position: absolute;
 	z-index: 1;
+	margin: 0;
+}
+
+/* dropdown cells */
+.dropdown-content p
+{
+	margin: 0;
 }
 
 /* dropdown links */
