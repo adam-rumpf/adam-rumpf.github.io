@@ -116,8 +116,8 @@ h2
 /* darkened box */
 .dark
 {
-	background-color: #d0d0d0;
-	border: 3px #d0d0d0 solid;
+	background-color: #181818;
+	border: 3px #181818 solid;
 	display: block;
 	overflow: auto;
 }
