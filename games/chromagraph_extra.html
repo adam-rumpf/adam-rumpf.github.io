@@ -22,16 +22,23 @@
 		<a href="teaching.html">Teaching</a>
 		<a href="research.html">Research</a>
 		<div class="dropdown">
-			<button class="dropbtn" id="current">
+			<button class="dropbtn">
 				Programs...
 			</button>
 			<div class="dropdown-content">
 				<p><a href="programs/mathematica.html">Mathematica Class Demonstrations</a></p>
 				<p><a href="programs/gamemaker_scripts.html">GameMaker Scripts</a></p>
-				<p><a href="programs/cellular_automata.html">Cellular Automata</a></p>
-				<p><a href="programs/chromagraph.html" id="current">Chromagraph</a></p>
 				<p><a href="programs/logic_circuits.html">Logic Circuits</a></p>
-				<p><a href="programs/topological_asteroids.html">Topological Asteroids</a></p>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn" id="current">
+				Games...
+			</button>
+			<div class="dropdown-content">
+				<p><a href="games/cellular_automata.html">Cellular Automata Playground</a></p>
+				<p><a href="games/chromagraph.html" id="current">Chromagraph</a></p>
+				<p><a href="games/topological_asteroids.html">Topological Asteroids</a></p>
 			</div>
 		</div>
 		<a href="papercraft.html">Papercraft</a>
@@ -44,32 +51,32 @@
 	
 	<h2>Spoiler Warning</h2>
 	
-	<p>For those of you interested in learning some more about the specific mathematical concepts included in my puzzle game <a href="programs/chromagraph.html"><i>Chromagraph</i></a>, this page explains some of the graphs and graph theory problems included in the game. The intended experience of <i>Chromagraph</i> is for the player to discover the rules for these problems on their own by playing around with the puzzles to see what works and what doesn't. This page is intended for those whom have already completed the game, and will spoil large portions of its contents.</p>
+	<p>For those of you interested in learning some more about the specific mathematical concepts included in my puzzle game <a href="games/chromagraph.html"><i>Chromagraph</i></a>, this page explains some of the graphs and graph theory problems included in the game. The intended experience of <i>Chromagraph</i> is for the player to discover the rules for these problems on their own by playing around with the puzzles to see what works and what doesn't. This page is intended for those whom have already completed the game, and will spoil large portions of its contents.</p>
 	
 	<!-- Problem Types -->
 	
 	<h1>Graph Theory Problems</h1>
 	
-	<p><a href="https://en.wikipedia.org/wiki/Graph_theory">Graph theory</a> is an extremely broad field and includes a large number of completely different topics. Graphs can be used to represent many different phenomena, and depending on what we are using the graph for there are a lot of different questions that we might want to ask about it. As explained on the <a href="programs/chromagraph.html#background">main project page</a> for this game, graph coloring problems tend to appear whenever the concept of coverage or conflict avoidance is important since their solutions tend to rely on distributing labels over the entire graph in a way that spreads them somewhat evenly.</p>
+	<p><a href="https://en.wikipedia.org/wiki/Graph_theory">Graph theory</a> is an extremely broad field and includes a large number of completely different topics. Graphs can be used to represent many different phenomena, and depending on what we are using the graph for there are a lot of different questions that we might want to ask about it. As explained on the <a href="games/chromagraph.html#background">main project page</a> for this game, graph coloring problems tend to appear whenever the concept of coverage or conflict avoidance is important since their solutions tend to rely on distributing labels over the entire graph in a way that spreads them somewhat evenly.</p>
 	
 	<p>Each of the eight sections of this game consists of puzzles which explore a real, established sub-field in graph theory. Because I wanted all of the puzzles to use a similar control scheme and visual language, the included problems are all modifications of graph labeling (or problems that can be phrased in the language of graph labeling). The following types of problem are included in the game:</p>
 	
 	<ul>
-		<li><a href="programs/chromagraph_extra#coloring">Coloring</a></li>
-		<li><a href="programs/chromagraph_extra#edge">Edge Coloring</a></li>
-		<li><a href="programs/chromagraph_extra#total">Total Coloring</a></li>
-		<li><a href="programs/chromagraph_extra#equitable">Equitable Coloring</a></li>
-		<li><a href="programs/chromagraph_extra#dominating">Dominating Set</a></li>
-		<li><a href="programs/chromagraph_extra#fall">Fall Coloring</a></li>
-		<li><a href="programs/chromagraph_extra#graceful">Graceful Trees</a></li>
-		<li><a href="programs/chromagraph_extra#decomp">Triangle Decomposition</a></li>
+		<li><a href="games/chromagraph_extra#coloring">Coloring</a></li>
+		<li><a href="games/chromagraph_extra#edge">Edge Coloring</a></li>
+		<li><a href="games/chromagraph_extra#total">Total Coloring</a></li>
+		<li><a href="games/chromagraph_extra#equitable">Equitable Coloring</a></li>
+		<li><a href="games/chromagraph_extra#dominating">Dominating Set</a></li>
+		<li><a href="games/chromagraph_extra#fall">Fall Coloring</a></li>
+		<li><a href="games/chromagraph_extra#graceful">Graceful Trees</a></li>
+		<li><a href="games/chromagraph_extra#decomp">Triangle Decomposition</a></li>
 	</ul>
 	
 	<h2 id="coloring">Coloring</h2>
 	
 	<p class="center"><img src="images/chromagraph/screen_coloring_solved.png" title="Coloring" width="450px"/></p>
 	
-	<p>Although there are many different varieties of graph coloring problem, the term <a href="https://en.wikipedia.org/wiki/Graph_coloring">"graph coloring"</a> without qualification generally refers to proper vertex coloring. This type of problem is explained on the <a href="programs/chromagraph.html#background">main project page</a>, and consists of an assignment of colors to each vertex such that adjacent vertices are colored differently. Each puzzle in this section limits the number of colors that can be used to the smallest number for which a proper coloring is possible, which is known as the <a href="https://en.wikipedia.org/wiki/Graph_coloring#Chromatic_number">chromatic number</a> of the graph, <i>χ(G)</i>. Determining the chromatic number of a general graph is a known <a href="https://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems">hard</a> problem, although there are certain special classes of graph for which specific results are known. A famous example of this is the 1976 <a href="https://en.wikipedia.org/wiki/Four_color_theorem">four color theorem</a> (which is also famous for being the first computer-assisted proof), which established that any <a href="https://en.wikipedia.org/wiki/Planar_graph">planar graph</a> (a graph that can be drawn in the plane so that none of its edges cross) can be colored with only 4 colors.</p>
+	<p>Although there are many different varieties of graph coloring problem, the term <a href="https://en.wikipedia.org/wiki/Graph_coloring">"graph coloring"</a> without qualification generally refers to proper vertex coloring. This type of problem is explained on the <a href="games/chromagraph.html#background">main project page</a>, and consists of an assignment of colors to each vertex such that adjacent vertices are colored differently. Each puzzle in this section limits the number of colors that can be used to the smallest number for which a proper coloring is possible, which is known as the <a href="https://en.wikipedia.org/wiki/Graph_coloring#Chromatic_number">chromatic number</a> of the graph, <i>χ(G)</i>. Determining the chromatic number of a general graph is a known <a href="https://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems">hard</a> problem, although there are certain special classes of graph for which specific results are known. A famous example of this is the 1976 <a href="https://en.wikipedia.org/wiki/Four_color_theorem">four color theorem</a> (which is also famous for being the first computer-assisted proof), which established that any <a href="https://en.wikipedia.org/wiki/Planar_graph">planar graph</a> (a graph that can be drawn in the plane so that none of its edges cross) can be colored with only 4 colors.</p>
 	
 	<h2 id="edge">Edge Coloring</h2>
 	
@@ -105,7 +112,7 @@
 	
 	<p class="center"><img src="images/chromagraph/screen_graceful_solved.png" title="Graceful Tree Labeling" width="450px"/></p>
 	
-	<p>There are several different varieties of <a href="https://en.wikipedia.org/wiki/Graceful_labeling">graceful labeling</a> problem, but the common theme is to assign a numerical label to each vertex so that all of the absolute differences in adjacent labels are distinct. In the context of this game the player assigns numerical labels to the vertices, and then the edge labels are automatically calculated as the differences in their endpoints' labels, with the goal of making all vertex and edge labels distinct. The version of this puzzle used in the game is based on the <a href="https://prideout.net/blog/graceful/">graceful tree conjecture</a>, which holds that all tree graphs (connected graphs without cycles) can be gracefully labeled. In this case we restrict ourselves to consecutive odd integer labels. This is the only puzzle in the game for which the numerical values of the vertex labels are actually significant, with the <a href="programs/chromagraph#av">groups of dots</a> serving only to make the colors more visually distinct in the other puzzle types. While some of the larger arrangements of dots can be difficult to count exactly or visually distinguish at a glance, the fact that the labels for this puzzle are odd numbers means that all labels differ by at least two, which makes it easier to quickly tell which are larger than which and by what approximate margin.</p>
+	<p>There are several different varieties of <a href="https://en.wikipedia.org/wiki/Graceful_labeling">graceful labeling</a> problem, but the common theme is to assign a numerical label to each vertex so that all of the absolute differences in adjacent labels are distinct. In the context of this game the player assigns numerical labels to the vertices, and then the edge labels are automatically calculated as the differences in their endpoints' labels, with the goal of making all vertex and edge labels distinct. The version of this puzzle used in the game is based on the <a href="https://prideout.net/blog/graceful/">graceful tree conjecture</a>, which holds that all tree graphs (connected graphs without cycles) can be gracefully labeled. In this case we restrict ourselves to consecutive odd integer labels. This is the only puzzle in the game for which the numerical values of the vertex labels are actually significant, with the <a href="games/chromagraph#av">groups of dots</a> serving only to make the colors more visually distinct in the other puzzle types. While some of the larger arrangements of dots can be difficult to count exactly or visually distinguish at a glance, the fact that the labels for this puzzle are odd numbers means that all labels differ by at least two, which makes it easier to quickly tell which are larger than which and by what approximate margin.</p>
 	
 	<h2 id="decomp">Triangle Decomposition</h2>
 	
@@ -120,21 +127,21 @@
 	<p>Most of the graphs that define the various puzzles are actually named, important graphs with well-studied properties. These specific graphs and graph families are explained below. The other puzzles in the game were mostly made by me either randomly generating a graph, slightly modifying an existing graph, or doodling on a piece of paper to try to come up with something that would lead to a challenging puzzle. The images included below were rendered in-game by deactivating all sprites and having the graph elements draw themselves as black geometric objects on a white background. Screenshots were taken of the puzzles in this state in order to isolate the outlines of the graphs for use in creating the main menu puzzle icons. Some of the graphs and graph families included in the game are:</p>
 	
 	<ul>
-		<li><a href="programs/chromagraph_extra#complete">Complete Graphs</a></li>
-		<li><a href="programs/chromagraph_extra#cycle">Cycle Graphs</a></li>
-		<li><a href="programs/chromagraph_extra#wheel">Wheel Graphs</a></li>
-		<li><a href="programs/chromagraph_extra#tree">Tree Graphs</a></li>
-		<li><a href="programs/chromagraph_extra#path">Path Graphs</a></li>
-		<li><a href="programs/chromagraph_extra#star">Star Graphs</a></li>
-		<li><a href="programs/chromagraph_extra#petersen">The Petersen Graph</a></li>
-		<li><a href="programs/chromagraph_extra#polyhedral">Polyhedral Graphs</a></li>
-		<li><a href="programs/chromagraph_extra#hypercube">Hypercube Graphs</a></li>
-		<li><a href="programs/chromagraph_extra#fullerene">The 26-Fullerene Graph</a></li>
-		<li><a href="programs/chromagraph_extra#grotzsch">The Grötzsch Graph</a></li>
-		<li><a href="programs/chromagraph_extra#clebsch">The Clebsch Graph</a></li>
-		<li><a href="programs/chromagraph_extra#grid">Grid Graphs</a></li>
-		<li><a href="programs/chromagraph_extra#cartesian">Cartesian Graph Products</a></li>
-		<li><a href="programs/chromagraph_extra#dart">The Dart Graph</a></li>
+		<li><a href="games/chromagraph_extra#complete">Complete Graphs</a></li>
+		<li><a href="games/chromagraph_extra#cycle">Cycle Graphs</a></li>
+		<li><a href="games/chromagraph_extra#wheel">Wheel Graphs</a></li>
+		<li><a href="games/chromagraph_extra#tree">Tree Graphs</a></li>
+		<li><a href="games/chromagraph_extra#path">Path Graphs</a></li>
+		<li><a href="games/chromagraph_extra#star">Star Graphs</a></li>
+		<li><a href="games/chromagraph_extra#petersen">The Petersen Graph</a></li>
+		<li><a href="games/chromagraph_extra#polyhedral">Polyhedral Graphs</a></li>
+		<li><a href="games/chromagraph_extra#hypercube">Hypercube Graphs</a></li>
+		<li><a href="games/chromagraph_extra#fullerene">The 26-Fullerene Graph</a></li>
+		<li><a href="games/chromagraph_extra#grotzsch">The Grötzsch Graph</a></li>
+		<li><a href="games/chromagraph_extra#clebsch">The Clebsch Graph</a></li>
+		<li><a href="games/chromagraph_extra#grid">Grid Graphs</a></li>
+		<li><a href="games/chromagraph_extra#cartesian">Cartesian Graph Products</a></li>
+		<li><a href="games/chromagraph_extra#dart">The Dart Graph</a></li>
 	</ul>
 	
 	<h2 id="complete">Complete Graphs</h2>
