@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
+	<!-- Metadata -->
 	<meta charset="utf-8">
 	<title>Adam Rumpf: Topological Asteroids</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,12 @@
 	<link rel="stylesheet" href="../styles.css">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<base href="https://adam-rumpf.github.io/">
+	
+	<!-- KaTeX -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
 </head>
 
 <body>
@@ -88,7 +95,9 @@
 	
 	<p>Like the torus, the cylinder also wraps around to meet itself. Unlike the torus, the cylinder has two edges representing a boundary that cannot be crossed while still remaining on the surface. We can easily imagine creating a model cylinder by taking a square marked like the above picture, curling it into a loop, and gluing the opposite edges together so that the half-arrows match up to create a full arrow. If we could somehow bend the square to then also glue the <i>other</i> set of opposite edges together, we would get a doughnut-shaped torus.</p>
 	
-	<p>The way in which the torus and the cylinder identify coordinates with each other represents only a geometric translation, meaning that objects that leave one edge reappear at the opposite edge in the same orientation, and with only one of their coordinates (x or y) changing. There are more complicated spaces for which this is not the case, for example the <a href="https://en.wikipedia.org/wiki/M%C3%B6bius_strip">Möbius strip</a>, whose fundamental polygon is:</p>
+	<!--<p>The way in which the torus and the cylinder identify coordinates with each other represents only a geometric translation, meaning that objects that leave one edge reappear at the opposite edge in the same orientation, and with only one of their coordinates (x or y) changing. There are more complicated spaces for which this is not the case, for example the <a href="https://en.wikipedia.org/wiki/M%C3%B6bius_strip">Möbius strip</a>, whose fundamental polygon is:</p>-->
+	
+	<p>The way in which the torus and the cylinder identify coordinates with each other represents only a geometric translation, meaning that objects that leave one edge reappear at the opposite edge in the same orientation, and with only one of their coordinates (\(x\) or \(y\)) changing. There are more complicated spaces for which this is not the case, for example the <a href="https://en.wikipedia.org/wiki/M%C3%B6bius_strip">Möbius strip</a>, whose fundamental polygon is:</p>
 	
 	<p class="center"><img src="images/asteroids/polygon_mobius.png" title="Möbius Strip" width="200px"/></p>
 	
