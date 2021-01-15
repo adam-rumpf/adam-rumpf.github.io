@@ -58,27 +58,41 @@
 	
 	<!-- cobwebbing, complex-operations -->
 	
-	<!--<script src="D:/Documents/_GitHub Professional Site/test.js"></script>-->
+	<script type="text/javascript" src="test.js"></script>
 	
-	<script>
-		// Set of spacer object IDs to be shown/hidden at the same time
-		list = ["cobwebbing", "complex-operations"];
+	<!--<script>
+		// Define dictionary of tag groups
+		var group = {};
+		group["all"] = ["cobwebbing", "complex-operations"];
+		group["first"] = ["cobwebbing"];
+		group["second"] = ["complex-operations"];
+		group["none"] = [];
 
-		// Show/hide all elements in the above list
+		// Show only elements in specified tag list
 		function toggle()
 		{
-			for (var i = 0; i < list.length; i++)
-			{
-				x = document.getElementById(list[i]);
-				if (x.style.display === "none")
-					x.style.display = "block";
-				else
-					x.style.display = "none";
-			}
+			// Get selected tag
+			var t = document.getElementById("tags").value;
+			
+			// Hide everything
+			for (var i = 0; i < group["all"].length; i++)
+				document.getElementById(group["all"][i]).style.display = "none";
+			
+			// Show the elements from the selected list
+			for (var i = 0; i < group[t].length; i++)
+				document.getElementById(group[t][i]).style.display = "block";
 		}
-	</script>
+	</script>-->
 	
 	<p><button onclick="toggle()">Show/Hide</button></p>
+	
+	<p><select value="default" name="tag" id="tags" onchange="toggle()">
+		<option value="default" selected disabled>Choose filter</option>
+		<option value="all">All</option>
+		<option value="first">First</option>
+		<option value="second">Second</option>
+		<option value="none">None</option>
+	</select></p>
 	
 	<div class="spacer" id="cobwebbing">
 		<div class="dark">
