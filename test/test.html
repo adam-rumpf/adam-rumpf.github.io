@@ -16,6 +16,18 @@
 	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
+	
+	<!-- Filter script -->
+	<script src="test.js"></script>
+	<!--<script>
+		function toggle()
+		{
+			// Hide everything
+			alert("Hiding.");
+			document.getElementById("box1").style.display = "none";
+			document.getElementById("box2").style.display = "none";
+		}
+	</script>-->
 </head>
 
 <body>
@@ -55,7 +67,19 @@
 	
 	<br/>
 	
-	<p>...</p>
+	<p><button onclick="toggle()">Toggle</button></p>
+	
+	<div class="spacer" id="box1">
+		<div class="dark">
+			<p>1</p>
+		</div>
+	</div>
+	
+	<div class="spacer" id="box2">
+		<div class="dark">
+			<p>2</p>
+		</div>
+	</div>
 	
 	<footer>
 		<hr>
