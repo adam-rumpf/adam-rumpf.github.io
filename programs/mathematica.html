@@ -16,9 +16,13 @@
 	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
+	
+	<!-- Tag filter script -->
+	<script type="text/javascript" src="programs/mathematica.js"></script>
 </head>
 
-<body>
+<!-- Run display script on load. -->
+<body onload="filter()">
 	<header>
 		Adam Rumpf: Math Person
 	</header>
@@ -64,8 +68,34 @@
 	
 	<p><a href="https://github.com/adam-rumpf/mathematica-class-demonstrations"><img src="images/github/GitHub_Logo.png" alt="GitHub Link" title="GitHub Link" width="300px"/></a></p>
 	
+	<p>Filter by tag: <select value="default" name="tag" id="tags" onchange="filter()">
+		<option value="all" selected>Show All</option>
+		<!-- Courses -->
+		<option value="" disabled>--- Courses ---</option>
+		<option value="analysis">Analysis</option>
+		<option value="calculus">Calculus</option>
+		<option value="computational">Computational Mathematics</option>
+		<option value="diffeq">Differential Equations</option>
+		<option value="discrete">Discrete Mathematics</option>
+		<option value="dynamical">Dynamical Systems</option>	
+		<option value="geometry">Geometry</option>
+		<option value="graph">Graph Theory</option>
+		<option value="linalg">Linear Algebra</option>
+		<option value="modeling">Mathematical Modeling</option>
+		<option value="numthry">Number Theory</option>
+		<option value="optimization">Optimization</option>
+		<option value="voting">Voting Theory</option>
+		<!-- Topics -->
+		<option value="" disabled>--- Topics ---</option>
+		<option value="chaos">Chaos</option>
+		<option value="complex">Complex Numbers</option>
+		<option value="fractal">Fractal</option>
+		<option value="fun">Just for Fun</option>
+		<option value="pretty">Pretty Pictures</option>
+	</select></p>
+	
 	<!-- Displays number of active demonstrations depending on selection. -->
-	<p id="tally"> </p>
+	<p id="tally">Displaying ?? demonstrations.</p>
 	
 	<!-- All of the 'spacer' containers below will be revealed or hidden depending on the dropdown menu selection. -->
 	
@@ -139,11 +169,7 @@
 			
 			<p><a href="https://en.wikipedia.org/wiki/Cobweb_plot">Cobwebbing</a> is a graphical technique for evaluating the long-term behavior of a discrete dynamical system. This demonstration automatically generates cobweb plots for a variety of test systems, although the method is meant to be used by hand to quickly analyze such a system without the need for a computer.</p>
 			
-			<!--<p>Specifically, cobwebbing is used for discrete dynamical systems for which the next iteration is given as a function <i>f</i> of the previous iteration. We first plot both the function and the <i>y = x</i> line on the same set of axes. Given an initial value <i>x0</i>, the next value should be <i>f(x0)</i>, which we can eyeball from the plot by drawing a vertical line up from <i>x0</i> on the <i>x</i>-axis until it touches the function curve. Intuitively, if we wanted to find the next iteration, we would need to transfer this value back onto the <i>x</i>-axis and then draw another vertical line up from it. However, because we already have the <i>y = x</i> line drawn, if we simply draw a horizontal line from our current position to it we will automatically reach the <i>x</i>-coordinate corresponding to our current <i>y</i>-coordinate. Then we can simply move vertically from this location. This process can be repeated as many times as needed to approximate the sequence of values produced by the system, alternating between moving vertically to the <i>f</i> curve to evaluate the update step, and then horizontally to the <i>y = x</i> line to convert the <i>y</i>-coordinate to an <i>x</i>-coordinate.</p>-->
-			
 			<p>Specifically, cobwebbing is used for discrete dynamical systems for which the next iteration is given as a function \(f\) of the previous iteration. We first plot both the function and the \(y = x\) line on the same set of axes. Given an initial value \(x_0\), the next value should be \(f(x_0)\), which we can eyeball from the plot by drawing a vertical line up from \(x_0\) on the \(x\)-axis until it touches the function curve. Intuitively, if we wanted to find the next iteration, we would need to transfer this value back onto the \(x\)-axis and then draw another vertical line up from it. However, because we already have the \(y = x\) line drawn, if we simply draw a horizontal line from our current position to it we will automatically reach the \(x\)-coordinate corresponding to our current \(y\)-coordinate. Then we can simply move vertically from this location. This process can be repeated as many times as needed to approximate the sequence of values produced by the system, alternating between moving vertically to the \(f\) curve to evaluate the update step, and then horizontally to the \(y = x\) line to convert the \(y\)-coordinate to an \(x\)-coordinate.</p>
-			
-			<!--<p>The points where the function curve passes through the <i>y = x</i> line are the fixed points of the system, and in general an initial solution will either approach or diverge from certain fixed points (or possibly enter a periodic orbit around them), which is how the long-term behavior of the system can be estimated. The result often ends up creating stair-step or spiral patterns which look like cobwebs, hence the name. In chaotic systems, like the <a href="https://en.wikipedia.org/wiki/Logistic_map">discrete logistic map</a> with large growth rates, it provides a very clear picture of how complicated and messy things can get.</p>-->
 			
 			<p>The points where the function curve passes through the \(y = x\) line are the fixed points of the system, and in general an initial solution will either approach or diverge from certain fixed points (or possibly enter a periodic orbit around them), which is how the long-term behavior of the system can be estimated. The result often ends up creating stair-step or spiral patterns which look like cobwebs, hence the name. In chaotic systems, like the <a href="https://en.wikipedia.org/wiki/Logistic_map">discrete logistic map</a> with large growth rates, it provides a very clear picture of how complicated and messy things can get.</p>
 			
@@ -195,19 +221,11 @@
 			
 			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/number-theory/continued-fraction-square-packing.nb" download="continued-fraction-square-packing.nb">Download Notebook</a></p>
 			
-			<!--<p>This is a program for constructing geometric pictures of <a href="https://en.wikipedia.org/wiki/Continued_fraction">continued fractions</a>. A continued fraction is a way to represent a real number as a sequence of integers, similar to how a decimal expansion is a way to represent a real number as a sequence of integers. The way to interpret a decimal expansion like "3.14159" is to recognize that each digit tells us the coefficient in a series of decreasing powers of 10, so the leading 3 should be multiplied by 1, then the 1 should be multiplied by 1/10, then the 4 should be multiplied by 1/100, and so on, and all of these values should be added together. Some numbers (like 2 and 564 and 5/8) can be represented exactly with finitely many decimal values, while others (like 1/3 and pi and √2) cannot, but they can at least be approximated by specifying the first few terms and truncating the rest.</p>-->
-			
 			<p>This is a program for constructing geometric pictures of <a href="https://en.wikipedia.org/wiki/Continued_fraction">continued fractions</a>. A continued fraction is a way to represent a real number as a sequence of integers, similar to how a decimal expansion is a way to represent a real number as a sequence of integers. The way to interpret a decimal expansion like "3.14159" is to recognize that each digit tells us the coefficient in a series of decreasing powers of 10, so the leading 3 should be multiplied by 1, then the 1 should be multiplied by 1/10, then the 4 should be multiplied by 1/100, and so on, and all of these values should be added together. Some numbers (like 2 and 564 and 5/8) can be represented exactly with finitely many decimal values, while others (like 1/3 and \(\pi\) and \(\sqrt{2}\)) cannot, but they can at least be approximated by specifying the first few terms and truncating the rest.</p>
-			
-			<!--<p>The continued fraction representation of a number comes from iteratively taking its integer part and inverting its fractional part. Taking pi as an example, the integer part is 3 and the fractional part is 0.14159..., so the first digit in our continued fraction representation is 3. Then we invert the fractional part to get 1/0.14159... = 7.06251.... That has an integer part of 7, so our second digit is 7. The fractional part can be inverted to get 1/0.06251... = 15.99659..., and so the next digit is 15. Going through the same process again will yield 1 and then 292 as the next two digits. Much like with the decimal representation, since pi is irrational this process will never end, so we must choose to truncate it at some point. If we chose to do that here, then our continued fraction approximation of pi would be expressed as [3; 7, 15, 1, 292], the sequence of digits that we just found. The way to interpret a continued fraction representation is to plug the digits into a sequence of nested fractions of the form <b>3</b>+1/(<b>7</b>+1/(<b>15</b>+1/(<b>1</b>+1/<b>292</b>))).</p>-->
 			
 			<p>The continued fraction representation of a number comes from iteratively taking its integer part and inverting its fractional part. Taking \(\pi\) as an example, the integer part is 3 and the fractional part is \(0.14159\ldots\), so the first digit in our continued fraction representation is 3. Then we invert the fractional part to get \(1/0.14159\ldots = 7.06251\ldots\). That has an integer part of 7, so our second digit is 7. The fractional part can be inverted to get \(1/0.06251\ldots = 15.99659\ldots\), and so the next digit is 15. Going through the same process again will yield 1 and then 292 as the next two digits. Much like with the decimal representation, since \(\pi\) is irrational this process will never end, so we must choose to truncate it at some point. If we chose to do that here, then our continued fraction approximation of \(\pi\) would be expressed as \([3; 7, 15, 1, 292]\), the sequence of digits that we just found. The way to interpret a continued fraction representation is to plug the digits into a sequence of nested fractions of the form <b>3</b>+1/(<b>7</b>+1/(<b>15</b>+1/(<b>1</b>+1/<b>292</b>))).</p>
 			
-			<!--<p>There is a geometric interpretation of this process, and that is what this program generates. Imagine that we draw a rectangle with height 1 and width pi, and that we attempt to draw as many unit squares as we can inside this box. If we start at the lefthand side and continue to the right, we can fit exactly 3 squares before running out of room, and the remaining 1 by 0.14159... space will be empty. Now suppose that we wish to fit as many squares of side length 0.14159... as possible into this empty space. We can rescale by multiplying everything by 1/0.14159... (which is 7.06251...), in which case the problem becomes trying to fit as many unit squares as possible into a 1 by 7.06251... unit space. The solution is obviously 7, with a remaining 1 by 0.06251... space. This process of iteratively packing squares and rescaling the gap is analogous to the above process of taking the unit part and inverting the fractional part, and it will produce the same sequence of integers.</p>-->
-			
 			<p>There is a geometric interpretation of this process, and that is what this program generates. Imagine that we draw a rectangle with height 1 and width \(\pi\), and that we attempt to draw as many unit squares as we can inside this box. If we start at the lefthand side and continue to the right, we can fit exactly 3 squares before running out of room, and the remaining 1 by \(0.14159\ldots\) space will be empty. Now suppose that we wish to fit as many squares of side length \(0.14159\ldots\) as possible into this empty space. We can rescale by multiplying everything by \(1/0.14159\ldots\) (which is \(7.06251\ldots\)), in which case the problem becomes trying to fit as many unit squares as possible into a 1 by \(7.06251\ldots\) unit space. The solution is obviously 7, with a remaining 1 by \(0.06251\ldots\) space. This process of iteratively packing squares and rescaling the gap is analogous to the above process of taking the unit part and inverting the fractional part, and it will produce the same sequence of integers.</p>
-			
-			<!--<p>This box packing process is very much like the process for generating a <a href="https://en.wikipedia.org/wiki/Golden_spiral">golden spiral</a>, and in fact if we begin with a rectangle whose dimensions are 1 by phi (the <a href="https://en.wikipedia.org/wiki/Golden_ratio">golden ratio</a>) the two processes are exactly the same. Because the golden spiral involves packing a single square in each iteration, this implies that the continued fraction representation of phi is [1; 1, 1, 1, 1, ...], which is indeed true. It is for this reason that phi is occasionally referred to as the <a href="http://www.ams.org/publicoutreach/feature-column/fcarc-irrational4">"most irrational"</a> number. Because all of the digits in the continued fraction representation are inverted, large digits indicates that the term contributes a small value to the overall sum, and so truncating a large digit leads to smaller truncation error than truncating a small digit. Because all digits of phi's continued fraction are the smallest possible positive integer, truncating its continued fraction leads to the largest possible truncation error, making it the number with the worst possible rational approximations.</p>-->
 			
 			<p>This box packing process is very much like the process for generating a <a href="https://en.wikipedia.org/wiki/Golden_spiral">golden spiral</a>, and in fact if we begin with a rectangle whose dimensions are 1 by \(\phi\) (the <a href="https://en.wikipedia.org/wiki/Golden_ratio">golden ratio</a>) the two processes are exactly the same. Because the golden spiral involves packing a single square in each iteration, this implies that the continued fraction representation of \(\phi\) is \([1; 1, 1, 1, 1, \ldots]\), which is indeed true. It is for this reason that \(\phi\) is occasionally referred to as the <a href="http://www.ams.org/publicoutreach/feature-column/fcarc-irrational4">"most irrational"</a> number. Because all of the digits in the continued fraction representation are inverted, large digits indicates that the term contributes a small value to the overall sum, and so truncating a large digit leads to smaller truncation error than truncating a small digit. Because all digits of \(\phi\)'s continued fraction are the smallest possible positive integer, truncating its continued fraction leads to the largest possible truncation error, making it the number with the worst possible rational approximations.</p>
 			
@@ -413,8 +431,6 @@
 			
 			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/linear-algebra/linear-transformations.nb" download="bezier-curves.nb">Download Notebook</a></p>
 			
-			<!--<p>I wrote this demonstration while helping to teach a precalculus class that touched on linear algebra. One of the important observations that makes it possible to understand how a matrix acts as a linear transformation is to look at how multiplication by that matrix affects the standard unit vectors i = (1,0) and j = (0,1). Those two transformations correspond to the columns of the matrix, and define a linear transformation of the entire 2D plane by shearing, rotating, and reflecting everything in it. This can more clearly be seen by drawing the transformed version of the unit lattice, and possibly also including some images and showing how they are transformed by the matrix.</p>-->
-			
 			<p>I wrote this demonstration while helping to teach a precalculus class that touched on linear algebra. One of the important observations that makes it possible to understand how a matrix acts as a linear transformation is to look at how multiplication by that matrix affects the standard unit vectors \(\mathbf{i} = (1,0)\) and \(\mathbf{j} = (0,1)\). Those two transformations correspond to the columns of the matrix, and define a linear transformation of the entire 2D plane by shearing, rotating, and reflecting everything in it. This can more clearly be seen by drawing the transformed version of the unit lattice, and possibly also including some images and showing how they are transformed by the matrix.</p>
 			
 			<p>All of this is a bit hard to visualize when you just look at still images on the screen, so I decided to make an interactive demonstration that allows the user to click and drag the two transformed unit vectors to see how it affects the rest of the 2D plane in real time. As a sample image the letter <b>F</b> is drawn (its lack of symmetry makes it more obvious when rotations and reflections have occurred). The determinant of the matrix is also displayed. Things to keep an eye on include when the determinant becomes 0 and when it becomes negative.</p>
@@ -489,8 +505,6 @@
 			
 			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/number-theory/recamans-sequence.nb" download="recamans-sequence.nb">Download Notebook</a></p>
 			
-			<!--<p>Recamán's Sequence (sequence <a href="https://oeis.org/A005132">A005132</a> in the <a href="https://oeis.org">OEIS</a>) is defined by an iterative process beginning at 0, at step <i>n=0</i>. In step <i>n</i>, we either take <i>n</i> steps backward or <i>n</i> steps forward. We go backward if doing so would take us to a nonnegative number that has not yet been visited, and otherwise we go forward. It is conjectured that this sequence includes every nonnegative integer exactly once.</p>-->
-			
 			<p>Recamán's Sequence (sequence <a href="https://oeis.org/A005132">A005132</a> in the <a href="https://oeis.org">OEIS</a>) is defined by an iterative process beginning at 0, at step \(n=0\). In step \(n\), we either take \(n\) steps backward or \(n\) steps forward. We go backward if doing so would take us to a nonnegative number that has not yet been visited, and otherwise we go forward. It is conjectured that this sequence includes every nonnegative integer exactly once.</p>
 			
 			<p>This program is mostly meant for drawing pictures of Recamán's Sequence. Because each step is 1 unit larger than the preceding step, the most common way to draw it is using semicircular arcs to trace the path of the sequence on the number line. Doing so leads to interesting spiral patterns that illustrate the phases of rapid increase and of repeatedly bouncing back and forth to fill in areas that were previously unexplored.</p>
@@ -512,8 +526,6 @@
 			<p><a href="http://demonstrations.wolfram.com/AnimatedRemainderGraph/">Wolfram Demonstrations Link</a></p>
 			
 			<p>I was inspired to write this program by an <a href="https://mindyourdecisions.com/blog/2015/07/26/divisibility-by-7-test-using-a-graph-why-does-it-work-sunday-puzzle/">article</a> by Presh Talwalkar. It demonstrates a cool trick for determining remainders after dividing a large number by a small number. Because this also allows calculating remainders of 0, this also encompasses the topic of divisibility tests. Testing for divisibility by 7 is famously tricky compared to the other small numbers, but this graphical method gives a fairly easy solution.</p>
-			
-			<!--<p>As an example, suppose we wish to know whether 42,959 is divisible by 7. The process begins by writing the numbers 0, 1, ..., 6 in a circle and connecting them in a cycle with black arrows. Next, for each of these numbers, we multiply it by 10 and then evaluate the remainder after division by 7, and draw a green arrow from the original number to the result. For example, for 2, we multiply by 10 to get 20, then divide by 7 to get 14 with remainder 6, which means that we should draw an arrow from 2 to 6. At the end of the process we will have 7 black arrows and 7 green arrows.</p>-->
 			
 			<p>As an example, suppose we wish to know whether 42,959 is divisible by 7. The process begins by writing the numbers \(0, 1, \ldots, 6\) in a circle and connecting them in a cycle with black arrows. Next, for each of these numbers, we multiply it by 10 and then evaluate the remainder after division by 7, and draw a green arrow from the original number to the result. For example, for 2, we multiply by 10 to get 20, then divide by 7 to get 14 with remainder 6, which means that we should draw an arrow from 2 to 6. At the end of the process we will have 7 black arrows and 7 green arrows.</p>
 			
@@ -590,8 +602,6 @@
 			<p>Created 8/28/2017</p>
 			
 			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/calc-diffeq-analysis/vector-kinematics.nb" download="vector-kinematics.nb">Download Notebook</a></p>
-			
-			<!--<p>This demonstration is meant for elementary Calculus students encountering the concept of position, velocity, and acceleration vectors for the first time. It includes a series of Manipulate environments which describe various kinematic systems such as ballistic motion and rotational orbiting. Within each system there is a time slider to animate the system, and there is a toggle to select whether to display the position vector (with its x- and y-components), the velocity vector (with its x- and y-components), the acceleration vector (with its x- and y-components), and the velocity vector along with the acceleration vector. The purpose of these animations is to give a visual demonstration of how the velocity vector describes where the position vector is "about" to move to, and how the acceleration vector does the same for the velocity vector.</p>-->
 			
 			<p>This demonstration is meant for elementary Calculus students encountering the concept of position, velocity, and acceleration vectors for the first time. It includes a series of Manipulate environments which describe various kinematic systems such as ballistic motion and rotational orbiting. Within each system there is a time slider to animate the system, and there is a toggle to select whether to display the position vector (with its \(x\)- and \(y\)-components), the velocity vector (with its \(x\)- and \(y\)-components), the acceleration vector (with its \(x\)- and \(y\)-components), and the velocity vector along with the acceleration vector. The purpose of these animations is to give a visual demonstration of how the velocity vector describes where the position vector is "about" to move to, and how the acceleration vector does the same for the velocity vector.</p>
 			
