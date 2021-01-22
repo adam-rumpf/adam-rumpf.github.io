@@ -2,6 +2,7 @@
 var group = {};
 group["all"] = ["bezier-curves", "bifurcation-analysis", "single-winner-voting-systems", "cobwebbing", "complex-newtons-method", "complex-operations", "continued-fraction-square-packing", "continuous-discrete-logistic-growth", "crowd-escape-panic-model", "dijkstras-algorithm-and-astar-search", "domino-and-tromino-tiling", "dragon-curve", "duvergers-law", "fractal-shoulder-angels-and-devils", "graph-untangler", "kkt-conditions", "linear-transformations", "monte-carlo-method", "pascals-triangle-fractals", "pythagoras-tree", "recamans-sequence", "remainder-graphs", "spirograph", "taylor-and-fourier-series-approximations", "triangle-centers", "vector-kinematics", "winner-take-all-distortion"];
 group["analysis"] = ["complex-newtons-method", "taylor-and-fourier-series-approximations"];
+group["boring"] = [];
 group["calculus"] = ["bifurcation-analysis", "complex-newtons-method", "continuous-discrete-logistic-growth", "crowd-escape-panic-model", "kkt-conditions", "monte-carlo-method", "spirograph", "taylor-and-fourier-series-approximations", "vector-kinematics"];
 group["computational"] = ["bezier-curves", "complex-newtons-method", "monte-carlo-method", "taylor-and-fourier-series-approximations"];
 group["diffeq"] = ["bifurcation-analysis", "continuous-discrete-logistic-growth", "crowd-escape-panic-model", "vector-kinematics"];
