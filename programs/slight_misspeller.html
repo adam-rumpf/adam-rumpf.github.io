@@ -61,7 +61,77 @@
 	
 	<p><a href="https://github.com/adam-rumpf/slight-misspeller"><img src="images/github/GitHub_Logo.png" alt="GitHub Link" title="GitHub Link" width="300px"/></a></p>
 	
-	<p>(This page is a work in progress. Check back soon!)</p>
+	<p>A Python module that generates slightly misspelled versions of text files.</p>
+	
+	<p>Two different types of misspelling procedures are defined. <a href="programs/sligtmisseplle.html"><i>Typographical</i></a> misspelling is based on common mistakes from sloppy typing on a QWERTY keyboard. <a href="programs/slish_misspeelter.html"><i>Phonological</i></a> misspelling is based on some rudimentary and lazy English <a href="https://en.wikipedia.org/wiki/Phonotactics">phonotactics</a> and is meant to yield a pronounceable result rather than simply a string of random characters. The alterations are also meant to be minor enough for the text to remain vaguely understandable.</p>
+	
+	<p>What is the purpose of this module? That is an excellent question.</p>
+	
+	<h2>Motivation</h2>
+	
+	<p>My high school senior prank was to turn literally every wall fixture upside-down: Every poster, every banner, every framed picture, every bulletin board notice. Everything. I snuck into the building after hours with a small group of friends, and after a couple hours of work the deed was done. By far my favorite element was the paper dolls from some sort of charity drive that was going on. Every donor got to sign a paper doll to be posted on the wall, and by the end of the drive there were hundreds of them filling an entire wall in the hallway. Fortunately for us they were only taped up, and so we were able to turn every single one of them upside-down.</p>
+	
+	<p>This might not strike you as the most memorable of senior pranks, but it's exactly my favorite kind of practical joke: One which is slightly surrealistic and easily overlooked, but when you finally notice it you begin to gradually realize just how much work someone must have put into it. So the first answer to the question "Why would you spend so much time making such a dumb and useless thing?" is that it's my idea of comedy.</p>
+	
+	<p>The second answer is the same as my answer for why I do most things: <a href="https://www.d20pfsrd.com/"><i>Dungeons &amp; Dragons</i></a>. I do like the simplicity of the magic system in D&amp;D, but for a long time I've been toying with the idea of developing a custom magic system that would allow the players to create their own spells by combining magic words in the correct way. I would want my system to be intricate and precise so that writing a spell is like writing a computer program, leaving absolutely no ambiguity as to the effects of a spell, but I would also want it to be something that follows linguistic rules.</p>
+	
+	<p>A lot of fans of the fantasy genre are interested in linguistics. <a href="https://www.tolkiensociety.org/author/biography/">J. R. R. Tolkien</a> famously invented fantasy languages for reasons of worldbuilding and fun, and a lot of DMs do the same for use in their campaigns. I have a minor interest in linguistics and in the <a href="https://www.youtube.com/playlist?list=PLduA6tsl3gygfiWmGAhhHb4-HAqP6I63l">conlang</a> (<b>con</b>structed <b>lang</b>uage) community, stemming from my own efforts to develop a language-based magic system. Because of this I've probably thought more than the average person about how exactly to break words into their component parts and how to build them back up from a set of phonotactic rules, and this led me to ask myself what the phonological equivalent of a "typo" would be.</p>
+	
+	<h2>Design Notes</h2>
+	
+	<p>It would be trivially simple to write a program that just randomizes a portion of the characters in a text file, but that wasn't nearly convoluted enough for my taste. More importantly it didn't seem like it was likely to lead to funny-sounding typos, which was the entire point of this project in the first place. This is what prompted me to first consider the idea of how to algorithmically mistype a word in a way that would leave a pronounceable result, and to the concept of phonological misspelling. Typographical misspelling came later for the sake of completeness.</p>
+	
+	<h3>Typographical Misspelling</h3>
+	
+	<p>What I've termed <a href="programs/sligtmisseplle.html">"typographical misspelling"</a> is what most people mean when they refer to misspelling in typed text: That an error was made during typing so that the wrong sequence of characters is produced. In particular this might include deleted characters, inserted extraneous characters, incorrect characters, or transposed characters.</p>
+	
+	<p>For example, if we wanted to type the word <b>sheep</b> we might accidentally miss the <b>h</b> to end up with <b>seep</b>, or type <b>w</b> instead of <b>s</b> for <b>wheep</b>, or type the <b>h</b> before the <b>s</b> for <b>hseep</b>.</p>
+	
+	<p>Rather than generating these types of errors completely at random, I wanted my program to roughly model the sorts of mistakes that someone might make when they have a bad case of <a href="https://www.youtube.com/watch?v=bjbgeGhn_Lg">"stupid fingers"</a>, in which case it would make sense for any erroneous characters to be close to the intended character on the keyboard. The solution I came up with was to randomly draw inserted and replaced characters from the pool of keys adjacent to the intended one on a QWERTY keyboard, weighted according to their Euclidean distance from the intended key.</p>
+	
+	<p>Here's an example of the sorts of errors produced by typographical misspelling:</p>
+	
+	<div class="spacer">
+		<div class="dark">
+			<h4>Before</h4>
+			
+			<p>This might not strike you as the most memorable of senior pranks, but it's exactly my favorite kind of practical joke: One which is slightly surrealistic and easily overlooked, but when you finally notice it you begin to gradually realize just how much work someone must have put into it.</p>
+			
+			<h4>After</h4>
+			
+			<p>This migh not strike yuo zs themost memorable ot senior prsanks, bu it's exactly my favoirte kind of pactical joke: Oe which is lightly surralistic and easily overloked, but when you finally notice it you ebgin to gradwlly realize just how much work someone must hav pu itno it.</p>
+		</div>
+	</div>
+	
+	<h3>Phonological Misspelling</h3>
+	
+	<p>What I've termed <a href="programs/slish_misspeelter.html">"phonological misspelling"</a> is essentially the equivalent of typographical misspelling, but with alterations made directly to the individual sounds (called <i>phonemes</i>) of the word rather than the characters, themselves. At least, that's the idealized definition. <a href="https://www.youtube.com/watch?v=uYNzqgU7na4">English is not a phonetic language</a>, so there isn't a one-to-one correspondence between the letters in a word's spelling and the phonemes in its pronunciation. If we had the phonetic spelling of a word, for example its <a href="https://www.internationalphoneticalphabet.org/ipa-charts/ipa-symbols-chart-complete/">IPA spelling</a> (not <a href="https://www.fourpeaks.com/beer/year-round/hop-knot/"><i>that</i> IPA</a>) wherein each symbol represents exactly one phoneme, then we could conduct deletions, insertions, and replacements directly on the phonemes, themselves, exactly like we can with letters in typographical misspelling.</p>
+	
+	<p>For example, the English IPA spelling of <b>sheep</b> is /ʃip/, consisting of exactly three phonemes in sequence: A voiceless postalveolar fricative /ʃ/ (represented by the <b>sh</b>), a close front unrounded vowel /i/ (represented by the <b>ee</b>), and a voiceless bilabial plosive /p/ (represented by the <b>p</b>). Conducting phonological misspelling would ideally be done directly on the IPA spelling, so we might accidentally miss the final /p/ to get /ʃi/ (<b>shee</b>), or replace the /i/ with an open-mid back rounded vowel /ɒ/ to get /ʃɒp/ (<b>shop</b>).</p>
+	
+	<p>Here's an example of the sorts of errors produced by phonological misspelling:</p>
+	
+	<div class="spacer">
+		<div class="dark">
+			<h4>Before</h4>
+			
+			<p>This might not strike you as the most memorable of senior pranks, but it's exactly my favorite kind of practical joke: One which is slightly surrealistic and easily overlooked, but when you finally notice it you begin to gradually realize just how much work someone must have put into it.</p>
+			
+			<h4>After</h4>
+			
+			<p>Twis might not strike you as the miost meorable of senior pranks, but it's exakly my favorite kind of batical jeke: Onu which is slightly surreelistic and easily overlooked, bu when you finally notice it you begin to graduall reulize just how much work someone must hoave put into it.</p>
+		</div>
+	</div>
+	
+	<p>Simply replacing phonemes at random could result in a word which is impossible to pronounce out loud, or at least which would never occur in any natural language. The rules for which phonemes are allowed to be combined in any given language are called <a href="https://en.wikipedia.org/wiki/Phonotactics">phonotactics</a>. English is what is known as a (C)(C)(C)V(C)(C)(C)(C)(C) language, meaning that each syllable is allowed to consist of 0-3 consonant (C) sounds at the beginning (the <i>onset</i>), and then one mandatory vowel (V) sound in the middle (the <i>nucleus</i>), and finally 0-5 consonant sounds at the end (the <i>coda</i>), and there are restrictions on which specific phonemes can occur within each part of the syllable.</p>
+	
+	<p>For example, English does not allow a syllable to begin with a voiced velar nasal /ŋ/, the sound made by the <b>ng</b> in "runni<b>ng</b>". That's not because saying such a thing would be impossible, it's just that it never occurs in any natural English word, and so English phonotactics include rules which prohibit it. There are words in other languages, such as the Vietnamese surname "Nguyễn" (which is <a href="https://www.atlasobscura.com/articles/nguyen-name-common-vietnam">by far</a> the most common surname in Vietnam, shared by approximately 40% of the population), which <i>do</i> begin with that sound, although they might look a bit strange to native English speakers since, for the aforementioned reasons, no English word would ever begin with the letters <b>ng</b>.</p>
+	
+	<p>Of course, my program doesn't have access to the phonetic spellings of words, so I had to come up with a way for it to approximate which parts of a word belong to which parts of which syllable based only on the spelling. The quick and dirty solution I came up with was to break the word into alternating consonant and vowel blocks, and then to assume that each syllable consisted of a vowel block followed by a syllable block (VC), with the exception of the first syllable in a word beginning with a consonant (CVC), or the last vowel syllable in a word ending with a vowel (V). Rather than attempting to translate all of the English phonotactic rules into spelling rules, I instead decided to base my program's rules on the actual spellings of English words.</p>
+	
+	<p>I wrote a few <a href="https://github.com/adam-rumpf/english-words">small scripts</a> to gather statistical data from a list of <a href="https://github.com/dwyl/english-words">over 466,000 English words</a> and compile a set of phonological misspelling rules. The scripts searched through each English word, divided it into syllable groups, and found which combinations of characters were allowed to occur in each part of the syllable.	These rules then consisted of lists of forbidden 2-letter and 3-letter substrings within each part of a syllable, based on letter combinations which did not appear in any English word.</p>
+	
+	<p>Finally I also included a list of letter pairs which could potentially be grouped. Certain English letter combinations, like <b>th</b>, <b>ch</b>, <b>sh</b>, and <b>ng</b>, represent a single phoneme having no relation to the individual constituent letters, in which case it makes sense to consider the pair as a single character. Similarly, the letter <b>q</b> is so commonly followed by the letter <b>u</b> that it also made sense to consider <b>qu</b> as a single character. During the phonological misspelling process, letter pairs on this list have a chance to be considered as a single unit and therefore deleted, replaced, or inserted together.</p>
 	
 	<footer>
 		<hr>
