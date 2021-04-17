@@ -69,13 +69,37 @@
 	
 	<br/>
 	
-	<!--<p>Explanation of purpose, for making Mathematica projects more accessible.</p>-->
+	<p>This project is part of a follow-up effort to my <a href="demos/mathematica.html">Mathematica Class Demonstrations</a> project. While I do still enjoy using Mathematica since it's so quick and easy (and I hate doing algebra by hand), unfortunately most people don't have access to it, which significantly limits the potential audience for my previously-uploaded demonstrations. Aside from (and even with) <a href="https://demonstrations.wolfram.com/author.html?author=Adam+Rumpf">Wolfram Demonstrations</a> there isn't really a good way to make Mathematica files available online, so in late 2020 I started to look around for some alternatives.</p>
+	
+	<p>I came across a partial solution in the January 2021 issue of <a href="https://sinews.siam.org/">SIAM News</a>, which included an article about a recently-published <a href="https://sinews.siam.org/Details-Page/writing-an-interactive-textbook">interactive textbook</a> made in the form of a <a href="https://jupyter.org/">Jupyter Notebook</a>. I had heard about and briefly looked into Jupyter Notebooks previously while teaching myself Python, but they seemed hard so I stopped. I also wasn't aware that they had the potential to make interactive widgets similar to Mathematica's <a href="https://reference.wolfram.com/language/ref/Manipulate.html">Manipulate</a> function, but after seeing what they could do I set out to try to learn how to remake some of my old Mathematica projects using Jupyter Notebooks.</p>
+	
+	<p>This is still a work in progress. Jupyter Notebooks are a huge pain to develop as compared to Mathematica demonstrations, and I certainly don't expect to be able to port all of my old projects over, but I expect to be adding more over the years, alongside some other web app formats.</p>
+	
+	<p>Jupyter Notebooks are primarily meant for sharing code which can be executed by a server, which makes them great for computable notebooks, but I wanted to try to keep the output as simple as possible so that the user wouldn't have to think about the source code while looking at the interactive widgets. Normally a service like <a href="https://mybinder.org/">Binder</a> would display the notebook as a sequence of executable cells, so in order to simplify the presentation all of the links below are run through <a href="https://github.com/voila-dashboards/voila">Voilà</a> and rendered as standalone web apps.</p>
 	
 	<h1>Jupyter Notebook Demonstrations</h1>
 	
 	<p><a href="https://github.com/adam-rumpf/jupyter-class-demonstrations"><img src="https://img.shields.io/badge/download_source_code-black?style=for-the-badge&logo=github" alt="GitHub Link" title="Download source code" width="300px"/></a></p>
 	
-	<p>Coming soon!</p>
+	<div class="spacer" id="taylor-series-approximations">
+		<div class="dark">
+			<h2>Taylor Series Approximations</h2>
+			
+			<div class="center"><img src="https://raw.githubusercontent.com/adam-rumpf/jupyter-class-demonstrations/master/img/taylor-series-bell.png" title="Taylor Series Image 1" height="300"/> <img src="https://raw.githubusercontent.com/adam-rumpf/jupyter-class-demonstrations/master/img/taylor-series-sine.png" title="Taylor Series Image 2" height="300"/></div>
+		
+			<p>Created 4/17/2021</p>
+			
+			<p><a href="https://mybinder.org/v2/gh/adam-rumpf/jupyter-class-demonstrations/HEAD?urlpath=voila%2Frender%2Fcalc-diffeq-analysis%2Ftaylor-series.ipynb">Complete Demonstration</a></p>
+			
+			<p><a href="https://mybinder.org/v2/gh/adam-rumpf/jupyter-class-demonstrations/HEAD?urlpath=voila%2Frender%2Fcalc-diffeq-analysis%2Ftaylor-series-standalone.ipynb">Standalone Widget</a></p>
+			
+			<p><a href="demos/mathematica.html#taylor-and-fourier-series-approximations">Original Mathematica Demonstration</a></p>
+			
+			<p>This demonstration shows how a <a href="https://en.wikipedia.org/wiki/Taylor_series">Taylor series</a> approximation of a given function changes as more terms are added to the series. The complete demonstration includes a mini-lesson showing how the Taylor series can be arrived at by building up a sequence of increasingly-complicated polynomial approximations, while the standalone widget includes only the final widget for manipulating the center and degree of the approximation for a variety of test functions. These can be used to show how well the approximations model the original function near or far from the center, and how adding more terms changes things.</p>
+			
+			<p>Tags: Analysis, Calculus, Computational Mathematics</p>
+		</div>
+	</div>
 	
 	<footer>
 		<hr>
