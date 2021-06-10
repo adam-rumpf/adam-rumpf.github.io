@@ -11,6 +11,6 @@
   "license": "",
   "homepage": "https://adam-rumpf.github.io/",
   "dependencies": {
-    "katex": "KaTeX/KaTeX"
+    "katex": "git://github.com/KaTeX/KaTeX.git"
   }
 }
