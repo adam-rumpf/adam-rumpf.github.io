@@ -20,6 +20,8 @@ group["complex"] = ["bifurcation-analysis", "complex-newtons-method", "complex-o
 group["fractal"] = ["complex-newtons-method", "continuous-discrete-logistic-growth", "dragon-curve", "fractal-shoulder-angels-and-devils", "pascals-triangle-fractals", "pythagoras-tree"];
 group["fun"] = ["bezier-curves", "domino-and-tromino-tiling", "dragon-curve", "fractal-shoulder-angels-and-devils", "pythagoras-tree", "spirograph"];
 group["pretty"] = ["bezier-curves", "cobwebbing", "complex-newtons-method", "continuous-discrete-logistic-growth", "domino-and-tromino-tiling", "dragon-curve", "pythagoras-tree", "recamans-sequence", "spirograph"];
+group["jupyter"] = ["cobwebbing", "taylor-and-fourier-series-approximations"];
+group["wolfram"] = ["dijkstras-algorithm-and-astar-search", "domino-and-tromino-tiling", "kkt-conditions", "remainder-graphs", "single-winner-voting-systems"];
 
 // Show only elements in specified tag list
 function filter()

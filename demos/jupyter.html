@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<!-- Metadata -->
+	<meta charset="utf-8">
+	<title>Adam Rumpf: Jupyter Notebooks</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Adam Rumpf">
+	<meta name="description" content="Adam Rumpf: Jupyter Notebooks">
+	<link rel="stylesheet" href="../styles.css">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<base href="https://adam-rumpf.github.io/">
+	
+	<!-- KaTeX -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+	
+	<!-- Tag filter script -->
+	<!--<script type="text/javascript" src="demos/js/jupyter.js"></script>-->
+</head>
+
+<!-- Run display script on load. -->
+<body onload="filter()">
+	<header>
+		Adam Rumpf: Math Person
+	</header>
+	
+	<div class="navbar">
+		<a href="https://adam-rumpf.github.io/">Home</a>
+		<a href="cv.html">CV</a>
+		<a href="teaching.html">Teaching</a>
+		<a href="research.html">Research</a>
+		<div class="dropdown">
+			<button class="dropbtn" id="current">
+				Demos...
+			</button>
+			<div class="dropdown-content">
+				<p><a href="demos/mathematica.html">Mathematica Demonstrations</a></p>
+				<p><a href="demos/jupyter.html" id="current">Jupyter Notebook Demonstrations</a></p>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">
+				Programs...
+			</button>
+			<div class="dropdown-content">
+				<p><a href="programs/combat_turtles.html">Combat Turtles</a></p>
+				<p><a href="programs/gamemaker_scripts.html">GameMaker Scripts</a></p>
+				<p><a href="programs/cellular_automata.html">Cellular Automata Playground</a></p>
+				<p><a href="programs/slight_misspeller.html">Slight Misspeller</a></p>
+				<p><a href="programs/logic_circuits.html">Logic Circuits</a></p>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">
+				Games...
+			</button>
+			<div class="dropdown-content">
+				<p><a href="games/chromagraph.html">Chromagraph</a></p>
+				<p><a href="games/topological_asteroids.html">Topological Asteroids</a></p>
+				<p><a href="games/steepest_descent.html">Steepest Descent</a></p>
+			</div>
+		</div>
+		<a href="papercraft.html">Papercraft</a>
+		<a href="links.html">Links</a>
+	</div>
+	
+	<br/>
+	
+	<p>This project is part of a follow-up effort to my <a href="demos/mathematica.html">Mathematica Class Demonstrations</a> project. While I do still enjoy using Mathematica since it's so quick and easy (and I hate doing algebra by hand), unfortunately most people don't have access to it, which significantly limits the potential audience for my previously-uploaded demonstrations. Aside from (and even with) <a href="https://demonstrations.wolfram.com/author.html?author=Adam+Rumpf">Wolfram Demonstrations</a> there isn't really a good way to make Mathematica files available online, so in late 2020 I started to look around for some alternatives.</p>
+	
+	<p>I came across a partial solution in the January 2021 issue of <a href="https://sinews.siam.org/">SIAM News</a>, which included an article about a recently-published <a href="https://sinews.siam.org/Details-Page/writing-an-interactive-textbook">interactive textbook</a> made in the form of a <a href="https://jupyter.org/">Jupyter Notebook</a>. I had heard about and briefly looked into Jupyter Notebooks previously while teaching myself Python, but they seemed hard so I stopped. I also wasn't aware that they had the potential to make interactive widgets similar to Mathematica's <a href="https://reference.wolfram.com/language/ref/Manipulate.html">Manipulate</a> function, but after seeing what they could do I set out to try to learn how to remake some of my old Mathematica projects using Jupyter Notebooks.</p>
+	
+	<p>This is still a work in progress. Jupyter Notebooks are a huge pain to develop as compared to Mathematica demonstrations, and I certainly don't expect to be able to port all of my old projects over, but I expect to be adding more over the years alongside some other web app formats.</p>
+	
+	<p>Jupyter Notebooks are primarily meant for sharing code which can be executed by a server, which makes them great for computable notebooks, but I wanted to try to keep the output as simple as possible so that the user wouldn't have to think about or even look at the source code while looking at the interactive widgets. Normally a service like <a href="https://mybinder.org/">Binder</a> would display the notebook as a sequence of executable cells, so in order to simplify the presentation all of the links below are run through <a href="https://github.com/voila-dashboards/voila">Voilà</a> and rendered as standalone web apps.</p>
+	
+	<p>In addition, unlike the original Mathematica projects I've made more of an effort here to work the interactive widgets into a full mini-lesson with all of the necessary explanatory text. Most of the projects below link to more than one notebook, including a full explanation as well as just the main interactive widget by itself.</p>
+	
+	<h1>Jupyter Notebook Demonstrations</h1>
+	
+	<p><a href="https://github.com/adam-rumpf/jupyter-class-demonstrations"><img src="https://img.shields.io/badge/download_source_code-black?style=for-the-badge&logo=github" alt="GitHub Link" title="Download source code" width="300px"/></a></p>
+	
+	<div class="spacer" id="cobwebbing">
+		<div class="dark">
+			<h2>Cobwebbing</h2>
+			
+			<div class="center"><img src="https://raw.githubusercontent.com/adam-rumpf/jupyter-class-demonstrations/master/img/cobwebbing-chaos.png" title="Cobwebbing Image" height="300"/></div>
+		
+			<p>Created 4/20/2021</p>
+			
+			<p><a href="https://mybinder.org/v2/gh/adam-rumpf/jupyter-class-demonstrations/HEAD?urlpath=voila%2Frender%2Fcalc-diffeq-analysis%2Fcobwebbing.ipynb">Complete Demonstration</a></p>
+			
+			<p><a href="https://mybinder.org/v2/gh/adam-rumpf/jupyter-class-demonstrations/HEAD?urlpath=voila%2Frender%2Fcalc-diffeq-analysis%2Fcobwebbing-standalone.ipynb">Standalone Widget</a></p>
+			
+			<p><a href="demos/mathematica.html#cobwebbing">Original Mathematica Demonstration</a></p>
+			
+			<p>This demonstration gives a brief introduction to <a href="https://en.wikipedia.org/wiki/Cobweb_plot">cobwebbing</a>, a graphical technique for quickly approximating the general behavior of a discrete dynamical system. This is a useful technique in mathematical biology since many population growth models take the form of a difference equation. In particular, if the population in the next time step is given as a function \(f\) of the population in the current time step, then the cobweb plot can be used to estimate the sequence of population values over many time steps by drawing a zig-zagging line alternately between the \(y = f(x)\) curve and the \(y = x\) line. The complete demonstration includes an explanation for the motivation behind cobweb diagrams and the reasoning behind why they work, and goes through a few population models as examples. The standalone version includes only a pair of interactive widgets showing the process of drawing cobweb plots for two systems with adjustable parameters.</p>
+			
+			<p>Tags: Chaos, Discrete Mathematics, Dynamical Systems, Mathematical Modeling, Pretty Pictures</p>
+		</div>
+	</div>
+	
+	<div class="spacer" id="taylor-series-approximations">
+		<div class="dark">
+			<h2>Taylor Series Approximations</h2>
+			
+			<div class="center"><img src="https://raw.githubusercontent.com/adam-rumpf/jupyter-class-demonstrations/master/img/taylor-series-bell.png" title="Taylor Series Image 1" height="300"/> <img src="https://raw.githubusercontent.com/adam-rumpf/jupyter-class-demonstrations/master/img/taylor-series-sine.png" title="Taylor Series Image 2" height="300"/></div>
+		
+			<p>Created 4/17/2021</p>
+			
+			<p><a href="https://mybinder.org/v2/gh/adam-rumpf/jupyter-class-demonstrations/HEAD?urlpath=voila%2Frender%2Fcalc-diffeq-analysis%2Ftaylor-series.ipynb">Complete Demonstration</a></p>
+			
+			<p><a href="https://mybinder.org/v2/gh/adam-rumpf/jupyter-class-demonstrations/HEAD?urlpath=voila%2Frender%2Fcalc-diffeq-analysis%2Ftaylor-series-standalone.ipynb">Standalone Widget</a></p>
+			
+			<p><a href="demos/mathematica.html#taylor-and-fourier-series-approximations">Original Mathematica Demonstration</a></p>
+			
+			<p>This demonstration shows how a <a href="https://en.wikipedia.org/wiki/Taylor_series">Taylor series</a> approximation of a given function changes as more terms are added to the series. The complete demonstration includes a mini-lesson showing how the Taylor series can be arrived at by building up a sequence of increasingly-complicated polynomial approximations, while the standalone widget includes only the final widget for manipulating the center and degree of the approximation for a variety of test functions. These can be used to show how well the approximations model the original function near or far from the center, and how adding more terms changes things.</p>
+			
+			<p>Tags: Analysis, Calculus, Computational Mathematics</p>
+		</div>
+	</div>
+	
+	<footer>
+		<hr>
+		<p>© 2021 <a href="mailto:arumpf@hawk.iit.edu">Adam Rumpf</a></p>
+	</footer>
+</body>
+</html>

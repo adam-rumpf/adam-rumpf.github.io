@@ -30,12 +30,22 @@
 		<a href="research.html">Research</a>
 		<div class="dropdown">
 			<button class="dropbtn">
+				Demos...
+			</button>
+			<div class="dropdown-content">
+				<p><a href="demos/mathematica.html">Mathematica Demonstrations</a></p>
+				<p><a href="demos/jupyter.html">Jupyter Notebook Demonstrations</a></p>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">
 				Programs...
 			</button>
 			<div class="dropdown-content">
-				<p><a href="programs/mathematica.html">Mathematica Class Demonstrations</a></p>
 				<p><a href="programs/combat_turtles.html">Combat Turtles</a></p>
 				<p><a href="programs/gamemaker_scripts.html">GameMaker Scripts</a></p>
+				<p><a href="programs/cellular_automata.html">Cellular Automata Playground</a></p>
+				<p><a href="programs/slight_misspeller.html">Slight Misspeller</a></p>
 				<p><a href="programs/logic_circuits.html">Logic Circuits</a></p>
 			</div>
 		</div>
@@ -44,7 +54,6 @@
 				Games...
 			</button>
 			<div class="dropdown-content">
-				<p><a href="games/cellular_automata.html">Cellular Automata Playground</a></p>
 				<p><a href="games/chromagraph.html" id="current">Chromagraph</a></p>
 				<p><a href="games/topological_asteroids.html">Topological Asteroids</a></p>
 				<p><a href="games/steepest_descent.html">Steepest Descent</a></p>
@@ -85,23 +94,17 @@
 	
 	<p class="center"><img src="images/chromagraph/screen_coloring_solved.png" title="Coloring" width="450px"/></p>
 	
-	<!--<p>Although there are many different varieties of graph coloring problem, the term <a href="https://en.wikipedia.org/wiki/Graph_coloring">"graph coloring"</a> without qualification generally refers to proper vertex coloring. This type of problem is explained on the <a href="games/chromagraph.html#background">main project page</a>, and consists of an assignment of colors to each vertex such that adjacent vertices are colored differently. Each puzzle in this section limits the number of colors that can be used to the smallest number for which a proper coloring is possible, which is known as the <a href="https://en.wikipedia.org/wiki/Graph_coloring#Chromatic_number">chromatic number</a> of the graph, <i>χ(G)</i>. Determining the chromatic number of a general graph is a known <a href="https://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems">hard</a> problem, although there are certain special classes of graph for which specific results are known. A famous example of this is the 1976 <a href="https://en.wikipedia.org/wiki/Four_color_theorem">four color theorem</a> (which is also famous for being the first computer-assisted proof), which established that any <a href="https://en.wikipedia.org/wiki/Planar_graph">planar graph</a> (a graph that can be drawn in the plane so that none of its edges cross) can be colored with only 4 colors.</p>-->
-	
 	<p>Although there are many different varieties of graph coloring problem, the term <a href="https://en.wikipedia.org/wiki/Graph_coloring">"graph coloring"</a> without qualification generally refers to proper vertex coloring. This type of problem is explained on the <a href="games/chromagraph.html#background">main project page</a>, and consists of an assignment of colors to each vertex such that adjacent vertices are colored differently. Each puzzle in this section limits the number of colors that can be used to the smallest number for which a proper coloring is possible, which is known as the <a href="https://en.wikipedia.org/wiki/Graph_coloring#Chromatic_number">chromatic number</a> of the graph, \(\chi(G)\). Determining the chromatic number of a general graph is a known <a href="https://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems">hard</a> problem, although there are certain special classes of graph for which specific results are known. A famous example of this is the 1976 <a href="https://en.wikipedia.org/wiki/Four_color_theorem">four color theorem</a> (which is also famous for being the first computer-assisted proof), which established that any <a href="https://en.wikipedia.org/wiki/Planar_graph">planar graph</a> (a graph that can be drawn in the plane so that none of its edges cross) can be colored with only 4 colors.</p>
 	
 	<h2 id="edge">Edge Coloring</h2>
 	
 	<p class="center"><img src="images/chromagraph/screen_edge_solved.png" title="Edge Coloring" width="450px"/></p>
 	
-	<!--<p><a href="https://en.wikipedia.org/wiki/Edge_coloring">Edge coloring</a> is a natural variant of vertex coloring wherein we assign colors to the edges of a graph rather than the vertices, with the restriction that edges sharing an endpoint must be colored differently. The smallest number of required colors is known as the <a href="https://en.wikipedia.org/wiki/Edge_coloring#Definitions">chromatic index</a> of the graph, <i>χ'(G)</i>. Interestingly, although it is difficult to come up with good general bounds for the number of colors required for vertex coloring, the number of possible colors required for an edge coloring is extremely limited. The obvious lower bound is just the maximum vertex degree (or maximum number of neighbors possessed by any vertex), <i>Δ(G)</i>, since all edges meeting at a single vertex require different colors, but it's not too hard to see that some graphs require more than that many colors (for example, a triangle graph has maximum degree <i>Δ(G) = 2</i> but requires a different color for all three of its edges). However, <a href="https://en.wikipedia.org/wiki/Vizing%27s_theorem">Vizing's theorem</a> shows that having just one extra color is always enough. This implies that there are only two possible values for the chromatic index of any graph: either <i>χ'(G) = Δ(G)</i> or <i>χ'(G) = Δ(G)+1</i>.</p>-->
-	
 	<p><a href="https://en.wikipedia.org/wiki/Edge_coloring">Edge coloring</a> is a natural variant of vertex coloring wherein we assign colors to the edges of a graph rather than the vertices, with the restriction that edges sharing an endpoint must be colored differently. The smallest number of required colors is known as the <a href="https://en.wikipedia.org/wiki/Edge_coloring#Definitions">chromatic index</a> of the graph, \(\chi'(G)\). Interestingly, although it is difficult to come up with good general bounds for the number of colors required for vertex coloring, the number of possible colors required for an edge coloring is extremely limited. The obvious lower bound is just the maximum vertex degree (or maximum number of neighbors possessed by any vertex), \(\Delta(G)\), since all edges meeting at a single vertex require different colors, but it's not too hard to see that some graphs require more than that many colors (for example, a triangle graph has maximum degree \(\Delta(G) = 2\) but requires a different color for all three of its edges). However, <a href="https://en.wikipedia.org/wiki/Vizing%27s_theorem">Vizing's theorem</a> shows that having just one extra color is always enough. This implies that there are only two possible values for the chromatic index of any graph: either \(\chi'(G) = \Delta(G)\) or \(\chi'(G) = \Delta(G)+1\).</p>
 	
 	<h2 id="total">Total Coloring</h2>
 	
 	<p class="center"><img src="images/chromagraph/screen_total_solved.png" title="Total Coloring" width="450px"/></p>
-	
-	<!--<p>After defining vertex coloring and edge coloring the natural continuation is to combine the two, in which case we get <a href="https://en.wikipedia.org/wiki/Total_coloring">total coloring</a>. This consists of a coloring of the vertices and edges of a graph such that (a) the vertex coloring is proper, (b) the edge coloring is proper, and (c) each edge is colored differently from both of its endpoints. The minimum number of colors required to complete a total coloring is the total chromatic number, <i>χ''(G)</i>. Similar to edge coloring, it is clear that this requires at least <i>Δ(G)+1</i> colors (this is the number required to color the vertex of maximum degree plus all incident edges). Good general upper bounds do not exist, but it is conjectured that only one additional color suffices, in which case there would also only be two possible total chromatic numbers: either <i>χ''(G) = Δ(G)+1</i> or <i>χ''(G) = Δ(G)+2</i>.</p>-->
 	
 	<p>After defining vertex coloring and edge coloring the natural continuation is to combine the two, in which case we get <a href="https://en.wikipedia.org/wiki/Total_coloring">total coloring</a>. This consists of a coloring of the vertices and edges of a graph such that (a) the vertex coloring is proper, (b) the edge coloring is proper, and (c) each edge is colored differently from both of its endpoints. The minimum number of colors required to complete a total coloring is the total chromatic number, \(\chi''(G)\). Similar to edge coloring, it is clear that this requires at least \(\Delta(G)+1\) colors (this is the number required to color the vertex of maximum degree plus all incident edges). Good general upper bounds do not exist, but it is conjectured that only one additional color suffices, in which case there would also only be two possible total chromatic numbers: either \(\chi''(G) = \Delta(G)+1\) or \(\chi''(G) = \Delta(G)+2\).</p>
 	
@@ -114,8 +117,6 @@
 	<h2 id="dominating">Dominating Set</h2>
 	
 	<p class="center"><img src="images/chromagraph/screen_dominating_solved.png" title="Dominating Set" width="450px"/></p>
-	
-	<!--<p>The <a href="https://en.wikipedia.org/wiki/Dominating_set">dominating set</a> problem represents the first significant departure from graph coloring problems that the game explores (depending on the order in which the player makes it through the levels). A dominating set of a graph is a set of vertices for which every vertex is either in the selected set or adjacent to something in the selected set. The size of the smallest possible dominating set is known as the domination number, <i>γ(G)</i>. Within the game this problem is represented in the graph coloring format by allowing the player to color a limited number of vertices to represent the selected set, with the adjacent vertices highlighted to make it easier to tell when everything has been dominated. Unlike all of the above problems, dominating set is about coverage rather than conflict avoidance, and as such it allows adjacent vertices to be selected, causing it to play very differently from the previous sections.</p>-->
 	
 	<p>The <a href="https://en.wikipedia.org/wiki/Dominating_set">dominating set</a> problem represents the first significant departure from graph coloring problems that the game explores (depending on the order in which the player makes it through the levels). A dominating set of a graph is a set of vertices for which every vertex is either in the selected set or adjacent to something in the selected set. The size of the smallest possible dominating set is known as the domination number, \(\gamma(G)\). Within the game this problem is represented in the graph coloring format by allowing the player to color a limited number of vertices to represent the selected set, with the adjacent vertices highlighted to make it easier to tell when everything has been dominated. Unlike all of the above problems, dominating set is about coverage rather than conflict avoidance, and as such it allows adjacent vertices to be selected, causing it to play very differently from the previous sections.</p>
 	
@@ -169,8 +170,6 @@
 		<img src="images/chromagraph/graph_k7.png" title="K7" width="300px"/>
 	</p>
 	
-	<!--<p>A <a href="https://en.wikipedia.org/wiki/Complete_graph">complete graph</a> on <i>n</i> vertices, <i>K<sub>n</sub></i>, is a graph for which all possible pairs of vertices are adjacent. Normally these are not very interesting when it comes to graph coloring because, by their nature, all vertices require a different color, but they lead to some interesting results for some of the other puzzle types. For example, <i>K<sub>7</sub></i> can be decomposed into 7 triangles, which seems to be the go-to illustration that everyone reaches for when they talk about <a href="https://en.wikipedia.org/wiki/Block_design">block design</a> (as I saw for about five talks in a row at a <a href="https://sites.google.com/a/westga.edu/mcccc31/">combinatorics conference</a>).</p>-->
-	
 	<p>A <a href="https://en.wikipedia.org/wiki/Complete_graph">complete graph</a> on \(n\) vertices, \(K_n\), is a graph for which all possible pairs of vertices are adjacent. Normally these are not very interesting when it comes to graph coloring because, by their nature, all vertices require a different color, but they lead to some interesting results for some of the other puzzle types. For example, \(K_7\) can be decomposed into 7 triangles, which seems to be the go-to illustration that everyone reaches for when they talk about <a href="https://en.wikipedia.org/wiki/Block_design">block design</a> (as I saw for about five talks in a row at a <a href="https://sites.google.com/a/westga.edu/mcccc31/">combinatorics conference</a>).</p>
 	
 	<h2 id="cycle">Cycle Graphs</h2>
@@ -180,8 +179,6 @@
 		<img src="images/chromagraph/graph_c7.png" title="C7" width="300px"/>
 	</p>
 	
-	<!--<p>A <a href="https://en.wikipedia.org/wiki/Cycle_graph">cycle graph</a> on <i>n</i> vertices, <i>C<sub>n</sub></i>, is a graph that consists entirely of a single closed chain. This is a relatively simple type of graph that often appears as a subgraph in the characterization of other graph properties. For example, a graph is <a href="https://en.wikipedia.org/wiki/Bipartite_graph">bipartite</a> (i.e. 2-colorable) if and only if it does not contain an odd cycle. Cycles also figure prominently into one of my favorite graph theory problems (and what is by some measures the first ever graph theory result), the <a href="https://en.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg">Seven Bridges of Königsberg</a>.</p>-->
-	
 	<p>A <a href="https://en.wikipedia.org/wiki/Cycle_graph">cycle graph</a> on \(n\) vertices, \(C_n\), is a graph that consists entirely of a single closed chain. This is a relatively simple type of graph that often appears as a subgraph in the characterization of other graph properties. For example, a graph is <a href="https://en.wikipedia.org/wiki/Bipartite_graph">bipartite</a> (i.e. 2-colorable) if and only if it does not contain an odd cycle. Cycles also figure prominently into one of my favorite graph theory problems (and what is by some measures the first ever graph theory result), the <a href="https://en.wikipedia.org/wiki/Seven_Bridges_of_K%C3%B6nigsberg">Seven Bridges of Königsberg</a>.</p>
 	
 	<h2 id="wheel">Wheel Graphs</h2>
@@ -190,8 +187,6 @@
 		<img src="images/chromagraph/graph_w4.png" title="W5" width="300px"/>
 		<img src="images/chromagraph/graph_w5.png" title="W6" width="300px"/>
 	</p>
-	
-	<!--<p>A <a href="https://en.wikipedia.org/wiki/Wheel_graph">wheel graph</a> on <i>n</i> vertices, <i>W<sub>n</sub></i>, is constructed by connecting every vertex of a cycle to a single central vertex. Wheel graphs do not show up very often in nature, but they are a relatively simple infinite family of graphs to study, and so are often used in the development of results for restricted sets of graphs.</p>-->
 	
 	<p>A <a href="https://en.wikipedia.org/wiki/Wheel_graph">wheel graph</a> on \(n\) vertices, \(W_n\), is constructed by connecting every vertex of a cycle to a single central vertex. Wheel graphs do not show up very often in nature, but they are a relatively simple infinite family of graphs to study, and so are often used in the development of results for restricted sets of graphs.</p>
 	
@@ -212,8 +207,6 @@
 		<img src="images/chromagraph/graph_p4.png" title="P5" width="300px"/>
 	</p>
 	
-	<!--<p>A <a href="https://en.wikipedia.org/wiki/Path_graph">path graph</a> on <i>n</i> vertices, <i>P<sub>n</sub></i>, is a simple tree graph consisting of a single chain of vertices in sequence. <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Finding paths</a> within larger graphs is an extremely important problem in its own right, and forms the basis of navigation software, among many other things. In some sense a path can be thought of as the "least compact" type of tree on <i>n</i> vertices in that its vertices are as spread out as it is possible to be while still being connected.</p>-->
-	
 	<p>A <a href="https://en.wikipedia.org/wiki/Path_graph">path graph</a> on \(n\) vertices, \(P_n\), is a simple tree graph consisting of a single chain of vertices in sequence. <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Finding paths</a> within larger graphs is an extremely important problem in its own right, and forms the basis of navigation software, among many other things. In some sense a path can be thought of as the "least compact" type of tree on \(n\) vertices in that its vertices are as spread out as it is possible to be while still being connected.</p>
 	
 	<h2 id="star">Star Graphs</h2>
@@ -221,8 +214,6 @@
 	<p class="center">
 		<img src="images/chromagraph/graph_s5.png" title="S6" width="300px"/>
 	</p>
-	
-	<!--<p>A <a href="https://en.wikipedia.org/wiki/Star_(graph_theory)">star graph</a> on <i>n</i> vertices, <i>S<sub>n</sub></i>, is another simple tree graph consisting of a single central vertex adjacent to every other vertex. In some sense a star can be thought of as the "most compact" type of tree on <i>n</i> vertices in that its vertices are as close together as it is possible to be while avoiding forming any cycles. Although stars and paths are both trees, and are thus both 2-colorable, their difference in degree distribution gives them very different behavior when it comes to most other puzzles.</p>-->
 	
 	<p>A <a href="https://en.wikipedia.org/wiki/Star_(graph_theory)">star graph</a> on \(n\) vertices, \(S_n\), is another simple tree graph consisting of a single central vertex adjacent to every other vertex. In some sense a star can be thought of as the "most compact" type of tree on \(n\) vertices in that its vertices are as close together as it is possible to be while avoiding forming any cycles. Although stars and paths are both trees, and are thus both 2-colorable, their difference in degree distribution gives them very different behavior when it comes to most other puzzles.</p>
 	
@@ -250,8 +241,6 @@
 		<img src="images/chromagraph/graph_cube.png" title="Cube" width="300px"/>
 		<img src="images/chromagraph/graph_hypercube.png" title="Hypercube" width="300px"/>
 	</p>
-	
-	<!--<p>A <a href="https://en.wikipedia.org/wiki/Hypercube_graph">hypercube graph</a> of dimension <i>n</i>, <i>Q<sub>n</sub></i>, is a particular type of polyhedral graph which represents a generalization of the 2-dimensional square or the 3-dimensional cube. As with most <a href="https://en.wikipedia.org/wiki/120-cell">high-dimensional polytopes</a>, projecting the shape onto the plane results in a bit of a jumbled mess, but I like that you can still see some of the cubes present in this embedding of <i>Q<sub>4</sub></i>.</p>-->
 	
 	<p>A <a href="https://en.wikipedia.org/wiki/Hypercube_graph">hypercube graph</a> of dimension \(n\), \(Q_n\), is a particular type of polyhedral graph which represents a generalization of the 2-dimensional square or the 3-dimensional cube. As with most <a href="https://en.wikipedia.org/wiki/120-cell">high-dimensional polytopes</a>, projecting the shape onto the plane results in a bit of a jumbled mess, but I like that you can still see some of the cubes present in this embedding of \(Q_4\).</p>
 	
@@ -296,8 +285,6 @@
 		<img src="images/chromagraph/graph_c6_cart_p3.png" title="C6 □ P4" width="300px"/>
 		<img src="images/chromagraph/graph_c5_cart_c5.png" title="C5 □ C5" width="300px"/>
 	</p>
-	
-	<!--<p>In the same way that we can define algebraic operators which combine two numbers to produce another number, there are various <a href="https://en.wikipedia.org/wiki/Graph_product">graph operators</a> that combine two graphs to produce another graph. One of the simplest of these operators is the <a href="https://en.wikipedia.org/wiki/Cartesian_product_of_graphs">Cartesian product</a>, <i>G □ H</i>, which effectively consists of producing a copy of <i>G</i> for each vertex of <i>H</i> and defining edges between copied vertices to be analogous to the edges of <i>H</i>. The Cartesian product has a lot of nice algebraic properties, like being commutative and associative, and it is even possible to decompose a graph into "prime" graphs whose Cartesian product is the original graph. It also appears in a lot of graph coloring results because the colorings of the two factors can often be used to come up with a coloring for the product, and in fact a common early exercise for graph theory students is to prove that <i>χ(G □ H) = max{χ(G), χ(H)}</i>. The fall coloring puzzle which includes <i>C<sub>5</sub> □ C<sub>5</sub></i>, in particular, is worth pointing out as an unexpected result because the product is fall colorable in spite of the fact that neither factor is.</p>-->
 	
 	<p>In the same way that we can define algebraic operators which combine two numbers to produce another number, there are various <a href="https://en.wikipedia.org/wiki/Graph_product">graph operators</a> that combine two graphs to produce another graph. One of the simplest of these operators is the <a href="https://en.wikipedia.org/wiki/Cartesian_product_of_graphs">Cartesian product</a>, \(G \square H\), which effectively consists of producing a copy of \(G\) for each vertex of \(H\) and defining edges between copied vertices to be analogous to the edges of \(H\). The Cartesian product has a lot of nice algebraic properties, like being commutative and associative, and it is even possible to decompose a graph into "prime" graphs whose Cartesian product is the original graph. It also appears in a lot of graph coloring results because the colorings of the two factors can often be used to come up with a coloring for the product, and in fact a common early exercise for graph theory students is to prove that \(\chi(G \square H) = \max\{\chi(G), \chi(H)\}\). The fall coloring puzzle which includes \(C_5 \square C_5\), in particular, is worth pointing out as an unexpected result because the product is fall colorable in spite of the fact that neither factor is.</p>
 	

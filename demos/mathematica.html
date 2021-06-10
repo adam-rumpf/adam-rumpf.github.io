@@ -18,7 +18,7 @@
         onload="renderMathInElement(document.body);"></script>
 	
 	<!-- Tag filter script -->
-	<script type="text/javascript" src="programs/js/mathematica.js"></script>
+	<script type="text/javascript" src="demos/js/mathematica.js"></script>
 </head>
 
 <!-- Run display script on load. -->
@@ -34,14 +34,23 @@
 		<a href="research.html">Research</a>
 		<div class="dropdown">
 			<button class="dropbtn" id="current">
+				Demos...
+			</button>
+			<div class="dropdown-content">
+				<p><a href="demos/mathematica.html" id="current">Mathematica Demonstrations</a></p>
+				<p><a href="demos/jupyter.html">Jupyter Notebook Demonstrations</a></p>
+			</div>
+		</div>
+		<div class="dropdown">
+			<button class="dropbtn">
 				Programs...
 			</button>
 			<div class="dropdown-content">
-				<p><a href="programs/mathematica.html" id="current">Mathematica Class Demonstrations</a></p>
 				<p><a href="programs/combat_turtles.html">Combat Turtles</a></p>
 				<p><a href="programs/gamemaker_scripts.html">GameMaker Scripts</a></p>
-				<p><a href="programs/logic_circuits.html">Logic Circuits</a></p>
+				<p><a href="programs/cellular_automata.html">Cellular Automata Playground</a></p>
 				<p><a href="programs/slight_misspeller.html">Slight Misspeller</a></p>
+				<p><a href="programs/logic_circuits.html">Logic Circuits</a></p>
 			</div>
 		</div>
 		<div class="dropdown">
@@ -49,7 +58,6 @@
 				Games...
 			</button>
 			<div class="dropdown-content">
-				<p><a href="games/cellular_automata.html">Cellular Automata Playground</a></p>
 				<p><a href="games/chromagraph.html">Chromagraph</a></p>
 				<p><a href="games/topological_asteroids.html">Topological Asteroids</a></p>
 				<p><a href="games/steepest_descent.html">Steepest Descent</a></p>
@@ -63,11 +71,11 @@
 	
 	<p>Over the years I have written a large number of <a href="http://www.wolfram.com/mathematica/">Mathematica</a> programs, and still continue to do so. These projects started as an effort to teach myself Mathematica while working as a TA. Things have gotten a little out of hand, and as of today I have accrued over 200 <a href="https://www.wolfram.com/notebooks/">Notebook</a> files, all written during my spare time to explore a wide variety of topics of personal interest. In order to establish my nerd cred a small sample of this collection is provided below, and more will be added over time. I encourage you to have a look around to see if anything interests you. At the very least there are some pretty pictures.</p>
 	
-	<p>Some of these projects have been uploaded to the <a href="https://demonstrations.wolfram.com/">Wolfram Demonstrations Project</a>, and can be found at my <a href="http://demonstrations.wolfram.com/author.html?author=Adam+Rumpf">author page</a>. This entire collection is contained in a <a href="https://github.com/adam-rumpf/mathematica-class-demonstrations">GitHub repository</a> released under the <a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/LICENSE">MIT License</a>. You can also browse the collection below. Every project includes a link to download the Notebook file. The creation date indicates when my original version was completed, but all files have since been cleaned up to make them more user-friendly. All of the files below are meant to be useable in a classroom setting to act as visual, interactive demonstrations. Please feel free to use and modify these programs however you wish.</p>
+	<p>Some of these projects have been uploaded to the <a href="https://demonstrations.wolfram.com/">Wolfram Demonstrations Project</a>, and can be found at my <a href="http://demonstrations.wolfram.com/author.html?author=Adam+Rumpf">author page</a>. Others have been remade as <a href="https://jupyter.org/">Jupyter Notebooks</a> for viewing online, and can be found on this site's <a href="demos/jupyter.html">Jupyter Notebook page</a>. This entire collection is contained in a <a href="https://github.com/adam-rumpf/mathematica-class-demonstrations">GitHub repository</a> released under the <a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/LICENSE">MIT License</a>. You can also browse the collection below. Every project includes a link to download the Notebook file as well as any online distributions. The creation date indicates when my original version was completed, but all files have since been cleaned up to make them more user-friendly. All of the files below are meant to be usable in a classroom setting to act as visual, interactive demonstrations. Please feel free to use and modify these programs however you wish.</p>
 	
 	<h1>Mathematica Demonstrations</h1>
 	
-	<p><a href="https://github.com/adam-rumpf/mathematica-class-demonstrations"><img src="images/github/GitHub_Logo.png" alt="GitHub Link" title="GitHub Link" width="300px"/></a></p>
+	<p><a href="https://github.com/adam-rumpf/mathematica-class-demonstrations"><img src="https://img.shields.io/badge/download_source_code-black?style=for-the-badge&logo=github" alt="GitHub Link" title="Download source code" width="300px"/></a></p>
 	
 	<p>Filter by tag: <select value="all" name="tag" id="tags" onchange="filter()">
 		<option value="all" selected>Show All</option>
@@ -94,6 +102,10 @@
 		<option value="fun">Just for Fun</option>
 		<option value="modeling">Mathematical Modeling</option>
 		<option value="pretty">Pretty Pictures</option>
+		<!-- Distributions -->
+		<option value="" disabled>--- Distributions ---</option>
+		<option value="jupyter">Jupyter Notebooks</option>
+		<option value="wolfram">Wolfram Demonstrations</option>
 	</select></p>
 	
 	<!-- Displays number of active demonstrations depending on selection. -->
@@ -168,6 +180,8 @@
 			<p>Created 11/4/2014</p>
 			
 			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/calc-diffeq-analysis/cobwebbing.nb" download="cobwebbing.nb">Download Notebook</a></p>
+			
+			<p><a href="demos/jupyter.html#cobwebbing">Jupyter Notebook Remake</a></p>
 			
 			<p><a href="https://en.wikipedia.org/wiki/Cobweb_plot">Cobwebbing</a> is a graphical technique for evaluating the long-term behavior of a discrete dynamical system. This demonstration automatically generates cobweb plots for a variety of test systems, although the method is meant to be used by hand to quickly analyze such a system without the need for a computer.</p>
 			
@@ -566,6 +580,8 @@
 			<p>Created 11/6/2017</p>
 			
 			<p><a href="https://raw.githubusercontent.com/adam-rumpf/mathematica-class-demonstrations/master/calc-diffeq-analysis/taylor-fourier-series.nb" download="taylor-fourier-series.nb">Download Notebook</a></p>
+			
+			<p><a href="demos/jupyter.html#taylor-series-approximations">Jupyter Notebook Remake</a></p>
 			
 			<p>This demonstration shows how a <a href="https://en.wikipedia.org/wiki/Taylor_series">Taylor Series</a> or a <a href="https://en.wikipedia.org/wiki/Fourier_series">Fourier Series</a> approximation of a given function changes as more terms are added to the series. The Taylor and Fourier series' are both ways of representing functions as linear combinations of simpler functions (polynomial functions for Taylor and trigonometric functions for Fourier). They also have important applications in computational mathematics, since taking only the first few terms of the series can provide a simple approximation of a potentially complicated function within a small neighborhood.</p>
 			
