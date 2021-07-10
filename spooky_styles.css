@@ -122,6 +122,24 @@ h2
 	overflow: auto;
 }
 
+/* even darkeneder box */
+.darker
+{
+	background-color: #c0c0c0;
+	border: 3px #c0c0c0 solid;
+	display: block;
+	overflow: auto;
+}
+
+/* the darkenederest box */
+.darkest
+{
+	background-color: #b0b0b0;
+	border: 3px #b0b0b0 solid;
+	display: block;
+	overflow: auto;
+}
+
 /* spacer */
 .spacer
 {
