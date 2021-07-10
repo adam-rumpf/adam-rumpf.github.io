@@ -123,8 +123,8 @@ h2
 /* even darkeneder box */
 .darker
 {
-	background-color: #c0c0c0;
-	border: 3px #c0c0c0 solid;
+	background-color: #b8b8b8;
+	border: 3px #b8b8b8 solid;
 	display: block;
 	overflow: auto;
 }
@@ -132,8 +132,8 @@ h2
 /* the darkenederest box */
 .darkest
 {
-	background-color: #b0b0b0;
-	border: 3px #b0b0b0 solid;
+	background-color: #a0a0a0;
+	border: 3px #a0a0a0 solid;
 	display: block;
 	overflow: auto;
 }
