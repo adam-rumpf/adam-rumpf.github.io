@@ -88,7 +88,7 @@
 		</div>
 	</div>
 	
-	<p>This project is still in development and currently consists of little more than a tech demo for the CA-based spell system. I hope to periodically update it over time to get it to the point of being a full-fledged game.</p>
+	<p>This project is still in development and currently consists of little more than a tech demo for the CA-based spell system. I may periodically update it over time to get it to the point of being a full-fledged game. Or not. We'll see.</p>
 	
 	<!-- Screenshots -->
 	
@@ -103,13 +103,7 @@
 	
 	<!-- Mathematical Background -->
 	
-	<!-- lifelike CA <https://en.wikipedia.org/wiki/Life-like_cellular_automaton>, elementary CA <https://en.wikipedia.org/wiki/Elementary_cellular_automaton>, Wolfram codes <https://en.wikipedia.org/wiki/Wolfram_code> -->
-	
-	<!--<h2 id="background">Mathematical Background</h2>-->
-	
-	<!-- https://en.wikipedia.org/wiki/Elementary_cellular_automaton -->
-	<!-- https://en.wikipedia.org/wiki/Life-like_cellular_automaton -->
-	<!-- https://en.wikipedia.org/wiki/Wolfram_code -->
+	<!-- ### -->
 	
 	<!-- 7DRL Build -->
 	
@@ -117,7 +111,7 @@
 	
 	<p>I began working on this project as part of an intended submission for <a href="https://itch.io/jam/7drl-challenge-2021">7 Day Roguelike (7DRL) Challenge 2021</a>. Due perhaps in part to most of my previous experiences with roguelikes being <a href="https://bindingofisaacrebirth.fandom.com/wiki/Binding_of_Isaac:_Rebirth_Wiki">action-based</a>, my preliminary ideas revolved around developing interesting procedural generation systems for action game weapons based on <a href="https://en.wikipedia.org/wiki/Metaheuristic">metaheuristic</a> optimization techniques. I would still like to play around with those ideas at some point, but I felt like it would be more in the spirit of the jam to try to hew closer to the classic <a href="https://en.wikipedia.org/wiki/Roguelike">roguelike</a> style. That got me to thinking about a turn- and tile-based game, and eventually to the idea of using <a href="https://en.wikipedia.org/wiki/Cellular_automata">cellular automata</a> (a topic with which I have <a href="programs/cellular_automata.html">some level</a> of familiarity) for gameplay purposes. Thinking about "classic" roguelikes is also what motivated me to go for a fantasy dungeon crawling setting (along of course with my love of <a href="https://www.d20pfsrd.com/"><i>D&amp;D</i></a>).</p>
 	
-	<p>Making the player into a wizard, and making their spells behave like a CA, seemed to be the natural way to incorporate CA into a roguelike. My initial ideas for procedural spell generation were significantly more complicated and involved more effort on the part of the player to control the behavior of their spell. For simplicity I decided to just pick the CA at random from a list of rules that I had generated beforehand by writing a program to search for ones likely to lead to "interesting" patterns. As a result the gameplay tends to be rather unbalanced from run-to-run since some patterns are far more useful than others, and with lifelike CA it can be pretty easy to get yourself killed, but that's funny so I decided to roll with it. In fact, one of my favorite fantasy games is <a href="https://www.arrowheadgamestudios.com/aboutarrowhead/games/magicka/"><i>Magicka</i></a>, which does an excellent job of making its magic system feel dangerous and powerful due to how easily you can accidentally kill yourself with it. I really enjoy works that portray wizards as <a href="https://www.terrypratchettbooks.com/book-series/discworld/">irresponsible doofuses</a>, which is also what led me to spend so much time working on a random generation system for creating <a href="https://adam-rumpf.itch.io/wizard-names">dumb wizard names</a>.</p>
+	<p>Making the player into a wizard, and making their spells behave like a CA, seemed to be the natural way to incorporate CA into a roguelike. My initial ideas for procedural spell generation were significantly more complicated and involved more effort on the part of the player to control the behavior of their spell. For simplicity I decided to just pick the CA at random from a list of rules that I had generated beforehand by writing a program to search for ones likely to lead to "interesting" patterns. As a result the gameplay tends to be rather unbalanced from run-to-run since some patterns are far more useful than others, and with lifelike CA it can be pretty easy to get yourself killed, but that's funny so I decided to roll with it. In fact, one of my favorite fantasy games is <a href="https://www.arrowheadgamestudios.com/aboutarrowhead/games/magicka/"><i>Magicka</i></a>, which does an excellent job of making its magic system feel dangerous and powerful due to how easily you can accidentally kill yourself with your own spells. I really enjoy works that portray wizards as <a href="https://www.terrypratchettbooks.com/book-series/discworld/">irresponsible doofuses</a>, which is also what led me to spend so much time working on a random generation system for creating <a href="https://adam-rumpf.itch.io/wizard-names">dumb wizard names</a>.</p>
 	
 	<p class="center"><img src="images/cellular_arcana/jam_01.png" height="350px" title="My first screenshot of the jam build, before diagonal movement was added. The random name generation system is in place, so clearly I had my priorities in order."/></p>
 	
@@ -125,7 +119,7 @@
 	
 	<p>The pathfinding issue turned out to be one of the biggest stumbling blocks during the jam period, and was one of the things that ended up eating the most time. As a <a href="https://arxiv.org/abs/2102.05248">semi-professional graph lad</a>, when presented with the task of figuring out how to get enemies on a game board to find the shortest path to the player, the first thing that occurs to me is <a href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's algorithm</a>. My original plan was to maintain a graph representation of the game board and to use that for finding shortest paths, and I even made a <a href="https://github.com/adam-rumpf/game-maker-scripts#graph-objects-and-functions">GMS2 local asset package</a> for it, but that turned out to be far too computationally expensive on a board with hundreds of spaces. Having sunk a couple of days worth of development time into it, I eventually abandoned that system for a lightweight implementation of <a href="https://en.wikipedia.org/wiki/A*_search_algorithm">A* search</a> that uses only an array representation of the board while keeping the graph structures implicit, and making the switch dramtically improved the time required to compute enemy moves.</p>
 	
-	<p>The enemy pathfinding algorithm also resulted in some interesting unexpected behavior. <i>Cellular Arcana</i> allows diagonal movement (since disallowing it makes the entire game feel much slower), meaning that distances on the board are measured using <a href="https://en.wikipedia.org/wiki/Chebyshev_distance">Chebyshev distance</a>. Under this metric moving diagonally counts as exactly the same distance as moving rectilinearly, unlike <a href="https://en.wikipedia.org/wiki/Euclidean_distance">Euclidean Distance</a> where diagonal movement takes longer. As a result, if the player is located on the same rank or file as an enemy, the enemy often takes a circuitous-looking zig-zagging route to move closer to the player, since under Chebyshev distance that takes no longer than a straight path. I like the result since it makes it seem like the enemies are attempting to avoid a direct line of sight to the player as if they're attempting to dodge the player's attacks, even though that isn't something they've actually been programmed to do (yet).</p>
+	<p>The enemy pathfinding algorithm also resulted in some interesting unexpected behavior. <i>Cellular Arcana</i> allows diagonal movement (since disallowing it makes the entire game feel much slower), meaning that distances on the board are measured as <a href="https://en.wikipedia.org/wiki/Chebyshev_distance">Chebyshev distance</a>. Under this metric moving diagonally counts as exactly the same distance as moving rectilinearly, unlike <a href="https://en.wikipedia.org/wiki/Euclidean_distance">Euclidean Distance</a> where diagonal movement takes longer. As a result, if the player is located on the same rank or file as an enemy, the enemy often takes a circuitous-looking zig-zagging route to move closer to the player, since under Chebyshev distance that takes no longer than a straight path. I like the result since it makes it seem like the enemies are attempting to avoid a direct line of sight to the player as if to dodge the player's attacks, even though that isn't something they've actually been programmed to do (yet).</p>
 	
 	<p class="center"><img src="images/cellular_arcana/jam_02.png" height="350px" title="A diagnostic test image from when I was implementing the enemy pathfinding system. The colored dots show the (Chebyshev) shortest paths from each enemy to the player."/></p>
 	
@@ -139,11 +133,11 @@
 	
 	<h2 id="alpha">Early Access</h2>
 	
-	<p>... I decided to still leave it mostly on the shelf, but to occasionally poke and prod it and also to let other people in because I put a lot of work into that shelf.</p>
+	<p>... I decided to still leave it mostly on the shelf, but to occasionally poke and prod it and also to let other people in because hey I put a lot of work into that shelf.</p>
 	
 	<p>Previously I've preferred to keep all of my projects private until they're done to my level of satisfaction, but not too long after the 7DRL jam ended I started a <a href="https://floridapoly.edu/academic-departments/applied-mathmatics.php">new career</a>. With all of the preparation required for the position I knew that I would not have much time to work on game design projects for another year or so, and I certainly didn't like the prospect of going so long without releasing <i>something</i>, so I decided to continue to work on <i>Cellular Arcana</i> off-and-on as an early access game.</p>
 	
-	<p>As of the initial <a href="https://adam-rumpf.itch.io/cellular-arcana">public alpha</a> release the project has achieved what I would consider to be a bare minimum of what is required to constitute a gameplay demo, including completing the artwork, adding sound, and implementing a rudimentary room battle progression system to allow for endless mode. The eventual plan is to flesh out the game by adding different areas, shops, more enemies, and an actual ending, as well as differentiating the different spell elements (which currently differ only cosmetically).</p>
+	<p>As of the initial <a href="https://adam-rumpf.itch.io/cellular-arcana">public alpha</a> release the project has achieved what I would consider to be a bare minimum of what is required to constitute a gameplay demo, including completing the artwork, adding sound, and implementing a rudimentary room battle progression system to allow for endless mode. The eventual plan is to flesh out the game by adding different areas, shops, more enemies, and an actual ending, as well as differentiating the different spell elements (which currently differ only cosmetically), though I cannot say for certain whether any of that will ever happen. I will still certainly continue to release games in the future, but I may well have lost interest in this particular project and moved on to something else by the time I'm able to finally work on it.</p>
 	
 	<div class="spacer">
 		<div class="darkest">
@@ -157,7 +151,7 @@
 		</div>
 	</div>
 	
-	<p>I have to say that this game includes the best pixel art I've ever made. Working within a 16x16 pixel square forces you to adopt a stylized approach in order for anything to be recognizable. For example, trying to draw a realistically-proportioned adult humanoid in that little space would make their limbs about 1 pixel wide, which would make all humanoid characters look nearly identical. But giving every character a huge head allows a lot more distinguishing details to be added.</p>
+	<p>I have to say that this game includes the best pixel art I've ever made. Working within a 16x16 pixel square forces you to adopt a stylized approach in order for anything to be recognizable. For example, trying to draw a realistically-proportioned adult humanoid in that little space would make their limbs about 1 pixel wide, which would make all humanoid characters look nearly identical. But giving every character a huge head that takes up half of the square grants much more space in which to add distinguishing details.</p>
 	
 	<footer>
 		<hr>
