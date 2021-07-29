@@ -56,6 +56,7 @@
 			<div class="dropdown-content">
 				<p><a href="games/chromagraph.html">Chromagraph</a></p>
 				<p><a href="games/topological_asteroids.html" id="current">Topological Asteroids</a></p>
+				<p><a href="games/cellular_arcana.html">Cellular Arcana</a></p>
 				<p><a href="games/steepest_descent.html">Steepest Descent</a></p>
 			</div>
 		</div>
@@ -79,13 +80,13 @@
 	
 	<!-- Screenshots -->
 	
-	<h2>Screenshots</h2>
+	<h2 id="screenshots">Screenshots</h2>
 	
 	<p class="center"><img src="images/asteroids/torus_01.jpg" title="Torus Gameplay" width="300px"/> <img src="images/asteroids/rpp_01.jpg" title="Real Projective Plane Gameplay" width="300px"/> <img src="images/asteroids/sphere_01.jpg" title="Sphere Gameplay" width="300px"/></p>
 	
 	<!-- Background -->
 	
-	<h2>Background</h2>
+	<h2 id="background">Background</h2>
 	
 	<p>This project was largely inspired by the freeware program <a href="http://www.geometrygames.org/TorusGames/index.html"><i>Torus Games</i></a>, by Jeff Weeks. Jeff has <a href="http://www.geometrygames.org">an entire website</a> devoted to interesting games and other interactive programs for illustrating abstract mathematical concepts, and anyone who knows me knows that I'm all about that. <i>Torus Games</i> allows players to explore how familiar games work differently when space connects to itself differently. Whereas most board games that we are used to have finite boundaries, on a <a href="https://en.wikipedia.org/wiki/Torus">torus</a> the edges "wrap around", and things that leave through one edge seem to reappear at the opposite edge. My goal with this project was to do something along the lines of <i>Torus Games</i>, but to explore more exotic topological spaces than just the torus, and to do so using an action game rather than a puzzle game.</p>
 	
@@ -105,8 +106,6 @@
 	
 	<p>Like the torus, the cylinder also wraps around to meet itself. Unlike the torus, the cylinder has two edges representing a boundary that cannot be crossed while still remaining on the surface. We can easily imagine creating a model cylinder by taking a square marked like the above picture, curling it into a loop, and gluing the opposite edges together so that the half-arrows match up to create a full arrow. If we could somehow bend the square to then also glue the <i>other</i> set of opposite edges together, we would get a doughnut-shaped torus.</p>
 	
-	<!--<p>The way in which the torus and the cylinder identify coordinates with each other represents only a geometric translation, meaning that objects that leave one edge reappear at the opposite edge in the same orientation, and with only one of their coordinates (x or y) changing. There are more complicated spaces for which this is not the case, for example the <a href="https://en.wikipedia.org/wiki/M%C3%B6bius_strip">Möbius strip</a>, whose fundamental polygon is:</p>-->
-	
 	<p>The way in which the torus and the cylinder identify coordinates with each other represents only a geometric translation, meaning that objects that leave one edge reappear at the opposite edge in the same orientation, and with only one of their coordinates (\(x\) or \(y\)) changing. There are more complicated spaces for which this is not the case, for example the <a href="https://en.wikipedia.org/wiki/M%C3%B6bius_strip">Möbius strip</a>, whose fundamental polygon is:</p>
 	
 	<p class="center"><img src="images/asteroids/polygon_mobius.png" title="Möbius Strip" width="200px"/></p>
@@ -121,7 +120,7 @@
 	
 	<!-- Design Notes -->
 	
-	<h2>Design Notes</h2>
+	<h2 id="design">Design Notes</h2>
 	
 	<p>If you happen to look through this game's source code I am certain that you will find many more efficient ways to do things, but in case you are curious about how I got this game to work, here is a brief explanation. Each of the different surfaces is contained in its own game room. Within each of these rooms is a 4 x 4 array of fundamental polygons, similar to the example shown above for the torus, but with some of the polygons being reflected or rotated depending on the type of surface. Every object in the game (the player, the asteroids, bullets, etc.) is actually made up of a single master object that spawns and keeps track of 16 copies, one for each polygon. Whenever two objects need to interact with each other (for example when a bullet hits an asteroid), a signal is sent to both objects' controllers, which then tell all of the copies to simultaneously react in exactly the same way. This is how all of the copies remain synchronized, even if minor numerical errors might cause some collisions to register while others narrowly miss.</p>
 	
